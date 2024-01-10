@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">Camila</a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
+                    <li><a href="#sobremi"onclick="seleccionar()">SOBREMI</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
+                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+    <!-- SECCION INICIO -->
+    <section id="inicio" class="inicio">
+        <div class="contenido-banner">
+            
+            <div class="contenedor-img">
+                <img src="img/hero.jpeg" alt="">
+            </div>
+            <div class="contenedor-texto">
+            <h1>Camila Perez</h1>
+            <h2>Full Stack Developer</h2>
+            </div>
+            <div class="redes">
+                <a href="https://www.linkedin.com/in/perezs-camila/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/camiperezs" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- SECCION SOBRE MI -->
+    <section id="sobremi" class="sobremi">
+        <div class="contenido-seccion">
+            <h2>Hola, soy Camila Pérez!</h2>
+            <p>Tengo 25 años y nací en Baradero, Buenos Aires. A mis 18 años me mudé a la ciudad de Rosario, donde me encuentro actualmente.<br>
+                Mi amor por la programación comenzó a finales del año 2022 con un curso introductorio llamado "Programación desde 0"
+                con <a href="https://egg.live/es-ar/" target="_blank" rel="noopener noreferrer"><span>Egg Corporation</span></a>,
+                donde la herramienta PSEINT asistió mis primeros pasos. Continué bajo la enseñanza de Egg hasta obtener
+                en el mes de Diciembre del año 2023 el certificado de Full Stack Developer. Allí vimos Java con el framework Spring como lenguaje de Backend,
+                MySQL como base de datos y REACT como librería de Frontend. También, se nos enseñó a utilizar la herramienta de GitHub con Git para subir nuestros proyectos a la nube
+                y poder trabajar en equipo. <br>
+                <a href="certificados/certificadoFullStack.pdf" target="_blank" rel="noopener noreferrer"><span>¡Click aqui para ver el certificado!</span></a><br>
+                Actualmente amplío mis conocimientos desde la plataforma Udemy con el profesor Juan Pablo De la Torre Valdez, en su curso de 
+                <a href="https://www.udemy.com/course/desarrollo-web-completo-con-html5-css3-js-php-y-mysql/" target="_blank" rel="noopener noreferrer"><span>Desarrollo Web</span>.</a>
+                y estoy buscando mi primer empleo como programadora, entusiasmada por proyectar lo aprendido y generar nuevas experiencias.
+                </p>
+                <div class="fila">  
+                    <!-- datos personales -->
+                    <div class="col">
+                        <h3>Algunos datos Sobre Mi!</h3>
+                        <ul>
+                            <li>
+                                <strong>Nacimiento:</strong>
+                                15-12-1998
+                            </li>
+                            <li>
+                                <strong>Telefono</strong>
+                                (+54) 3329 - 692902
+                            </li>
+                            <li>
+                                <strong>Email</strong>
+                                proggram.perezschami@outlook.com
+                            </li>
+                            <li>
+                                <strong>Localidad</strong>
+                                Rosario, Argentina
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <!-- intereses -->
+                    <div class="col">
+                        <h3>Skills</h3>
+                        <div class="contenedor-skills">
+                            <div class="skill">
+                                <i class="fa-brands fa-git-alt"></i>
+                                <span>GIT</span>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-brands fa-github"></i>
+                                <span>GITHUB</span>
+                            </div>
+
+                            <div class="skill">
+                                <i class="fa-brands fa-java"></i>
+                                <span>JAVA</span>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-database"></i>
+                                <span>MYSQL</span>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-brands fa-html5"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-brands fa-css3"></i>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-brands fa-js"></i>
+                                <span>JAVASCRIPT</span>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-brands fa-react"></i>
+                                <span>REACT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<button>
+                    Descargar CV <i class="fa-solid fa-download"></i>
+                    <span class="overlay"></span>
+                </button>-->
+        </div>
+    </section>
+
+    <!-- SECCION PORTFOLIO   -->
+    <section id="portfolio" class="portfolio">
+        <div class="contenido-seccion">
+            <h2>PORTFOLIO</h2>
+            <div class="galeria">
+                <div class="proyecto">
+                    <a href="https://camiperezs-blog-de-cafe.netlify.app/" target="_blank" rel="noopener noreferrer">
+                        <img src="img/banner.jpg" alt="blogdecafe">
+                        <div class="overlay">
+                            <h3>Blog De Café</h3>
+                            <p>Proyecto Frontend con secciones: "nosotros", "cursos", "contacto"</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="proyecto">
+                    <a href="index.html" target="_blank" rel="noopener noreferrer">
+                        <img src="img/portfolio.jpg" alt="">
+                        <div class="overlay">
+                        <h3>Portfolio</h3>
+                        <p>Portfolio personal con secciones "inicio", "sobre mi", "portfolio", "contacto"</p>
+                    </div>
+                    </a>
+                    
+                </div>
+                <div class="proyecto">
+                    <a href="https://cemiperezs-frontend-store.netlify.app/" target="_blank" rel="noopener noreferrer">
+                        <img src="img/frontendstore.jpg" alt="">
+                        <div class="overlay">
+                            <h3>Frontend Store</h3>
+                            <p>Simulación de Tienda de Remeras con secciones: "tienda", "nosotros" y "descripción de producto"</p>
+                        </div>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- SECCION CONTACTO -->
+    <section id="contacto" class="contacto">
+        <div class="contenido-seccion">
+            <h2>CONTACTO</h2>
+            
+            <!--<div class="fila">-->
+                    <!-- Formulario 
+                    <div class="col">
+                        <form class="formulario">
+                        <input type="text" id="nombre" placeholder="Nombre">
+                        <input type="tel" id="telefono" placeholder="Número telefónico">
+                        <input type="email" id="correo" placeholder="Dirección de correo">
+                        <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                        <button type="submit" class="boton-enviar">
+                            Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
+                            <span class="overlay"></span>
+                        </button>
+                    </form>
+                    </div>
+                    -->
+                <!-- Mapa -->
+                <div class="col">
+                    <div class="fondo-imagen"></div>
+                    <div class="info">
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Rosario Santa Fe.
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                (3329) - 692902
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-envelope"></i>
+                                Email: proggram.perezschami@outlook.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            <!--</div>-->
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        <a href="#inicio" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        <div class="redes">
+            <a href="https://www.linkedin.com/in/perezs-camila/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/camiperezs" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="formulario.js"></script>
+</body>
+</html>
