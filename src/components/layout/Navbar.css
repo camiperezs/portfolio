@@ -1,0 +1,48 @@
+.barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 18px;
+  padding: 8px max(16px, 3vw);
+  background: url(/sprites/tile-madera.png) 0 0 / 192px 96px;
+  border-bottom: 3px solid var(--tinta);
+  box-shadow: 0 3px 0 var(--oro), 0 9px 0 rgb(20 8 16 / 50%);
+}
+
+.barra-marca {
+  color: var(--oro-claro);
+  font-family: var(--fuente-titulo);
+  font-size: 44px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.pestanas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.pestana {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 6px;
+  border: 6px solid transparent;
+  border-image: url(/sprites/pestana.png) 3 fill / 6px stretch;
+  color: var(--crema);
+  font-size: 19px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.pestana:hover {
+  color: var(--oro-claro);
+}
+
+.pestana.activa {
+  border-image-source: url(/sprites/pestana-activa.png);
+  color: var(--aubergine);
+  font-weight: 700;
+}

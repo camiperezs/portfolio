@@ -1,0 +1,11 @@
+.selector {
+  display: flex;
+  gap: 6px;
+}
+
+.selector .boton {
+  min-width: 52px;
+  min-height: 46px;
+  padding: 0 2px;
+  font-size: 18px;
+}

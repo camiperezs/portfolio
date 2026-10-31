@@ -1,0 +1,9 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 16px solid transparent;
+  border-image: url(/sprites/panel-papel.png) 8 fill / 16px round;
+  color: var(--aubergine);
+  filter: drop-shadow(6px 6px 0 rgb(20 8 16 / 60%));
+}

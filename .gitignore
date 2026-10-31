@@ -2,3 +2,8 @@ node_modules
 dist
 .env
 .env.*
+.claude/skills
+.claude/agents
+.claude/settings.local.json
+.impeccable
+fondos-originales

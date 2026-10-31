@@ -1,0 +1,71 @@
+.fila {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 60px;
+  padding: 4px 12px;
+  border: 2px solid var(--papel-borde);
+  border-radius: 6px;
+  background: rgb(250 241 220 / 60%);
+  color: var(--aubergine);
+  font: 600 21px var(--fuente-texto);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.fila img {
+  flex: none;
+  width: 48px;
+  height: 48px;
+}
+
+.fila-texto {
+  min-width: 0;
+}
+
+.fila-texto small {
+  display: block;
+  font: 400 16px/1.15 var(--fuente-etiqueta);
+}
+
+.fila-flecha {
+  flex: none;
+  width: 14px;
+  height: 22px;
+  margin-left: auto;
+  background: url(/sprites/flecha.png) 0 0 / 100% 100% no-repeat;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .fila:hover {
+    border-color: var(--terracota);
+    background: #fff8e6;
+  }
+}
+
+.fila:active {
+  transform: translateY(2px);
+}
+
+.fila:focus-visible {
+  outline-color: var(--oxido);
+}
+
+.fila.activa {
+  border-color: var(--oro);
+  background: var(--aubergine);
+  color: var(--oro-claro);
+}
+
+.fila.activa .fila-flecha {
+  background-image: url(/sprites/flecha-oro.png);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fila {
+    transition: none;
+  }
+}

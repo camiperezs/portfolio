@@ -1,0 +1,59 @@
+:root {
+  --tinta: #140810;
+  --aubergine: #3a0f34;
+  --madera: #351607;
+  --terracota: #a8431f;
+  --oxido: #6e2a16;
+  --oro: #eaaa00;
+  --oro-claro: #f2c84b;
+  --crema: #f8efd8;
+  --papel-claro: #fbf3df;
+  --papel-borde: #c9a978;
+  --oro-borde: #b98a1e;
+  --ease-salida: cubic-bezier(0.23, 1, 0.32, 1);
+  --fuente-marca: 'Grenze Gotisch', 'Times New Roman', serif;
+  --fuente-titulo: 'Jacquard 12', 'Times New Roman', serif;
+  --fuente-texto: 'Alegreya Sans', 'Segoe UI', sans-serif;
+  --fuente-etiqueta: 'Alegreya Sans', 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-color: var(--terracota) var(--madera);
+}
+
+::selection {
+  background: var(--oro-claro);
+  color: var(--aubergine);
+}
+
+body {
+  margin: 0;
+  background: var(--madera);
+  color: var(--crema);
+  font-family: var(--fuente-texto);
+  font-size: 20px;
+  line-height: 1.35;
+  image-rendering: pixelated;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--oro-claro);
+  outline-offset: 2px;
+}
+
+.titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1;
+}

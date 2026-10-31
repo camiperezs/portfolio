@@ -1,0 +1,131 @@
+.inicio {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.inicio-hoja {
+  width: 30px;
+  height: 30px;
+}
+
+.inicio-marca {
+  color: var(--aubergine);
+  font-family: var(--fuente-marca);
+  font-size: 66px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.inicio-nombre {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.inicio-rol {
+  margin-bottom: 2px;
+  font-size: 18px;
+}
+
+.inicio-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+.inicio-menu .fila {
+  animation: fila-entra 280ms var(--ease-salida) 120ms backwards;
+}
+
+.inicio-menu .fila:nth-child(2) {
+  animation-delay: 160ms;
+}
+
+.inicio-menu .fila:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+.inicio-menu .fila:nth-child(4) {
+  animation-delay: 240ms;
+}
+
+@keyframes fila-entra {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.inicio .boton,
+.inicio .boton:hover,
+.inicio .boton:active {
+  min-width: 56px;
+  min-height: 44px;
+  border: 2px solid var(--papel-borde);
+  border-image: none;
+  border-radius: 6px;
+  background: var(--papel-claro);
+}
+
+.inicio .boton:active {
+  transform: translateY(2px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .inicio .boton:hover {
+    border-color: var(--terracota);
+  }
+}
+
+.inicio .boton.oro {
+  border-color: var(--oro-borde);
+  background: var(--oro);
+}
+
+.inicio .boton:focus-visible {
+  outline-color: var(--oxido);
+}
+
+@media (max-height: 700px) {
+  .inicio-marca {
+    font-size: 54px;
+  }
+
+  .inicio-menu {
+    gap: 6px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+  }
+
+  .inicio-menu .fila {
+    min-height: 56px;
+    padding-block: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inicio-menu .fila {
+    animation: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .inicio-marca {
+    font-size: 56px;
+  }
+
+  .inicio-menu .fila {
+    min-height: 54px;
+    font-size: 20px;
+  }
+
+  .inicio-menu {
+    gap: 8px;
+  }
+}
