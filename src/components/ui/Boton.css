@@ -3,30 +3,39 @@
   align-items: center;
   justify-content: center;
   min-height: 44px;
-  padding: 0 8px;
-  border: 8px solid transparent;
-  border-image: url(/sprites/boton.png) 4 fill / 8px stretch;
-  background: none;
+  padding: 0 16px;
+  border: 2px solid var(--papel-borde);
+  border-radius: 6px;
+  background: var(--aubergine);
   color: var(--crema);
-  font: 600 19px var(--fuente-texto);
+  font: 400 20px var(--fuente-texto);
   cursor: pointer;
-}
-
-.boton:hover {
-  border-image-source: url(/sprites/boton-hover.png);
-}
-
-.boton:active {
-  border-image-source: url(/sprites/boton-press.png);
-  transform: translateY(3px);
-}
-
-.boton.oro {
-  border-image-source: url(/sprites/boton-oro.png);
-  color: var(--aubergine);
+  transition: background-color 150ms ease, border-color 150ms ease;
 }
 
 .boton.papel {
-  border-image-source: url(/sprites/boton-papel.png);
+  background: var(--papel-claro);
   color: var(--aubergine);
+}
+
+.boton.oro {
+  border-color: var(--oro-borde);
+  background: var(--oro);
+  color: var(--aubergine);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .boton:hover {
+    border-color: var(--terracota);
+  }
+}
+
+.boton:active {
+  transform: translateY(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boton {
+    transition: none;
+  }
 }

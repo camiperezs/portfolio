@@ -4,3 +4,9 @@
   margin-inline: auto;
   padding: 36px 16px;
 }
+
+@media (max-height: 960px) {
+  .contenido {
+    padding-block: 16px;
+  }
+}

@@ -14,6 +14,7 @@
 
 ## Diseño
 
-- Estética de RPG de 16 bits otoñal, con títulos profesionales y sin nombres medievalizados.
-- Los sprites van en `public/sprites` y se muestran a escala entera con `image-rendering: pixelated`.
+- Estética de videojuego de 16 bits combinada con cultura japonesa y colores cálidos, con títulos profesionales y sin nombres medievalizados.
+- Tipografía: Jersey 25 para marca y títulos, en múltiplos de 25px; Jersey 20 para el texto, en múltiplos de 20px. Ambas solo tienen peso 400.
+- Los iconos pixel art van en `public/sprites` y se muestran a escala entera con `image-rendering: pixelated`.
 - No inventar datos de proyectos, experiencia ni estadísticas.

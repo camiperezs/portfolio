@@ -1,0 +1,35 @@
+.tecnologias {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 24px;
+}
+
+.tecnologias-menu {
+  gap: 16px;
+}
+
+.tecnologias-panel {
+  display: grid;
+  align-content: start;
+  gap: 24px;
+  height: 100%;
+}
+
+.tecnologias-panel:focus-visible {
+  outline-color: var(--oxido);
+}
+
+.tecnologias-categoria {
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--papel-borde);
+  font-family: var(--fuente-titulo);
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+@media (max-width: 840px) {
+  .tecnologias {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,6 +1,6 @@
 export const secciones = [
-  { ruta: '/sobre-mi', texto: 'Sobre mí', icono: '/sprites/ic-persona.png' },
-  { ruta: '/tecnologias', texto: 'Tecnologías', icono: '/sprites/ic-engranaje.png' },
-  { ruta: '/trabajo', texto: 'Trabajo', icono: '/sprites/ic-cofre.png' },
-  { ruta: '/contacto', texto: 'Contacto', icono: '/sprites/ic-carta.png' },
-]
+  { id: 'sobreMi', ruta: '/sobre-mi', icono: '/sprites/ic-perfil.png' },
+  { id: 'tecnologias', ruta: '/tecnologias', icono: '/sprites/ic-codigo.png' },
+  { id: 'trabajo', ruta: '/trabajo', icono: '/sprites/ic-carpeta.png' },
+  { id: 'contacto', ruta: '/contacto', icono: '/sprites/ic-carta-sello.png' },
+] as const

@@ -10,11 +10,10 @@
   --papel-claro: #fbf3df;
   --papel-borde: #c9a978;
   --oro-borde: #b98a1e;
-  --ease-salida: cubic-bezier(0.23, 1, 0.32, 1);
-  --fuente-marca: 'Grenze Gotisch', 'Times New Roman', serif;
-  --fuente-titulo: 'Jacquard 12', 'Times New Roman', serif;
-  --fuente-texto: 'Alegreya Sans', 'Segoe UI', sans-serif;
-  --fuente-etiqueta: 'Alegreya Sans', 'Segoe UI', sans-serif;
+  --papel: #f1e5ca;
+  --ease-despliegue: cubic-bezier(0.77, 0, 0.175, 1);
+  --fuente-titulo: 'Jersey 25', 'Segoe UI', sans-serif;
+  --fuente-texto: 'Jersey 20', 'Segoe UI', sans-serif;
 }
 
 * {
@@ -36,6 +35,7 @@ body {
   color: var(--crema);
   font-family: var(--fuente-texto);
   font-size: 20px;
+  font-synthesis: none;
   line-height: 1.35;
   image-rendering: pixelated;
 }
@@ -44,6 +44,7 @@ h1,
 h2,
 p {
   margin: 0;
+  font-weight: 400;
 }
 
 :focus-visible {
@@ -53,7 +54,7 @@ p {
 
 .titulo {
   font-family: var(--fuente-titulo);
-  font-size: 56px;
+  font-size: 50px;
   font-weight: 400;
   line-height: 1;
 }

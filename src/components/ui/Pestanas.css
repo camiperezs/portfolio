@@ -1,0 +1,41 @@
+.pestanas-seccion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 4px;
+  border-bottom: 2px solid var(--papel-borde);
+}
+
+.pestana-seccion {
+  min-height: 44px;
+  margin-bottom: -2px;
+  padding: 0 12px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--aubergine);
+  font: 400 20px var(--fuente-texto);
+  cursor: pointer;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pestana-seccion:hover {
+    color: var(--terracota);
+  }
+}
+
+.pestana-seccion:focus-visible {
+  outline-color: var(--oxido);
+  outline-offset: -3px;
+}
+
+.pestana-seccion[aria-selected='true'] {
+  border-bottom-color: var(--terracota);
+  color: var(--terracota);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pestana-seccion {
+    transition: none;
+  }
+}

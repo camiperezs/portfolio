@@ -1,0 +1,42 @@
+.categorias {
+  display: grid;
+  gap: 8px;
+}
+
+@media (max-width: 840px) {
+  .categorias {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .categorias .fila {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    padding: 8px 4px;
+    font-family: var(--fuente-texto);
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .categorias .fila-flecha {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .categorias {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .categorias .fila {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 4px 12px;
+    font-family: var(--fuente-titulo);
+    font-size: 25px;
+    text-align: left;
+  }
+}
