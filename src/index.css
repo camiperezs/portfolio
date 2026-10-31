@@ -73,7 +73,7 @@ a{
 /* SECCION inicio*/
 .inicio{
     background: linear-gradient(to bottom, rgba(30,35,38,.6), rgba(30,35,38,1)),
-    url(img/fondo.jpg);
+    url(/img/fondo.jpg);
     background-size: cover;
     height: 115vh;
     color: var(--blanco);
@@ -320,7 +320,7 @@ a{
     text-transform: uppercase;
 }
 .contacto{
-    background-image: url(img/fondo.jpg);
+    background-image: url(/img/fondo.jpg);
     background-color: var(--primario);
     color: var(--blanco);
     padding: 50px 0;
@@ -355,7 +355,7 @@ a{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url(img/ubicacion.png);
+    background-image: url(/img/ubicacion.png);
 }
 /*.contacto .col input, .contacto .col textarea{
     display: block;
