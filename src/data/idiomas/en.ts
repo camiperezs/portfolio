@@ -23,6 +23,7 @@ export const en: Textos = {
     secciones: 'About me sections',
     pestanas: { perfil: 'Profile', recorrido: 'Journey' },
     retrato: 'Pixel art portrait of',
+    contacto: 'Contact links',
     perfil: [
       "I'm a software developer with a backend focus. I'm interested in working on the structure and logic that make an application run, from data modeling to service integration.",
       'I especially enjoy the analysis and design stage, where I can evaluate different approaches and turn requirements into technical solutions. My frontend experience complements this perspective and lets me approach web projects as a whole.',

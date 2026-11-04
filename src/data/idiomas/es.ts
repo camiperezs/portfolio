@@ -101,6 +101,7 @@ export const es = {
     secciones: 'Secciones de Sobre mí',
     pestanas: { perfil: 'Perfil', recorrido: 'Recorrido' },
     retrato: 'Retrato pixel art de',
+    contacto: 'Enlaces de contacto',
     perfil: [
       'Soy desarrolladora de software con orientación al backend. Me interesa trabajar en la estructura y lógica que hacen funcionar una aplicación, desde el modelado de datos hasta la integración de servicios.',
       'Disfruto especialmente la etapa de análisis y diseño, donde puedo evaluar diferentes enfoques y transformar requerimientos en soluciones técnicas. Mi experiencia en frontend complementa esta perspectiva y me permite abordar proyectos web de manera integral.',

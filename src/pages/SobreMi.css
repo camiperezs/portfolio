@@ -32,6 +32,10 @@
   font-size: 25px;
 }
 
+.sobre-mi-contacto {
+  margin-top: 22px;
+}
+
 .sobre-mi-panel:focus-visible {
   outline-color: var(--oxido);
 }

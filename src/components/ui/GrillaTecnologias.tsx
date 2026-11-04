@@ -10,8 +10,10 @@ export default function GrillaTecnologias({ tecnologias }: { tecnologias: Tecnol
     <ul className="grilla-tecnologias">
       {tecnologias.map(({ nombre, icono }) => (
         <li className="tecnologia" key={nombre}>
-          <img src={icono} alt="" />
-          {nombre}
+          <div className="tecnologia-tarjeta">
+            <img src={icono} alt="" />
+            {nombre}
+          </div>
         </li>
       ))}
     </ul>

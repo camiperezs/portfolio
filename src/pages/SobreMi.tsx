@@ -1,9 +1,10 @@
 import { useId, useState } from 'react'
+import IconosContacto from '../components/ui/IconosContacto'
 import MapaRecorrido from '../components/ui/MapaRecorrido'
 import Panel from '../components/ui/Panel'
 import Pestanas from '../components/ui/Pestanas'
 import { useIdioma } from '../context/IdiomaContext'
-import { perfil } from '../data/perfil'
+import { contactos, perfil } from '../data/perfil'
 import {
   iconosParada,
   iconosParadaApagada,
@@ -76,7 +77,14 @@ export default function SobreMi() {
               onCambiar={elegirParada}
             />
           ) : (
-            sobreMi.perfil.map((parrafo) => <p key={parrafo}>{parrafo}</p>)
+            <>
+              {sobreMi.perfil.map((parrafo) => (
+                <p key={parrafo}>{parrafo}</p>
+              ))}
+              <div className="sobre-mi-contacto">
+                <IconosContacto etiqueta={sobreMi.contacto} contactos={contactos} />
+              </div>
+            </>
           )}
         </div>
       </Panel>
