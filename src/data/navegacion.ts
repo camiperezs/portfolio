@@ -1,6 +1,16 @@
 export const secciones = [
-  { id: 'sobreMi', ruta: '/sobre-mi', icono: '/sprites/ic-perfil.png' },
-  { id: 'tecnologias', ruta: '/tecnologias', icono: '/sprites/ic-codigo.png' },
-  { id: 'trabajo', ruta: '/trabajo', icono: '/sprites/ic-carpeta.png' },
-  { id: 'contacto', ruta: '/contacto', icono: '/sprites/ic-carta-sello.png' },
+  { id: 'sobreMi', ruta: '/sobre-mi' },
+  { id: 'tecnologias', ruta: '/tecnologias' },
+  { id: 'trabajo', ruta: '/trabajo' },
+  { id: 'contacto', ruta: '/contacto' },
 ] as const
+
+export const iconosTema = {
+  dia: '/sprites/tema-sol.png',
+  noche: '/sprites/tema-luna.png',
+}
+
+export const faroles = {
+  encendido: '/sprites/parada-formacion.png',
+  apagado: '/sprites/parada-formacion-apagada.png',
+}

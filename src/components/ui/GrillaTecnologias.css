@@ -21,7 +21,7 @@
   border-radius: 6px;
   font-size: 20px;
   text-align: center;
-  transition: transform 150ms ease, background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+  transition: background-color 150ms ease;
 }
 
 .tecnologia-tarjeta img {
@@ -32,10 +32,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .tecnologia:hover .tecnologia-tarjeta {
-    border-color: var(--terracota);
-    background: #fff8e6;
-    box-shadow: 0 4px 0 var(--papel-borde);
-    transform: translateY(-4px);
+    background: var(--resalte-ventana);
   }
 }
 

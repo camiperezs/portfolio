@@ -1,79 +1,44 @@
 .sobre-mi {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 304px;
-  gap: 24px;
+  gap: 16px;
+  max-width: 720px;
 }
 
 .sobre-mi-ancho {
-  grid-template-columns: minmax(0, 1fr);
-}
-
-.sobre-mi-contenido {
-  gap: 16px;
+  max-width: 804px;
 }
 
 .sobre-mi-cabecera {
-  display: grid;
-  gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
-.sobre-mi-panel {
+.sobre-mi-identidad {
   display: grid;
-  align-content: start;
-  flex: 1;
-  gap: 14px;
-  padding-top: 6px;
-  max-width: 65ch;
+  gap: 4px;
 }
 
-.sobre-mi-presentacion {
-  align-content: baseline;
+.sobre-mi-identidad .titulo {
+  margin-bottom: 6px;
+}
+
+.sobre-mi-nombre {
   font-family: var(--fuente-titulo);
   font-size: 25px;
-}
-
-.sobre-mi-contacto {
-  margin-top: 22px;
-}
-
-.sobre-mi-panel:focus-visible {
-  outline-color: var(--oxido);
-}
-
-.sobre-mi-ancho .sobre-mi-panel {
-  max-width: none;
-}
-
-.sobre-mi-retrato {
-  align-items: center;
-  justify-content: center;
-  gap: 22px;
-  padding: 24px 20px;
-  text-align: center;
 }
 
 .sobre-mi-marco {
   position: relative;
   flex: none;
-  width: 256px;
-  height: 320px;
+  width: 128px;
+  height: 160px;
+  margin: 5px;
   overflow: hidden;
   box-shadow:
     0 0 0 1px var(--oro-borde),
-    0 0 0 5px var(--madera),
-    0 0 0 6px var(--oro-borde),
-    0 12px 14px 4px rgb(30 14 6 / 45%);
-}
-
-.sobre-mi-marco::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  box-shadow:
-    inset 0 0 0 1px rgb(30 14 6 / 45%),
-    inset 0 8px 10px -2px rgb(30 14 6 / 40%),
-    inset 0 -4px 8px -2px rgb(30 14 6 / 25%);
-  pointer-events: none;
+    0 0 0 4px var(--madera),
+    0 0 0 5px var(--oro-borde),
+    0 8px 10px 2px rgb(30 14 6 / 45%);
 }
 
 .sobre-mi-imagen {
@@ -84,53 +49,30 @@
   transform: scale(1.06);
 }
 
-.sobre-mi-datos {
+.sobre-mi-panel {
   display: grid;
-  gap: 2px;
-  font-size: 20px;
-  text-wrap: balance;
+  align-content: start;
+  gap: 14px;
+  max-width: 65ch;
 }
 
-.sobre-mi-nombre {
-  font-family: var(--fuente-titulo);
-  font-size: 25px;
+.sobre-mi-ancho .sobre-mi-panel {
+  max-width: none;
 }
 
-@media (min-width: 841px) {
-  .sobre-mi-contenido {
-    min-height: 804px;
-  }
+.sobre-mi-panel:focus-visible {
+  outline-color: var(--texto-ventana-suave);
 }
 
-@media (max-width: 840px) {
-  .sobre-mi {
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
-  }
-
-  .sobre-mi-retrato {
-    grid-row: 1;
-    flex-direction: row;
-    gap: 18px;
-    padding: 18px;
-    text-align: left;
-  }
-
-  .sobre-mi-marco {
-    width: 128px;
-    height: 160px;
-    margin: 6px;
-    box-shadow:
-      0 0 0 1px var(--oro-borde),
-      0 0 0 4px var(--madera),
-      0 0 0 5px var(--oro-borde),
-      0 8px 10px 2px rgb(30 14 6 / 45%);
-  }
+.sobre-mi-panel .iconos-contacto {
+  justify-content: flex-start;
+  margin-top: 6px;
 }
 
-@media (max-width: 360px) {
-  .sobre-mi-retrato {
+@media (max-width: 520px) {
+  .sobre-mi-cabecera {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
+    gap: 16px;
   }
 }

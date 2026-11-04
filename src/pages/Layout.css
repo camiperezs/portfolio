@@ -1,12 +1,29 @@
 .contenido {
-  width: 100%;
-  max-width: 1080px;
-  margin-inline: auto;
-  padding: 36px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px max(16px, 3vw);
 }
 
-@media (max-height: 960px) {
+.contenido > * {
+  width: 100%;
+}
+
+.contenido-izquierda {
+  align-items: flex-start;
+}
+
+.contenido-derecha {
+  align-items: flex-end;
+}
+
+.contenido-velo {
+  --sombra-ventana: drop-shadow(0 10px 12px rgb(30 14 6 / 45%)) drop-shadow(0 0 16px rgb(38 18 12 / 45%));
+}
+
+@media (max-width: 840px) {
   .contenido {
-    padding-block: 16px;
+    align-items: stretch;
+    padding: 20px 16px;
   }
 }

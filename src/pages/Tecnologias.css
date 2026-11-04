@@ -1,7 +1,9 @@
 .tecnologias {
   display: grid;
-  grid-template-columns: 320px minmax(0, 1fr);
+  grid-template-columns: 330px minmax(0, 1fr);
+  align-items: start;
   gap: 24px;
+  max-width: 900px;
 }
 
 .tecnologias-menu {

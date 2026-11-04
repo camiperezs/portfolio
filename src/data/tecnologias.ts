@@ -67,3 +67,7 @@ export const categoriasTecnologias: CategoriaTecnologias[] = [
     ],
   },
 ]
+
+export const iconosTecnologia: Record<string, string> = Object.fromEntries(
+  categoriasTecnologias.flatMap(({ tecnologias }) => tecnologias.map(({ nombre, icono }) => [nombre, icono])),
+)

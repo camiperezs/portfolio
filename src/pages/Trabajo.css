@@ -1,0 +1,160 @@
+.trabajo {
+  gap: 18px;
+  max-width: 980px;
+}
+
+.trabajo-cartas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trabajo-cartas > li {
+  display: grid;
+}
+
+.ficha {
+  gap: 20px;
+  max-width: 980px;
+}
+
+.ficha-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-self: start;
+  min-height: 44px;
+  padding-right: 8px;
+  border-radius: 4px;
+  color: var(--texto-ventana-suave);
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.ficha-volver::before {
+  content: '';
+  width: 14px;
+  height: 22px;
+  background: var(--cursor) 0 0 / 100% 100% no-repeat;
+  transform: scaleX(-1);
+}
+
+.ficha-volver:hover {
+  color: var(--texto-ventana);
+}
+
+.ficha-volver:focus-visible {
+  outline-color: var(--texto-ventana-suave);
+}
+
+.ficha-cabecera {
+  display: grid;
+  gap: 8px;
+}
+
+.ficha-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  color: var(--texto-ventana-suave);
+}
+
+.ficha-cabecera .titulo {
+  text-wrap: balance;
+}
+
+.ficha-rol {
+  font: 400 25px var(--fuente-titulo);
+}
+
+.ficha-cuerpo {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  align-items: start;
+  gap: 28px;
+}
+
+.ficha-lateral,
+.ficha-texto {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+
+.ficha-texto {
+  max-width: 65ch;
+}
+
+.ficha-bloque {
+  display: grid;
+  gap: 8px;
+}
+
+.ficha-bloque h2 {
+  margin: 0;
+  font: 400 25px var(--fuente-titulo);
+}
+
+.ficha-lista {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ficha-lista li {
+  display: grid;
+  grid-template-columns: 8px minmax(0, 1fr);
+  gap: 10px;
+}
+
+.ficha-lista li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  margin-top: 9px;
+  background: var(--oro-borde);
+}
+
+.ficha-enlace {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  min-height: 44px;
+  color: var(--acento-ventana);
+  font-size: 20px;
+  text-underline-offset: 3px;
+}
+
+.ficha-enlace:focus-visible {
+  outline-color: var(--texto-ventana-suave);
+}
+
+@media (max-width: 840px) {
+  .ficha-cuerpo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ficha-lateral {
+    display: contents;
+  }
+
+  .ficha-texto {
+    order: 2;
+  }
+
+  .ficha-lateral > :not(.marco-imagen) {
+    order: 3;
+  }
+}
+
+@media (max-width: 520px) {
+  .ficha-cabecera .titulo {
+    font-size: 25px;
+  }
+}

@@ -4,9 +4,11 @@ import type { Textos } from './es'
 export const en: Textos = {
   rol: 'Backend Developer',
   idioma: 'Language',
+  modoNoche: 'Night mode',
   pendiente: 'This section is coming next.',
   navegacion: {
     etiqueta: 'Sections',
+    menu: 'Menu',
     sobreMi: 'About me',
     tecnologias: 'Technologies',
     trabajo: 'Work',
@@ -114,6 +116,92 @@ export const en: Textos = {
       ia: 'AI',
     },
   },
-  trabajo: { titulo: 'Work' },
+  trabajo: {
+    titulo: 'Work',
+    etiqueta: 'Projects and experience',
+    volver: 'Back to Work',
+    verFicha: 'View details',
+    rol: 'Role',
+    desafio: 'The challenge',
+    contexto: 'Context',
+    tecnologias: 'Technologies',
+    verSitio: 'View live site',
+    parteDe: 'Part of',
+    incluye: 'Includes',
+    imagenDe: 'Screenshot of',
+    tipos: {
+      proyecto: 'Personal project',
+      experiencia: 'Professional experience',
+      implementacion: 'Implementation',
+      formacion: 'Training',
+    },
+    estados: { desarrollo: 'In development', produccion: 'In production', publicado: 'Published' },
+    items: {
+      sistemaSalon: {
+        titulo: 'Beauty Salon Management System',
+        rol: 'Full Stack Developer · Project Owner',
+        resumen:
+          'Full-stack web application designed to simplify daily operations for beauty salons and independent professionals.',
+        lista: {
+          titulo: 'Key features',
+          items: [
+            'Appointment scheduling and availability management.',
+            'Client, service, and professional management.',
+            'Multi-service bookings and status tracking.',
+            'Pricing, deposits, and suggested return intervals.',
+            'Role-based authentication and access control.',
+          ],
+        },
+        contexto:
+          'Independently developed, from database design and REST APIs to frontend implementation. Currently in development.',
+      },
+      integracionesPago: {
+        titulo: 'E-commerce Payment Gateway Integrations',
+        rol: 'Backend Developer · Payment Integrations',
+        resumen:
+          'Developing, maintaining, and improving payment integrations for production e-commerce platforms.',
+        lista: {
+          titulo: 'Key contributions',
+          items: [
+            'Integrated Mercado Pago, MODO, and GOcuotas.',
+            'Developed and maintained payment gateway functionality.',
+            'Worked with REST APIs and external services.',
+            'Adapted checkout and payment flows to business requirements.',
+            'Troubleshot payment issues and improved existing integrations.',
+          ],
+        },
+        contexto: 'Work performed at WAIA, maintaining and improving real-world e-commerce applications.',
+      },
+      rbac: {
+        titulo: 'Role-Based Access Control (RBAC)',
+        rol: 'Backend Developer · Authentication & Authorization',
+        resumen:
+          "Authentication and role-based authorization in a full-stack beauty salon management application, providing different levels of access depending on each user's responsibilities.",
+        desafio:
+          'Different users need access to different features and information: an administrator manages system configuration, a receptionist handles appointments and clients, and a professional accesses information relevant to their own work. The application needed a centralized security model to enforce these restrictions consistently.',
+        lista: {
+          titulo: 'What I implemented',
+          items: [
+            'Authentication with JSON Web Tokens (JWT) and BCrypt password protection, integrated with Spring Security.',
+            'Three user roles: ADMIN, RECEPTIONIST, and PROFESSIONAL.',
+            'Role-based authorization for protected backend operations.',
+            'Access restrictions based on user identity and resource ownership.',
+            'Permission validation before protected operations, on a stateless architecture.',
+            'Separation between authentication and business logic.',
+          ],
+        },
+        contexto:
+          'Independently designed and implemented the authentication and authorization architecture, focusing on maintainability, clear separation of responsibilities, and protecting application resources from unauthorized access.',
+      },
+      festival: {
+        titulo: 'Rock & EDM Festival',
+        resumen: 'Festival-themed frontend project with line-up information, a gallery, and tickets.',
+      },
+      frontendStore: {
+        titulo: 'Frontend Store',
+        resumen: 'Simulated T-shirt store with shop, about us, and product description sections.',
+      },
+    },
+  },
   contacto: { titulo: 'Contact' },
 }

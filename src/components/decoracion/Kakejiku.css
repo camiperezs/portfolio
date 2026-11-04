@@ -86,9 +86,6 @@
 .kakejiku-papel {
   padding: 26px 44px 16px;
   background-color: var(--papel);
-  background-image:
-    radial-gradient(ellipse at 30% 16%, rgb(255 250 236 / 85%), transparent 58%),
-    radial-gradient(ellipse at 76% 88%, rgb(196 160 106 / 26%), transparent 52%);
   box-shadow: 0 0 0 1px var(--oro-borde), 0 0 0 4px var(--terracota);
 }
 

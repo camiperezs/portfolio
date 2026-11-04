@@ -1,0 +1,24 @@
+.etiqueta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 8px;
+  border-radius: 4px;
+  background: var(--madera);
+  color: var(--crema);
+  font: 400 20px/1 var(--fuente-texto);
+  white-space: nowrap;
+}
+
+.etiqueta-proyecto {
+  background: var(--oro);
+  color: var(--aubergine);
+}
+
+.etiqueta-experiencia {
+  background: var(--terracota);
+}
+
+.etiqueta-implementacion {
+  background: var(--aubergine);
+}

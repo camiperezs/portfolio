@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 24px 28px;
-  border-radius: 4px;
-  background-color: var(--papel);
-  box-shadow: 0 0 0 2px var(--oro-borde), 0 14px 18px rgb(30 14 6 / 45%);
-  color: var(--aubergine);
+  padding: 14px 18px;
+  border: 12px solid transparent;
+  border-image: var(--marco-ventana) 6 fill / 12px stretch;
+  color: var(--texto-ventana);
+  filter: var(--sombra-ventana);
 }

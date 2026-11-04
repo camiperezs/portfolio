@@ -6,6 +6,7 @@ import Marco from './pages/Marco'
 import SobreMi from './pages/SobreMi'
 import Tecnologias from './pages/Tecnologias'
 import Trabajo from './pages/Trabajo'
+import TrabajoDetalle from './pages/TrabajoDetalle'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route index element={<Inicio />} />
         <Route element={<Layout />}>
           <Route path="trabajo" element={<Trabajo />} />
+          <Route path="trabajo/:slug" element={<TrabajoDetalle />} />
           <Route path="tecnologias" element={<Tecnologias />} />
           <Route path="sobre-mi" element={<SobreMi />} />
           <Route path="contacto" element={<Contacto />} />

@@ -6,14 +6,16 @@ import Divisor from '../components/ui/Divisor'
 import EnlacesRedes from '../components/ui/EnlacesRedes'
 import FilaMenu from '../components/ui/FilaMenu'
 import { useIdioma } from '../context/IdiomaContext'
-import { escenaInicio } from '../data/escenas'
-import { secciones } from '../data/navegacion'
+import { useTema } from '../context/TemaContext'
+import { ambienteInicio } from '../data/ambientes'
+import { faroles, secciones } from '../data/navegacion'
 import { perfil, redes } from '../data/perfil'
 import './Inicio.css'
 
 export default function Inicio() {
   const { key } = useLocation()
   const { textos } = useIdioma()
+  const { tema } = useTema()
   const primeraCarga = key === 'default'
   const [abierto, setAbierto] = useState(!primeraCarga)
 
@@ -24,7 +26,7 @@ export default function Inicio() {
   }, [primeraCarga])
 
   return (
-    <FondoEscena imagen={escenaInicio.imagen} encuadre={escenaInicio.encuadre} centrado>
+    <FondoEscena imagen={ambienteInicio.imagenes[tema]} encuadre={ambienteInicio.encuadre} centrado>
       <Kakejiku
         abierto={abierto}
         etiqueta={abierto ? textos.inicio.cerrar : textos.inicio.abrir}
@@ -36,8 +38,16 @@ export default function Inicio() {
           <p className="inicio-rol">{textos.rol}</p>
           <Divisor />
           <nav className="inicio-menu" aria-label={textos.inicio.menu}>
-            {secciones.map(({ id, ruta, icono }) => (
-              <FilaMenu key={ruta} as={Link} to={ruta} texto={textos.navegacion[id]} icono={icono} />
+            {secciones.map(({ id, ruta }) => (
+              <FilaMenu
+                key={ruta}
+                as={Link}
+                to={ruta}
+                texto={textos.navegacion[id]}
+                icono={faroles.apagado}
+                iconoActivo={faroles.encendido}
+                tamanoIcono={24}
+              />
             ))}
           </nav>
           <EnlacesRedes etiqueta={textos.inicio.redes} redes={redes} />

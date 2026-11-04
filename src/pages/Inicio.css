@@ -28,8 +28,8 @@
 .inicio-menu {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 100%;
+  gap: 4px;
+  width: min(100%, 300px);
   margin-top: 6px;
   margin-bottom: 6px;
 }
@@ -40,13 +40,13 @@
   }
 
   .inicio-menu {
-    gap: 6px;
+    gap: 0;
     margin-top: 4px;
     margin-bottom: 2px;
   }
 
   .inicio-menu .fila {
-    min-height: 54px;
+    min-height: 48px;
     padding-block: 2px;
   }
 }
@@ -57,29 +57,6 @@
   }
 
   .inicio-menu .fila {
-    min-height: 54px;
-    font-family: var(--fuente-texto);
-    font-size: 20px;
-  }
-
-  .inicio-menu {
-    gap: 8px;
-  }
-}
-
-@media (max-width: 360px) {
-  .inicio-rol {
-    font-size: 20px;
-  }
-
-  .inicio-menu {
-    gap: 4px;
-  }
-
-  .inicio-menu .fila {
-    gap: 8px;
-    padding-inline: 8px;
-    font-family: var(--fuente-texto);
-    font-size: 20px;
+    min-height: 50px;
   }
 }
