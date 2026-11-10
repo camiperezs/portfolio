@@ -110,6 +110,7 @@ export default function Contacto() {
           errorEnvio={estado === 'error' ? `${contacto.errorEnvio} ${perfil.email}.` : undefined}
           textoEnviar={contacto.enviar}
           textoEnviando={contacto.enviando}
+          iconoEnviar={iconoSobre}
           onCambiar={cambiar}
           onEnviar={enviar}
         />

@@ -218,7 +218,7 @@ export const en: Textos = {
     opcional: '(optional)',
     motivos: { puesto: 'Job position', freelance: 'Freelance project', otro: 'Other' },
     enviar: 'Send',
-    enviando: 'Sending',
+    enviando: 'Sending…',
     errores: {
       nombre: 'Your name is missing.',
       email: 'Your email is missing.',

@@ -2,23 +2,35 @@
   display: grid;
   justify-items: center;
   gap: 12px;
-  padding: 28px 24px 30px;
-  border-radius: 4px;
-  background: var(--papel-claro);
-  box-shadow: 0 0 0 2px var(--papel-borde);
-  color: var(--texto-ventana);
+  padding: 32px 24px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-elevada);
   text-align: center;
   animation: sobre-aparecer 400ms steps(4) both;
 }
 
+.sobre-enviado-baldosa {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 4px;
+  border-radius: var(--radio-grande);
+  background: var(--color-turquesa-suave);
+  color: var(--color-turquesa);
+}
+
 .sobre-enviado h2 {
   margin: 0;
-  font: 400 50px/1 var(--fuente-titulo);
+  font: var(--tipo-subtitulo);
+  letter-spacing: var(--tracking-subtitulo);
 }
 
 .sobre-enviado p {
   max-width: 44ch;
-  margin: 0;
+  margin: 0 0 6px;
+  color: var(--color-texto-suave);
 }
 
 @keyframes sobre-aparecer {

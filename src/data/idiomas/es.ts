@@ -226,7 +226,7 @@ export const es = {
     opcional: '(opcional)',
     motivos: { puesto: 'Puesto de trabajo', freelance: 'Proyecto freelance', otro: 'Otro' },
     enviar: 'Enviar',
-    enviando: 'Enviando',
+    enviando: 'Enviando…',
     errores: {
       nombre: 'Falta tu nombre.',
       email: 'Falta tu email.',

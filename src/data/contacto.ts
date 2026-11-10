@@ -11,4 +11,4 @@ export const formularioContacto = {
   trampa: 'campo-trampa',
 }
 
-export const iconoSobre = '/sprites/red-email.png'
+export const iconoSobre = '/sprites/mascara-sobre.png'

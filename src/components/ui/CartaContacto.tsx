@@ -1,4 +1,5 @@
 import type { ChangeEvent, FormEvent } from 'react'
+import Boton from './Boton'
 import './CartaContacto.css'
 
 type Campo = 'nombre' | 'email' | 'telefono' | 'motivo' | 'mensaje'
@@ -18,6 +19,7 @@ type Props = {
   errorEnvio?: string
   textoEnviar: string
   textoEnviando: string
+  iconoEnviar: string
   onCambiar: (campo: Campo, valor: string) => void
   onEnviar: (evento: FormEvent<HTMLFormElement>) => void
 }
@@ -37,6 +39,7 @@ export default function CartaContacto({
   errorEnvio,
   textoEnviar,
   textoEnviando,
+  iconoEnviar,
   onCambiar,
   onEnviar,
 }: Props) {
@@ -63,6 +66,7 @@ export default function CartaContacto({
         name={campo}
         type={tipo}
         autoComplete={autocompletar}
+        spellCheck={tipo === 'email' ? false : undefined}
         value={valores[campo]}
         onChange={cambiar(campo)}
         disabled={enviando}
@@ -130,9 +134,9 @@ export default function CartaContacto({
         <p className="carta-error carta-error-envio" role="alert">
           {errorEnvio}
         </p>
-        <button type="submit" className="carta-sello" disabled={enviando}>
+        <Boton type="submit" variante="principal" icono={iconoEnviar} disabled={enviando}>
           {enviando ? textoEnviando : textoEnviar}
-        </button>
+        </Boton>
       </div>
     </form>
   )

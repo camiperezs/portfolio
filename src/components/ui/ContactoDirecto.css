@@ -1,54 +1,52 @@
 .contacto-directo {
   display: grid;
-  gap: 10px;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-borde);
 }
 
 .contacto-directo h2 {
   margin: 0;
-  font: 400 25px var(--fuente-titulo);
+  font: var(--tipo-subtitulo);
+  letter-spacing: var(--tracking-subtitulo);
 }
 
-.contacto-directo-email,
-.contacto-directo-redes {
+.contacto-directo-email {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px 16px;
+  gap: 8px 12px;
+  color: var(--color-turquesa);
 }
 
-.contacto-directo-email img {
-  margin-right: -8px;
-}
-
-.contacto-directo a {
+.contacto-directo-email a {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
   min-height: 44px;
-  color: var(--texto-ventana);
-  font-size: 20px;
+  color: var(--color-texto);
+  font-weight: 500;
   text-decoration: none;
   text-underline-offset: 3px;
-  user-select: all;
-}
-
-.contacto-directo-redes {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.contacto-directo-redes a {
-  user-select: auto;
+  overflow-wrap: anywhere;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .contacto-directo a:hover {
-    color: var(--acento-ventana);
+  .contacto-directo-email a:hover {
+    color: var(--color-turquesa);
     text-decoration: underline;
   }
 }
 
-.contacto-directo a:focus-visible {
-  outline-color: var(--texto-ventana-suave);
+.contacto-directo-email a:focus-visible {
+  outline: 2px solid var(--color-foco);
+  outline-offset: 2px;
+}
+
+.contacto-directo-redes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

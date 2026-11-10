@@ -92,6 +92,13 @@ Estado: hecha.
 
 ### Etapa 4: vistas, de la más simple a la más compleja
 
+Estado: hecha.
+- Tecnologías: baldosas con sprites a 48px y subtítulo con la escala nueva.
+- Trabajo: cartas con borde sutil, `MarcoImagen` sin filete ni prop `grande`, respaldo con la máscara del maletín y "Ver sitio publicado" como acción principal.
+- Sobre mí: textos del recorrido reescritos con el esquema de la sección 4 (en inglés, "Arquitectura en Ciberseguridad" deja de figurar como "Cybersecurity Architect"); `LineaTiempo` del paso más reciente al más antiguo; pestaña en la URL (`?seccion=recorrido`); acciones de contacto iguales a Inicio. Se eliminaron `MapaRecorrido`, `IconosContacto` y `contactos`.
+- Contacto: campos con `--color-borde-control`, foco turquesa y error en `--color-error`; motivos como pastillas con indicador cuadrado; botón principal "Enviar" en lugar del sello; `ContactoDirecto` y `SobreEnviado` con máscaras y acciones del sistema; "Enviando…" con puntos suspensivos y `spellCheck` desactivado en el email.
+- Verificado con capturas de cada vista en día, noche, celular, inglés, errores de validación y envío exitoso simulado.
+
 1. **Tecnologías:** dos tarjetas (categorías y detalle), `ListaCategorias` sobre la nueva fila, `GrillaTecnologias` con hover suave. Los sprites `d-*.png` se mantienen como acento pixel.
 2. **Trabajo y detalle:** reemplazar el respaldo `farolSinImagen` (sprite de farol, en `data/trabajo.ts`) por un icono máscara con `IconoPixel`, por ejemplo el maletín. `CartaTrabajo` como tarjeta con imagen, título Onest 600 y etiquetas nuevas; `MarcoImagen` sin filete dorado (radio + borde sutil); `ListaTecnologias` como pastillas; `.ficha-*` con jerarquía Onest, "volver" con cursor máscara y enlaces turquesa.
 3. **Sobre mí:** retrato con radio y borde sutil, pestañas nuevas, `IconosContacto` → `EnlaceAccion` con `redes` (igual que Inicio).

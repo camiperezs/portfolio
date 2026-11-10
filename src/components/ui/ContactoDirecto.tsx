@@ -1,4 +1,6 @@
 import Boton from './Boton'
+import EnlaceAccion from './EnlaceAccion'
+import IconoPixel from './IconoPixel'
 import './ContactoDirecto.css'
 
 type Red = {
@@ -32,7 +34,7 @@ export default function ContactoDirecto({
     <section className="contacto-directo" aria-label={titulo}>
       <h2>{titulo}</h2>
       <div className="contacto-directo-email">
-        <img src={iconoEmail} alt="" width={24} height={24} />
+        <IconoPixel imagen={iconoEmail} />
         <a href={`mailto:${email}`}>{email}</a>
         <Boton onClick={onCopiar} aria-live="polite">
           {copiado ? textoCopiado : textoCopiar}
@@ -41,10 +43,7 @@ export default function ContactoDirecto({
       <ul className="contacto-directo-redes">
         {redes.map(({ texto, url, icono }) => (
           <li key={url}>
-            <a href={url} target="_blank" rel="noopener noreferrer">
-              <img src={icono} alt="" width={24} height={24} />
-              {texto}
-            </a>
+            <EnlaceAccion texto={texto} icono={icono} destino={url} externo />
           </li>
         ))}
       </ul>
