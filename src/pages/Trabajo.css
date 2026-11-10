@@ -1,5 +1,5 @@
 .trabajo {
-  gap: 18px;
+  gap: 20px;
   max-width: 980px;
 }
 
@@ -17,42 +17,50 @@
 }
 
 .ficha {
-  gap: 20px;
+  gap: 24px;
   max-width: 980px;
 }
 
 .ficha-volver {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  justify-self: start;
+  gap: 10px;
+  align-self: flex-start;
   min-height: 44px;
   padding-right: 8px;
-  border-radius: 4px;
-  color: var(--texto-ventana-suave);
-  font-size: 20px;
+  border-radius: var(--radio);
+  color: var(--color-texto-suave);
+  font: var(--tipo-etiqueta);
   text-decoration: none;
+  touch-action: manipulation;
+  transition: color 150ms ease;
 }
 
 .ficha-volver::before {
   content: '';
-  width: 14px;
-  height: 22px;
-  background: var(--cursor) 0 0 / 100% 100% no-repeat;
+  width: 10px;
+  height: 18px;
+  background: currentColor;
+  -webkit-mask: var(--icono-cursor) 0 0 / 10px 18px no-repeat;
+  mask: var(--icono-cursor) 0 0 / 10px 18px no-repeat;
   transform: scaleX(-1);
 }
 
-.ficha-volver:hover {
-  color: var(--texto-ventana);
+@media (hover: hover) and (pointer: fine) {
+  .ficha-volver:hover {
+    color: var(--color-turquesa);
+  }
 }
 
-.ficha-volver:focus-visible {
-  outline-color: var(--texto-ventana-suave);
+.ficha-volver:focus-visible,
+.ficha-enlace:focus-visible {
+  outline: 2px solid var(--color-foco);
+  outline-offset: 2px;
 }
 
 .ficha-cabecera {
   display: grid;
-  gap: 8px;
+  gap: 10px;
 }
 
 .ficha-meta {
@@ -60,33 +68,32 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 6px 12px;
-  color: var(--texto-ventana-suave);
-}
-
-.ficha-cabecera .titulo {
-  text-wrap: balance;
+  color: var(--color-texto-suave);
+  font: var(--tipo-detalle);
 }
 
 .ficha-rol {
-  font: 400 25px var(--fuente-titulo);
+  color: var(--color-texto-suave);
+  font: var(--tipo-subtitulo);
+  letter-spacing: var(--tracking-subtitulo);
 }
 
 .ficha-cuerpo {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
   align-items: start;
-  gap: 28px;
+  gap: 32px;
 }
 
 .ficha-lateral,
 .ficha-texto {
   display: grid;
-  gap: 18px;
+  gap: 20px;
   min-width: 0;
 }
 
 .ficha-texto {
-  max-width: 65ch;
+  max-width: var(--ancho-lectura);
 }
 
 .ficha-bloque {
@@ -96,7 +103,7 @@
 
 .ficha-bloque h2 {
   margin: 0;
-  font: 400 25px var(--fuente-titulo);
+  font: var(--tipo-encabezado);
 }
 
 .ficha-lista {
@@ -109,30 +116,26 @@
 
 .ficha-lista li {
   display: grid;
-  grid-template-columns: 8px minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: 6px minmax(0, 1fr);
+  gap: 12px;
 }
 
 .ficha-lista li::before {
   content: '';
-  width: 8px;
-  height: 8px;
-  margin-top: 9px;
-  background: var(--oro-borde);
+  width: 6px;
+  height: 6px;
+  margin-top: 11px;
+  background: var(--color-turquesa);
+}
+
+.ficha-accion {
+  display: flex;
 }
 
 .ficha-enlace {
-  display: inline-flex;
-  align-items: center;
-  justify-self: start;
-  min-height: 44px;
-  color: var(--acento-ventana);
-  font-size: 20px;
+  color: var(--color-turquesa);
+  font-weight: 500;
   text-underline-offset: 3px;
-}
-
-.ficha-enlace:focus-visible {
-  outline-color: var(--texto-ventana-suave);
 }
 
 @media (max-width: 840px) {
@@ -153,8 +156,8 @@
   }
 }
 
-@media (max-width: 520px) {
-  .ficha-cabecera .titulo {
-    font-size: 25px;
+@media (prefers-reduced-motion: reduce) {
+  .ficha-volver {
+    transition: none;
   }
 }

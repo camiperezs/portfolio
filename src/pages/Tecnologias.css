@@ -7,27 +7,27 @@
 }
 
 .tecnologias-menu {
-  gap: 16px;
+  gap: 18px;
 }
 
 .tecnologias-panel {
   display: grid;
   align-content: start;
-  gap: 24px;
+  gap: 20px;
   height: 100%;
+  border-radius: var(--radio);
 }
 
 .tecnologias-panel:focus-visible {
-  outline-color: var(--oxido);
+  outline: 2px solid var(--color-foco);
+  outline-offset: 4px;
 }
 
 .tecnologias-categoria {
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--papel-borde);
-  font-family: var(--fuente-titulo);
-  font-size: 50px;
-  font-weight: 400;
-  line-height: 1;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-borde);
+  font: var(--tipo-subtitulo);
+  letter-spacing: var(--tracking-subtitulo);
 }
 
 @media (max-width: 840px) {

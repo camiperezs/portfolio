@@ -69,6 +69,7 @@
   --tracking-titulo: -0.03em;
   --tracking-subtitulo: -0.01em;
   --ancho-lectura: 65ch;
+  --icono-cursor: url(/sprites/mascara-cursor.png);
   --brillo-1: rgb(79 209 197 / 30%);
   --brillo-2: rgb(242 193 78 / 32%);
   --brillo-3: rgb(194 123 176 / 14%);

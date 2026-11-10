@@ -65,4 +65,4 @@ export const trabajos: Trabajo[] = [
   },
 ]
 
-export const farolSinImagen = '/sprites/parada-formacion-apagada.png'
+export const iconoSinImagen = '/sprites/mascara-maletin.png'

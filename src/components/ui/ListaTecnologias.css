@@ -10,13 +10,14 @@
 .lista-tecnologias li {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   min-height: 36px;
-  padding: 2px 10px 2px 6px;
-  border: 2px solid var(--papel-borde);
-  border-radius: 4px;
-  background: var(--papel-claro);
-  font-size: 20px;
+  padding: 0 12px 0 6px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-elevada);
+  font: var(--tipo-detalle);
+  font-weight: 500;
 }
 
 .lista-tecnologias img {

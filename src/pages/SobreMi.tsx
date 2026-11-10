@@ -48,7 +48,7 @@ export default function SobreMi() {
           </div>
         )}
         <div className="sobre-mi-identidad">
-          <h1 className="titulo">{sobreMi.titulo}</h1>
+          <h1 className="titulo-seccion">{sobreMi.titulo}</h1>
           {!enRecorrido && (
             <>
               <p className="sobre-mi-nombre">{perfil.nombre}</p>

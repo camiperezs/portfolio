@@ -21,7 +21,7 @@ export default function Tecnologias() {
   return (
     <div className="tecnologias">
       <Panel className="tecnologias-menu">
-        <h1 className="titulo">{titulos.titulo}</h1>
+        <h1 className="titulo-seccion">{titulos.titulo}</h1>
         <ListaCategorias
           etiqueta={titulos.etiqueta}
           idBase={idBase}

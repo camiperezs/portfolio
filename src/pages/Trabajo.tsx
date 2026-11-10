@@ -2,7 +2,7 @@ import CartaTrabajo from '../components/ui/CartaTrabajo'
 import Panel from '../components/ui/Panel'
 import { useIdioma } from '../context/IdiomaContext'
 import { iconosTecnologia } from '../data/tecnologias'
-import { farolSinImagen, trabajos } from '../data/trabajo'
+import { iconoSinImagen, trabajos } from '../data/trabajo'
 import './Trabajo.css'
 
 export default function Trabajo() {
@@ -11,7 +11,7 @@ export default function Trabajo() {
 
   return (
     <Panel className="trabajo">
-      <h1 className="titulo">{trabajo.titulo}</h1>
+      <h1 className="titulo-seccion">{trabajo.titulo}</h1>
       <ul className="trabajo-cartas" aria-label={trabajo.etiqueta}>
         {trabajos.map(({ id, slug, tipo, estado, tecnologias, imagen }) => {
           const { titulo } = trabajo.items[id]
@@ -29,7 +29,7 @@ export default function Trabajo() {
                 estado={trabajo.estados[estado]}
                 imagen={imagen}
                 imagenAlt={`${trabajo.imagenDe} ${titulo}`}
-                respaldo={farolSinImagen}
+                respaldo={iconoSinImagen}
                 iconos={iconos}
               />
             </li>

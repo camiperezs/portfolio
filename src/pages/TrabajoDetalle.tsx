@@ -1,11 +1,12 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
+import EnlaceAccion from '../components/ui/EnlaceAccion'
 import Etiqueta from '../components/ui/Etiqueta'
 import ListaTecnologias from '../components/ui/ListaTecnologias'
 import MarcoImagen from '../components/ui/MarcoImagen'
 import Panel from '../components/ui/Panel'
 import { useIdioma } from '../context/IdiomaContext'
 import { iconosTecnologia } from '../data/tecnologias'
-import { farolSinImagen, trabajos } from '../data/trabajo'
+import { iconoSinImagen, trabajos } from '../data/trabajo'
 import './Trabajo.css'
 
 export default function TrabajoDetalle() {
@@ -35,7 +36,7 @@ export default function TrabajoDetalle() {
           <Etiqueta texto={trabajo.tipos[actual.tipo]} variante={actual.tipo} />
           <span>{trabajo.estados[actual.estado]}</span>
         </div>
-        <h1 className="titulo">{texto.titulo}</h1>
+        <h1 className="titulo-seccion">{texto.titulo}</h1>
         {texto.rol && <p className="ficha-rol">{texto.rol}</p>}
       </header>
       <div className="ficha-cuerpo">
@@ -43,8 +44,7 @@ export default function TrabajoDetalle() {
           <MarcoImagen
             imagen={actual.imagen}
             alt={`${trabajo.imagenDe} ${texto.titulo}`}
-            respaldo={farolSinImagen}
-            grande
+            respaldo={iconoSinImagen}
           />
           {tecnologias.length > 0 && (
             <section className="ficha-bloque">
@@ -53,9 +53,9 @@ export default function TrabajoDetalle() {
             </section>
           )}
           {actual.sitio && (
-            <a className="ficha-enlace" href={actual.sitio} target="_blank" rel="noopener noreferrer">
-              {trabajo.verSitio}
-            </a>
+            <div className="ficha-accion">
+              <EnlaceAccion texto={trabajo.verSitio} destino={actual.sitio} externo variante="principal" />
+            </div>
           )}
         </div>
         <div className="ficha-texto">

@@ -1,7 +1,7 @@
 .grilla-tecnologias {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 4px 12px;
+  grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+  gap: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -9,51 +9,31 @@
 
 .tecnologia {
   display: grid;
-}
-
-.tecnologia-tarjeta {
-  display: grid;
   align-content: start;
   justify-items: center;
-  gap: 8px;
-  padding: 10px 8px;
-  border: 2px solid transparent;
-  border-radius: 6px;
-  font-size: 20px;
+  gap: 10px;
+  padding: 16px 8px 14px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-elevada);
+  color: var(--color-texto);
+  font: var(--tipo-detalle);
+  font-weight: 500;
   text-align: center;
-  transition: background-color 150ms ease;
+  overflow-wrap: anywhere;
 }
 
-.tecnologia-tarjeta img {
+.tecnologia img {
   display: block;
-  width: 72px;
-  height: 72px;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .tecnologia:hover .tecnologia-tarjeta {
-    background: var(--resalte-ventana);
-  }
 }
 
 @media (max-width: 520px) {
   .grilla-tecnologias {
     grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
-    gap: 4px 8px;
+    gap: 8px;
   }
 
-  .tecnologia-tarjeta {
-    padding: 6px 2px;
-  }
-
-  .tecnologia-tarjeta img {
-    width: 48px;
-    height: 48px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .tecnologia-tarjeta {
-    transition: none;
+  .tecnologia {
+    padding: 12px 6px 10px;
   }
 }

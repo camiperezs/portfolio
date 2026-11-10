@@ -8,6 +8,7 @@
   background: var(--color-superficie);
   box-shadow: var(--sombra-elevada);
   color: var(--color-texto);
+  font: var(--tipo-cuerpo);
 }
 
 @media (max-width: 520px) {

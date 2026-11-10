@@ -85,7 +85,7 @@ export default function Contacto() {
 
   return (
     <Panel className="contacto">
-      <h1 className="titulo">{contacto.titulo}</h1>
+      <h1 className="titulo-seccion">{contacto.titulo}</h1>
       {estado === 'enviado' ? (
         <SobreEnviado
           icono={iconoSobre}

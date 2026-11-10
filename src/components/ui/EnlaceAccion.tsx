@@ -4,7 +4,7 @@ import './Accion.css'
 
 type Props = {
   texto: string
-  icono: string
+  icono?: string
   destino: string
   externo?: boolean
   variante?: 'principal' | 'secundaria'
@@ -14,7 +14,7 @@ export default function EnlaceAccion({ texto, icono, destino, externo = false, v
   const clase = `accion ${variante}`
   const contenido = (
     <>
-      <IconoPixel imagen={icono} />
+      {icono && <IconoPixel imagen={icono} />}
       {texto}
     </>
   )

@@ -22,10 +22,7 @@ export default function CartaTrabajo({ ruta, titulo, tipo, estado, imagen, image
         <Etiqueta texto={tipo.texto} variante={tipo.variante} />
         <span className="carta-estado">{estado}</span>
       </span>
-      <span className="carta-titulo">
-        <span className="carta-cursor" aria-hidden="true"></span>
-        {titulo}
-      </span>
+      <span className="carta-titulo">{titulo}</span>
       {iconos.length > 0 && (
         <span className="carta-iconos">
           {iconos.map(({ nombre, icono }) => (

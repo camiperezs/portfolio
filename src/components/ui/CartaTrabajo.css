@@ -1,14 +1,16 @@
 .carta {
   display: grid;
   align-content: start;
-  gap: 10px;
-  padding: 8px 10px 12px;
-  border: 2px solid var(--papel-borde);
-  border-radius: 4px;
-  background: var(--papel-claro);
-  color: var(--texto-ventana);
+  gap: 12px;
+  height: 100%;
+  padding: 10px 10px 16px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-grande);
+  background: var(--color-elevada);
+  color: var(--color-texto);
   text-decoration: none;
-  transition: background-color 150ms ease, border-color 150ms ease;
+  touch-action: manipulation;
+  transition: border-color 150ms ease, transform 140ms var(--ease-salida);
 }
 
 .carta-meta {
@@ -16,66 +18,49 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 6px 10px;
+  padding-inline: 4px;
 }
 
 .carta-estado {
-  color: var(--texto-ventana-suave);
-  font-size: 20px;
+  color: var(--color-texto-suave);
+  font: var(--tipo-detalle);
 }
 
 .carta-titulo {
-  display: flex;
-  align-items: flex-start;
-  gap: 4px;
-  font: 400 25px/1.1 var(--fuente-titulo);
+  padding-inline: 4px;
+  font: var(--tipo-encabezado);
+  font-size: 18px;
   text-wrap: balance;
-}
-
-.carta-cursor {
-  flex: none;
-  width: 0;
-  height: 22px;
-  margin-top: 2px;
-  background: var(--cursor) 0 0 / 14px 22px no-repeat;
-  transition: width 150ms ease;
 }
 
 .carta-iconos {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  padding-inline: 4px;
 }
 
 .carta-iconos img {
   display: block;
 }
 
-.carta:focus-visible {
-  outline-color: var(--texto-ventana-suave);
-}
-
-.carta:focus-visible .carta-cursor {
-  width: 14px;
-}
-
 @media (hover: hover) and (pointer: fine) {
   .carta:hover {
-    border-color: var(--oro-borde);
-    background: var(--resalte-ventana);
-  }
-
-  .carta:hover .carta-cursor {
-    width: 14px;
+    border-color: var(--color-turquesa);
   }
 }
 
 .carta:active {
-  transform: translateY(2px);
+  transform: scale(0.99);
+}
+
+.carta:focus-visible {
+  outline: 2px solid var(--color-foco);
+  outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .carta,
-  .carta-cursor {
+  .carta {
     transition: none;
   }
 }
