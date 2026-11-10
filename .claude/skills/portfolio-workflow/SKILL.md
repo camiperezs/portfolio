@@ -47,7 +47,7 @@ Cargalas para planificar y tomar decisiones; no generes auditorías largas en es
 | E | `performance` | Formato (WebP/AVIF), tamaños, `loading="lazy"`, `width/height` |
 | F | `seo`; `schema` si hay datos estructurados | Qué meta tags y JSON-LD (`Person`, `WebSite`) corresponden |
 | G | `copywriting` (título + descripción orientada a resultado y tecnologías); `performance` (imagen) | Tarjeta consistente con las existentes |
-| H | `vercel-react-best-practices`; `vercel-composition-patterns` | Estructura de componentes y patrones antes de escribir JSX |
+| H | `react-best-practices`; `composition-patterns` | Estructura de componentes y patrones antes de escribir JSX |
 | I | No aplica: ir directo al Paso 4 en modo auditoría completa | |
 
 ## Paso 3: implementar
@@ -70,7 +70,7 @@ Según categoría:
 | D | `webapp-testing` (probar el menú/formulario de verdad en navegador); `accessibility` (navegación con teclado) |
 | E | `core-web-vitals` (LCP de la imagen hero, CLS por imágenes sin dimensiones) |
 | F | `seo` (verificar); `schema` (validar JSON-LD) |
-| H | `vercel-react-best-practices` en modo revisión; `webapp-testing` |
+| H | `react-best-practices` en modo revisión; `webapp-testing` |
 | I | Auditoría completa en este orden: `accessibility`, `performance` + `core-web-vitals`, `seo`, `best-practices`, `web-design-guidelines`, `cro` (¿se entiende quién es y cómo contactarla?), `copy-editing` |
 
 `cro` también aplica después de cambios en el hero, la sección de contacto o los CTAs.
