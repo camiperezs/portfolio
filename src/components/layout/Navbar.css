@@ -77,6 +77,11 @@
   }
 }
 
+.barra-seccion,
+.barra-abrir {
+  touch-action: manipulation;
+}
+
 .barra-seccion:active,
 .barra-abrir:active {
   transform: scale(0.97);

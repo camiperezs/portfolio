@@ -9,16 +9,11 @@
   }
 
   .categorias .fila {
-    min-height: 48px;
-    gap: 8px;
-    padding-inline: 8px;
-    font-family: var(--fuente-texto);
-    font-size: 20px;
-  }
-
-  .categorias .fila img {
-    width: 24px;
-    height: 24px;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 10px;
+    min-height: 52px;
+    padding: 6px 8px;
+    font-size: 15px;
   }
 
   .categorias .fila-cursor {

@@ -34,7 +34,7 @@ export default function ContactoDirecto({
       <div className="contacto-directo-email">
         <img src={iconoEmail} alt="" width={24} height={24} />
         <a href={`mailto:${email}`}>{email}</a>
-        <Boton variante="papel" onClick={onCopiar} aria-live="polite">
+        <Boton onClick={onCopiar} aria-live="polite">
           {copiado ? textoCopiado : textoCopiar}
         </Boton>
       </div>

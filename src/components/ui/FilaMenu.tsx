@@ -1,11 +1,11 @@
 import type { ComponentPropsWithoutRef, ElementType } from 'react'
+import IconoPixel from './IconoPixel'
 import './FilaMenu.css'
 
 type Props<E extends ElementType> = {
   as?: E
   icono: string
-  iconoActivo?: string
-  tamanoIcono?: number
+  cursor: string
   texto: string
   detalle?: string
   activa?: boolean
@@ -14,29 +14,22 @@ type Props<E extends ElementType> = {
 export default function FilaMenu<E extends ElementType = 'button'>({
   as,
   icono,
-  iconoActivo,
-  tamanoIcono = 48,
+  cursor,
   texto,
   detalle,
   activa = false,
   ...props
 }: Props<E>) {
   const Elemento: ElementType = as ?? 'button'
-  const clases = ['fila', activa && 'activa', iconoActivo && 'con-farol'].filter(Boolean).join(' ')
 
   return (
-    <Elemento className={clases} {...props}>
-      {iconoActivo ? (
-        <span className="fila-icono" aria-hidden="true">
-          <img src={icono} alt="" width={tamanoIcono} height={tamanoIcono} />
-          <img className="fila-icono-activo" src={iconoActivo} alt="" width={tamanoIcono} height={tamanoIcono} />
-        </span>
-      ) : (
-        <>
-          <span className="fila-cursor" aria-hidden="true"></span>
-          <img src={icono} alt="" width={tamanoIcono} height={tamanoIcono} />
-        </>
-      )}
+    <Elemento className={activa ? 'fila activa' : 'fila'} {...props}>
+      <span className="fila-cursor" aria-hidden="true">
+        <IconoPixel imagen={cursor} tamano={10} />
+      </span>
+      <span className="fila-baldosa" aria-hidden="true">
+        <img src={icono} alt="" width={24} height={24} />
+      </span>
       <span className="fila-texto">
         {texto}
         {detalle && <small>{detalle}</small>}

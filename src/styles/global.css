@@ -7,16 +7,16 @@
   --oro: #eaaa00;
   --oro-claro: #f2c84b;
   --crema: #f8efd8;
-  --papel-claro: #fbf3df;
-  --papel-borde: #c9a978;
+  --papel-claro: var(--color-elevada);
+  --papel-borde: var(--color-borde);
   --oro-borde: #b98a1e;
   --papel: #f1e5ca;
   --madera-noche: #26120c;
-  --superficie-ventana: var(--papel);
-  --texto-ventana: var(--aubergine);
-  --texto-ventana-suave: var(--oxido);
-  --acento-ventana: var(--terracota);
-  --resalte-ventana: rgb(234 170 0 / 22%);
+  --superficie-ventana: var(--color-superficie);
+  --texto-ventana: var(--color-texto);
+  --texto-ventana-suave: var(--color-texto-suave);
+  --acento-ventana: var(--color-turquesa);
+  --resalte-ventana: var(--color-activo);
   --texto-menu: var(--crema);
   --texto-menu-activo: var(--oro-claro);
   --marco-ventana: url(/sprites/ventana.png);
@@ -30,6 +30,7 @@
 }
 
 :root {
+  color-scheme: light;
   --fuente-interfaz: 'Onest', 'Segoe UI', system-ui, sans-serif;
   --fuente-marca: 'Jersey 25', 'Onest', sans-serif;
   --ease-salida: cubic-bezier(0.23, 1, 0.32, 1);
@@ -79,6 +80,7 @@
 }
 
 :root[data-tema='noche'] {
+  color-scheme: dark;
   --color-fondo: #14101a;
   --color-superficie: #1e1824;
   --color-elevada: #28212f;

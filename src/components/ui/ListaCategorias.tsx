@@ -12,11 +12,12 @@ type Props = {
   etiqueta: string
   idBase: string
   categorias: Categoria[]
+  cursor: string
   actual: string
   onCambiar: (id: string) => void
 }
 
-export default function ListaCategorias({ etiqueta, idBase, categorias, actual, onCambiar }: Props) {
+export default function ListaCategorias({ etiqueta, idBase, categorias, cursor, actual, onCambiar }: Props) {
   const moverCon = (evento: KeyboardEvent<HTMLButtonElement>, indice: number) => {
     const ultimo = categorias.length - 1
     const siguiente = indice === ultimo ? 0 : indice + 1
@@ -47,6 +48,7 @@ export default function ListaCategorias({ etiqueta, idBase, categorias, actual, 
           role="tab"
           id={`${idBase}-pestana-${id}`}
           icono={icono}
+          cursor={cursor}
           texto={texto}
           activa={id === actual}
           aria-selected={id === actual}

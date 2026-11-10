@@ -1,24 +1,40 @@
 .etiqueta {
+  --fondo-etiqueta: transparent;
+  --punto-etiqueta: var(--color-texto-suave);
   display: inline-flex;
   align-items: center;
-  min-height: 28px;
-  padding: 0 8px;
-  border-radius: 4px;
-  background: var(--madera);
-  color: var(--crema);
-  font: 400 20px/1 var(--fuente-texto);
+  gap: 7px;
+  min-height: 26px;
+  padding: 0 10px 0 9px;
+  border-radius: var(--radio-chico);
+  background: var(--fondo-etiqueta);
+  box-shadow: inset 0 0 0 1px var(--color-borde);
+  color: var(--color-texto);
+  font: var(--tipo-chico);
   white-space: nowrap;
 }
 
+.etiqueta-punto {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  background: var(--punto-etiqueta);
+}
+
 .etiqueta-proyecto {
-  background: var(--oro);
-  color: var(--aubergine);
+  --fondo-etiqueta: var(--color-dorado-suave);
+  --punto-etiqueta: var(--color-dorado);
+  box-shadow: none;
 }
 
 .etiqueta-experiencia {
-  background: var(--terracota);
+  --fondo-etiqueta: var(--color-turquesa-suave);
+  --punto-etiqueta: var(--color-turquesa);
+  box-shadow: none;
 }
 
 .etiqueta-implementacion {
-  background: var(--aubergine);
+  --fondo-etiqueta: var(--color-ciruela-suave);
+  --punto-etiqueta: var(--color-ciruela);
+  box-shadow: none;
 }

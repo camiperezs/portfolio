@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import IconoPixel from './IconoPixel'
-import './EnlaceAccion.css'
+import './Accion.css'
 
 type Props = {
   texto: string
@@ -11,7 +11,7 @@ type Props = {
 }
 
 export default function EnlaceAccion({ texto, icono, destino, externo = false, variante = 'secundaria' }: Props) {
-  const clase = `enlace-accion ${variante}`
+  const clase = `accion ${variante}`
   const contenido = (
     <>
       <IconoPixel imagen={icono} />

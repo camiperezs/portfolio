@@ -1,10 +1,17 @@
 import type { ButtonHTMLAttributes } from 'react'
-import './Boton.css'
+import IconoPixel from './IconoPixel'
+import './Accion.css'
 
-type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variante?: 'principal' | 'oro' | 'papel'
+type Props = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> & {
+  variante?: 'principal' | 'secundaria'
+  icono?: string
 }
 
-export default function Boton({ variante = 'principal', className = '', type = 'button', ...props }: Props) {
-  return <button type={type} className={`boton ${variante} ${className}`.trim()} {...props} />
+export default function Boton({ variante = 'secundaria', icono, type = 'button', children, ...props }: Props) {
+  return (
+    <button type={type} className={`accion ${variante}`} {...props}>
+      {icono && <IconoPixel imagen={icono} />}
+      {children}
+    </button>
+  )
 }

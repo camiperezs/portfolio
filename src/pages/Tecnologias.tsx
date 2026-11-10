@@ -3,6 +3,7 @@ import GrillaTecnologias from '../components/ui/GrillaTecnologias'
 import ListaCategorias from '../components/ui/ListaCategorias'
 import Panel from '../components/ui/Panel'
 import { useIdioma } from '../context/IdiomaContext'
+import { cursorMenu } from '../data/navegacion'
 import { categoriasTecnologias } from '../data/tecnologias'
 import './Tecnologias.css'
 
@@ -25,6 +26,7 @@ export default function Tecnologias() {
           etiqueta={titulos.etiqueta}
           idBase={idBase}
           categorias={categorias}
+          cursor={cursorMenu}
           actual={actual}
           onCambiar={setActual}
         />

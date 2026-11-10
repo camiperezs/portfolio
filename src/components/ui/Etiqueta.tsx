@@ -6,5 +6,10 @@ type Props = {
 }
 
 export default function Etiqueta({ texto, variante }: Props) {
-  return <span className={`etiqueta etiqueta-${variante}`}>{texto}</span>
+  return (
+    <span className={`etiqueta etiqueta-${variante}`}>
+      <span className="etiqueta-punto" aria-hidden="true"></span>
+      {texto}
+    </span>
+  )
 }

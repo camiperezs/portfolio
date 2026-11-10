@@ -73,6 +73,16 @@ Estado: hecha. `Layout` usa `FondoRadial` y el contenido queda centrado (con `im
 
 ### Etapa 3: primitivas compartidas
 
+Estado: hecha.
+- `Panel` es la tarjeta del sistema nuevo.
+- `Boton` (botón) y `EnlaceAccion` (enlace) comparten `Accion.css`, con variantes `principal` y `secundaria`; se quitaron las variantes `papel` y `oro` y los CSS `Boton.css` y `EnlaceAccion.css`.
+- `Pestanas` toma el estilo de `ControlSegmentado`.
+- `FilaMenu` toma el estilo de `MenuJuego` (cursor máscara, baldosa de 40px, sprite a 24px nativos) y se quitó la variante farol (`iconoActivo`, `tamanoIcono`).
+- `Etiqueta` pasa a pastilla con tinte y punto de color.
+- Puente de tokens en `global.css`: `--texto-ventana`, `--texto-ventana-suave`, `--acento-ventana`, `--resalte-ventana`, `--superficie-ventana`, `--papel-claro` y `--papel-borde` apuntan a los tokens nuevos, para que los componentes de vista sin migrar sigan el tema. Se borran en la Etapa 6.
+- Por la revisión de `web-design-guidelines`: `color-scheme` por tema y `touch-action: manipulation` en los controles.
+- Pendiente para la Etapa 4: reflejar la pestaña de Sobre mí en la URL; en Contacto, los chips y campos todavía usan el borde decorativo y deben pasar a `--color-borde-control`.
+
 - `Panel` → tarjeta del sistema nuevo (la misma superficie que `.menu-seleccion`).
 - `Boton` + `EnlaceAccion` → una sola familia con variantes principal y secundaria, como botón y como enlace. Evaluar con `composition-patterns` si conviene un componente con `as` o dos componentes explícitos.
 - `Pestanas` → pestañas con el lenguaje de `ControlSegmentado` (pastilla deslizante) o subrayado turquesa; cursor como `IconoPixel`.

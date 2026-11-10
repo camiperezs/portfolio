@@ -15,7 +15,7 @@ export default function SobreEnviado({ icono, titulo, texto, accion, onAccion }:
       <img src={icono} alt="" width={96} height={96} />
       <h2>{titulo}</h2>
       <p>{texto}</p>
-      <Boton variante="papel" onClick={onAccion}>
+      <Boton onClick={onAccion}>
         {accion}
       </Boton>
     </div>
