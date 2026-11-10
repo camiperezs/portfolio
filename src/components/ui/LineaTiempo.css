@@ -1,0 +1,129 @@
+.linea {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.linea::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 5px;
+  width: 2px;
+  background: var(--color-borde);
+}
+
+.linea-paso {
+  position: relative;
+  display: grid;
+  grid-template-columns: 12px minmax(0, 1fr);
+  gap: 18px;
+}
+
+.linea-punto {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  margin-top: 22px;
+  box-shadow: 0 0 0 4px var(--color-superficie);
+  background: var(--color-superficie);
+  outline: 2px solid var(--color-borde-control);
+  outline-offset: -2px;
+}
+
+.linea-experiencia .linea-punto {
+  background: var(--color-turquesa);
+  outline-color: var(--color-turquesa);
+}
+
+.linea-tarjeta {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  padding: 16px 20px 18px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-elevada);
+}
+
+.linea-cabecera {
+  display: grid;
+  gap: 4px;
+}
+
+.linea-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin-bottom: 4px;
+}
+
+.linea-fecha {
+  color: var(--color-texto-suave);
+  font: var(--tipo-chico);
+  font-variant-numeric: tabular-nums;
+}
+
+.linea-titulo {
+  margin: 0;
+  font: var(--tipo-encabezado);
+  font-size: 18px;
+  text-wrap: balance;
+}
+
+.linea-lugar {
+  color: var(--color-texto-suave);
+  font: var(--tipo-detalle);
+}
+
+.linea-logros {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.linea-logros li {
+  display: grid;
+  grid-template-columns: 6px minmax(0, 1fr);
+  gap: 12px;
+}
+
+.linea-logros li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  margin-top: 11px;
+  background: var(--color-turquesa);
+}
+
+.linea-enlace {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-turquesa);
+  font-weight: 500;
+  text-underline-offset: 3px;
+}
+
+.linea-enlace:focus-visible {
+  outline: 2px solid var(--color-foco);
+  outline-offset: 2px;
+}
+
+@media (max-width: 520px) {
+  .linea-paso {
+    gap: 12px;
+  }
+
+  .linea-tarjeta {
+    padding: 14px 14px 16px;
+  }
+}

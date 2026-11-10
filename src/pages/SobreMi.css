@@ -1,10 +1,6 @@
 .sobre-mi {
-  gap: 16px;
-  max-width: 720px;
-}
-
-.sobre-mi-ancho {
-  max-width: 804px;
+  gap: 22px;
+  max-width: 760px;
 }
 
 .sobre-mi-cabecera {
@@ -18,27 +14,28 @@
   gap: 4px;
 }
 
-.sobre-mi-identidad .titulo {
+.sobre-mi-identidad .titulo-seccion {
   margin-bottom: 6px;
 }
 
 .sobre-mi-nombre {
-  font-family: var(--fuente-titulo);
-  font-size: 25px;
+  font: var(--tipo-subtitulo);
+  letter-spacing: var(--tracking-subtitulo);
+}
+
+.sobre-mi-rol {
+  color: var(--color-texto-suave);
+  font: var(--tipo-detalle);
 }
 
 .sobre-mi-marco {
-  position: relative;
   flex: none;
   width: 128px;
   height: 160px;
-  margin: 5px;
   overflow: hidden;
-  box-shadow:
-    0 0 0 1px var(--oro-borde),
-    0 0 0 4px var(--madera),
-    0 0 0 5px var(--oro-borde),
-    0 8px 10px 2px rgb(30 14 6 / 45%);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-chica);
 }
 
 .sobre-mi-imagen {
@@ -53,19 +50,22 @@
   display: grid;
   align-content: start;
   gap: 14px;
-  max-width: 65ch;
+  border-radius: var(--radio);
 }
 
-.sobre-mi-ancho .sobre-mi-panel {
-  max-width: none;
+.sobre-mi-panel > p {
+  max-width: var(--ancho-lectura);
 }
 
 .sobre-mi-panel:focus-visible {
-  outline-color: var(--texto-ventana-suave);
+  outline: 2px solid var(--color-foco);
+  outline-offset: 4px;
 }
 
-.sobre-mi-panel .iconos-contacto {
-  justify-content: flex-start;
+.sobre-mi-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-top: 6px;
 }
 

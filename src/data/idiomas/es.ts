@@ -72,40 +72,36 @@ const trabajos: Record<IdTrabajo, TextoTrabajo> = {
 
 const paradas: Record<IdParada, TextoParada> = {
   inicios: {
-    etiqueta: '2022',
-    nombre: 'Primeros pasos',
-    titulo: 'Programación desde 0',
-    lugar: 'Egg · 2022',
+    fecha: '2022',
+    titulo: 'Programación desde cero Latam',
+    lugar: 'Egg',
     parrafos: [
-      'Curso de introducción a la programación a través de la herramienta PSeInt, un software de código abierto para estudiantes, donde aprendí sobre lógica de programación y escribí mis primeros algoritmos.',
+      'Aprendí lógica de programación con PSeInt, un software de código abierto para estudiantes, y escribí mis primeros algoritmos.',
     ],
   },
   fullStack: {
-    etiqueta: '2023',
-    nombre: 'Full Stack',
-    titulo: 'Full Stack Developer',
-    lugar: 'Egg Live · Diciembre de 2023',
+    fecha: '2023',
+    titulo: 'Full Stack Latam',
+    lugar: 'Egg Live',
     parrafos: [
-      'Programa intensivo de formación en desarrollo Full Stack, con práctica en tecnologías frontend y backend, bases de datos y desarrollo de APIs REST.',
-      'Durante la cursada trabajé en equipo con estudiantes de distintos países de Latinoamérica, participando en actividades y proyectos colaborativos.',
+      'Cursé un programa intensivo de desarrollo Full Stack, con práctica en frontend y backend, bases de datos y desarrollo de APIs REST.',
+      'Trabajé en equipo con estudiantes de distintos países de Latinoamérica en actividades y proyectos colaborativos.',
     ],
     enlaces: [{ texto: 'Ver certificado', url: certificados.fullStack }],
   },
   desarrolloWeb: {
-    etiqueta: 'Curso',
-    nombre: 'PHP',
+    fecha: '2023',
     titulo: 'Desarrollo Web Completo',
-    lugar: 'Udemy, con Juan Pablo De la Torre Valdez',
+    lugar: 'Udemy',
     parrafos: [
-      'Formación práctica en desarrollo web, con contenidos de HTML, CSS, Sass, JavaScript, PHP, programación orientada a objetos, MVC, MySQL e integración de APIs.',
-      'Durante esta etapa desarrollé mis primeros proyectos personales y profundicé mis conocimientos de PHP. Interrumpí el curso al incorporarme a mi primer empleo como desarrolladora.',
+      'Hice el curso de Juan Pablo De la Torre Valdez, con HTML, CSS, Sass, JavaScript, PHP, programación orientada a objetos, MVC, MySQL e integración de APIs.',
+      'En esta etapa desarrollé mis primeros proyectos personales y profundicé en PHP. Dejé el curso al incorporarme a mi primer empleo como desarrolladora.',
     ],
   },
   waia: {
-    etiqueta: '2024 – 2026',
-    nombre: 'WAIA',
-    titulo: 'Full Stack Developer',
-    lugar: 'WAIA · Marzo de 2024 – julio de 2026',
+    fecha: '2024 – 2026',
+    titulo: 'Desarrolladora Full Stack',
+    lugar: 'WAIA',
     parrafos: ['Desarrollé funcionalidades para tiendas OpenCart en producción con PHP y MySQL.'],
     logros: [
       'Integré pagos con Mercado Pago y MODO mediante APIs REST, OAuth y webhooks.',
@@ -115,25 +111,29 @@ const paradas: Record<IdParada, TextoParada> = {
     ],
   },
   ciberseguridad: {
-    etiqueta: '2025',
-    nombre: 'Ciberseguridad',
+    fecha: '2025 – actualidad',
     titulo: 'Arquitectura en Ciberseguridad',
-    lugar: 'Educación IT · Carrera en curso',
+    lugar: 'Educación IT',
     parrafos: [
-      'Formación orientada a comprender los fundamentos de seguridad informática, redes y sistemas Linux, incorporando conceptos de desarrollo seguro y prácticas de DevSecOps.',
-      'Completé Introducción a la Ciberseguridad y continué explorando áreas como seguridad de redes, administración de sistemas Linux y desarrollo seguro.',
+      'Estudio los fundamentos de seguridad informática, redes y sistemas Linux, junto con desarrollo seguro y prácticas de DevSecOps.',
+      'Completé Introducción a la Ciberseguridad y sigo con seguridad de redes, administración de sistemas Linux y desarrollo seguro.',
     ],
     enlaces: [
       { texto: 'Ver certificado de Introducción a la Ciberseguridad', url: certificados.introduccionCiberseguridad },
     ],
   },
   actual: {
-    etiqueta: 'Hoy',
-    nombre: 'Backend',
+    fecha: '2026 – actualidad',
     titulo: 'Desarrolladora Backend',
-    lugar: 'Startup de automatización con IA · Desde septiembre de 2026',
+    lugar: 'Startup de automatización con IA',
     parrafos: [
-      'Trabajo en una startup que usa IA para automatizar procesos y reducir tareas manuales. Desarrollo servicios con Node.js y Fastify, sobre PostgreSQL y Redis. Implemento autenticación JWT, control de roles y permisos, funciones en AWS Lambda y API Gateway, además de integraciones con servicios externos y automatizaciones. En paralelo, profundizo en Java y Spring Boot.',
+      'Trabajo en una startup que usa IA para automatizar procesos y reducir tareas manuales. En paralelo, profundizo en Java y Spring Boot.',
+    ],
+    logros: [
+      'Desarrollo servicios con Node.js y Fastify, sobre PostgreSQL y Redis.',
+      'Implemento autenticación JWT y control de roles y permisos.',
+      'Implemento funciones en AWS Lambda y API Gateway.',
+      'Implemento integraciones con servicios externos y automatizaciones.',
     ],
   },
 }
@@ -181,10 +181,8 @@ export const es = {
       'Disfruto especialmente la etapa de análisis y diseño, donde puedo evaluar diferentes enfoques y transformar requerimientos en soluciones técnicas. Mi experiencia en frontend complementa esta perspectiva y me permite abordar proyectos web de manera integral.',
     ],
     recorrido: {
-      etiqueta: 'Paradas del recorrido',
+      etiqueta: 'Recorrido profesional y formación',
       tipos: { experiencia: 'Experiencia', formacion: 'Formación' },
-      anterior: 'Parada anterior',
-      siguiente: 'Parada siguiente',
       paradas,
     },
   },
