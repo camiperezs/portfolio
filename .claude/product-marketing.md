@@ -1,35 +1,38 @@
-# Contexto de marketing: Portfolio de Camila Pérez
+# Contexto de marketing: ChamDev, portfolio de Camila Perez
 
-Las skills de marketing (copywriting, copy-editing, cro, schema, marketing-psychology) leen este archivo antes de preguntar.
+Las skills de marketing (copywriting, copy-editing, cro, schema, marketing-psychology) leen este archivo antes de preguntar. La fuente principal es `PRODUCT.md`; si hay diferencias, manda `PRODUCT.md`.
 
 ## Qué es
-Portfolio personal web de una sola página para presentar a Camila Pérez como desarrolladora Full Stack junior y mostrar sus proyectos.
+ChamDev, el portfolio web de Camila Perez (React + Vite, en Netlify), con las secciones Inicio, Sobre mí, Tecnologías, Trabajo y Contacto, en español e inglés.
 
 ## Quién es
-- Camila Pérez, Full Stack Developer, Rosario (Santa Fe, Argentina).
-- Formación: certificado Full Stack Developer de Egg (diciembre 2023): Java + Spring, MySQL, React, Git/GitHub. Actualmente cursa Desarrollo Web (HTML5, CSS3, JS, PHP, MySQL) en Udemy.
-- Situación: busca su primer empleo como programadora.
-- Stack que muestra: Git, GitHub, Java, MySQL, HTML5, CSS3, JavaScript, React.
+- Camila Perez (sin tilde), Desarrolladora Backend, de Rosario, Argentina.
+- Orientada a la estructura y la lógica de las aplicaciones, desde el modelado de datos hasta la integración de servicios, y a la etapa de análisis y diseño.
+- Su experiencia en frontend le permite encarar proyectos web de punta a punta.
+- Empleo actual: desarrolladora backend en una startup de automatización con IA. Se puede mencionar el rubro, pero no el nombre de la empresa.
+- Experiencia previa: WAIA (2024 – 2026), con desarrollo para tiendas OpenCart en PHP y MySQL e integraciones de pago.
+- Formación: Egg (Programación desde cero Latam, 2022; Full Stack Latam, 2023), Udemy (Desarrollo Web Completo, 2023) y Educación IT (Arquitectura en Ciberseguridad, en curso).
 
 ## Audiencia
-1. Reclutadores y líderes técnicos que evalúan perfiles junior (escanean rápido: rol, stack, proyectos, contacto).
-2. Posibles clientes freelance (pequeños negocios que necesitan una web).
+1. **Principal:** negocios y responsables de proyecto que buscan a alguien para un proyecto web freelance, una integración entre sistemas o un sistema de gestión.
+2. **Secundaria:** empresas y reclutadores que buscan una Desarrolladora Backend.
+
+Llegan desde un enlace directo, en escritorio o en el celular, y deciden rápido si el trabajo es relevante.
 
 ## Objetivo de conversión
-Principal: que contacten a Camila (LinkedIn o email). Secundario: que abran los proyectos desplegados y el GitHub.
-
-## Proyectos actuales
-- Rock & EDM Festival: sitio frontend de festival (line up, galería, boletos). Netlify.
-- Frontend Store: simulación de tienda de remeras (tienda, nosotros, detalle de producto). Netlify.
-- Portfolio: este sitio.
-
-## Tono
-Español rioplatense, cercano y profesional. Honesto sobre ser junior: destacar aprendizaje, proyectos concretos y ganas, sin inflar experiencia.
+- **Principal:** que contacten a Camila por el formulario de Contacto o por email.
+- **Secundario:** que revisen los proyectos de Trabajo, las tecnologías y los perfiles de LinkedIn y GitHub.
 
 ## Prueba disponible
-Certificado Full Stack (PDF en `certificados/`), proyectos desplegados, perfil de GitHub.
+- Proyectos publicados: Rock & EDM Festival y Frontend Store, en Netlify.
+- Experiencia en WAIA, con logros descritos en Sobre mí.
+- Certificados: Full Stack de Egg (2023) e Introducción a la Ciberseguridad de Educación IT (2025).
+- Perfiles: LinkedIn y GitHub. Email público: cperez.dev@outlook.com.
 
-## Pendiente de completar
-- [COMPLETAR: rol o tipo de empresa al que apunta (frontend, backend, full stack)]
-- [COMPLETAR: si ofrece servicios freelance o solo busca empleo]
-- [COMPLETAR: logros o métricas de proyectos, si hay]
+## Tono
+Español rioplatense (voseo), cercano y profesional. Lenguaje directo y títulos profesionales. La estética de videojuego acompaña el mensaje, pero no lo reemplaza.
+
+## Restricciones
+- No inventar testimonios, clientes, métricas ni estadísticas: no hay ninguno confirmado.
+- No nombrar la empresa actual ni hacerla identificable; el rubro (automatización con IA) sí se puede mencionar.
+- Cada afirmación debe poder respaldarse con un proyecto o un dato confirmado.
