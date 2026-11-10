@@ -18,7 +18,7 @@ ChamDev es el portfolio de Camila Perez. Existe para presentar y vender su traba
 
 ## Positioning
 
-Camila se presenta como Desarrolladora Backend, con orientación a la estructura y la lógica de las aplicaciones y a la etapa de análisis y diseño. Su experiencia frontend le permite abordar proyectos web de manera integral. Su empleo actual se muestra sin nombrar la empresa ni su rubro específico.
+Camila se presenta como Desarrolladora Backend, con orientación a la estructura y la lógica de las aplicaciones y a la etapa de análisis y diseño. Su experiencia frontend le permite abordar proyectos web de manera integral. Su empleo actual se muestra con su rubro (una startup de automatización con IA), sin nombrar la empresa.
 
 ## Operating Context
 
@@ -31,12 +31,13 @@ Un cliente o reclutador llega normalmente desde un enlace directo, en escritorio
 - Tecnologías declaradas: Java, Spring Boot, React, HTML, CSS, Bootstrap, Tailwind CSS, Node.js, Docker, GitHub, Linux, PHP, OpenCart, JavaScript, TypeScript, MySQL y PostgreSQL. IA: Claude, Antigravity y ChatGPT.
 - Integraciones no es una categoría de tecnologías; se muestra mediante proyectos.
 - El selector ES/EN traduce el sitio con los textos de `src/data/idiomas`. Los buscadores solo indexan el español hasta que existan rutas por idioma.
-- Pendiente de definir: las fichas de proyecto, el envío real del formulario de Contacto y la prerenderización de rutas.
+- El formulario de Contacto envía con Netlify Forms.
+- Pendiente de definir: la prerenderización de rutas.
 
 ## Brand Commitments
 
 - Marca: ChamDev. Nombre visible: Camila Perez, sin tilde.
-- Compromiso de identidad: estilo de videojuego combinado con cultura japonesa, representativo de Camila, con colores cálidos.
+- Compromiso de identidad: "Modern Retro RPG", una interfaz de producto moderno con acentos de videojuego de 16 bits (cursor pixel, iconos pixel y trama de dithering), con neutros cálidos, turquesa, dorado y ciruela. El detalle está en `DESIGN.md`.
 - Títulos profesionales, sin nombres medievalizados.
 - Email público: cperez.dev@outlook.com.
 

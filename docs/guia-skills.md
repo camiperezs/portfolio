@@ -2,6 +2,8 @@
 
 Qué skill usar, cuándo y cómo pedirla. Se escriben en el chat de Claude Code con `/nombre` o en lenguaje natural ("usá impeccable para...").
 
+> Disponibilidad: las skills se versionan en `.claude/skills`, igual en `main` y en `develop`. `emil-design-eng` está instalada. `impeccable` no lo está; hasta que se instale, `frontend-design` y `accessibility` cubren la crítica y la auditoría. El orquestador `portfolio-workflow` decide qué skill usar en cada cambio.
+
 ## Orden recomendado
 
 | Paso | Skill | Para qué | Cuándo |
@@ -17,19 +19,19 @@ Qué skill usar, cuándo y cómo pedirla. Se escriben en el chat de Claude Code 
 
 ## 1. `impeccable`: critique de identidad
 
-**Problema que resuelve:** lo japonés y lo de 16 bits aparecen como decoración separada y no como un único concepto.
+**Problema que resuelve:** que todas las vistas respondan a la misma identidad que Inicio.
 
 **Qué revisa:** concepto central, coherencia entre secciones, jerarquía, tipografía, color y ritmo.
 
 **Cómo pedirla:**
 
 ```
-/impeccable critique del sitio completo. Siento que lo japonés y lo de juego
-no están compenetrados. Compará con los mockups aprobados y proponé 2 o 3
-conceptos que unifiquen la identidad. No toques código todavía.
+/impeccable critique del sitio completo. Inicio es la referencia del estilo
+Modern Retro RPG descrito en DESIGN.md. Señalá qué vistas o componentes se
+apartan de él. No toques código todavía.
 ```
 
-**Resultado esperado:** qué elementos suman, cuáles diluyen la identidad y qué concepto elegir.
+**Resultado esperado:** qué elementos suman, cuáles se apartan de la identidad y cómo alinearlos.
 
 ## 2. `copywriting`: textos y mensaje
 
@@ -52,8 +54,8 @@ profesional. No inventes datos ni nombres la empresa actual.
 **Cómo pedirla:**
 
 ```
-/impeccable audit de accesibilidad y responsive. Respetá image-rendering:
-pixelated y las escalas tipográficas de 25px y 20px.
+/impeccable audit de accesibilidad y responsive en modo día y noche.
+Respetá los tokens y la escala tipográfica de DESIGN.md.
 ```
 
 Variantes útiles de la misma skill:
@@ -99,8 +101,8 @@ de 16 bits, con animaciones cortas y sin suavizados que choquen con el pixel art
 
 - No dejar comentarios en el código.
 - Componentes tontos en `src/components` y datos conectados solo en `src/pages`.
-- Jersey 25 en múltiplos de 25px para títulos y Jersey 20 en múltiplos de 20px para texto, siempre en peso 400.
-- Sprites en `public/sprites`, a escala entera y con `image-rendering: pixelated`.
+- Seguir `DESIGN.md` (Modern Retro RPG): Onest para texto e interfaz, Jersey 25 solo para la marca y los acentos pixel, y colores desde los tokens `--color-*`, verificados en día y noche.
+- Sprites en `public/sprites`, a escala entera; los iconos monocromos como máscaras con `IconoPixel`.
 - No inventar proyectos, experiencia ni estadísticas.
 - No nombrar ni hacer identificable la empresa actual.
 - Títulos profesionales, sin nombres medievalizados.

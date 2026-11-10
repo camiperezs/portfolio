@@ -1,219 +1,226 @@
 ---
 name: ChamDev
-description: Portfolio de Camila Perez ambientado en un otoño japonés de videojuego.
+description: Portfolio de Camila Perez con dirección Modern Retro RPG.
 colors:
-  aubergine: "#3a0f34"
-  tinta: "#140810"
-  madera: "#351607"
-  madera-noche: "#26120c"
-  terracota: "#a8431f"
-  oxido: "#6e2a16"
-  oro: "#eaaa00"
-  oro-claro: "#f2c84b"
-  oro-borde: "#b98a1e"
-  crema: "#f8efd8"
-  papel: "#f1e5ca"
-  papel-claro: "#fbf3df"
-  papel-borde: "#c9a978"
+  fondo: "#faf6ef"
+  superficie: "#fffcf7"
+  elevada: "#ffffff"
+  borde: "#e9e1d3"
+  texto: "#2a1e26"
+  texto-suave: "#6b5b63"
+  turquesa: "#0e7c77"
+  dorado: "#e2a92b"
+  ciruela: "#6e2d5b"
+  noche-fondo: "#14101a"
+  noche-superficie: "#1e1824"
+  noche-elevada: "#28212f"
+  noche-borde: "#3a3142"
+  noche-texto: "#f3ede4"
+  noche-texto-suave: "#b9aeb8"
+  noche-turquesa: "#4fd1c5"
+  noche-dorado: "#f2c14e"
+  noche-ciruela: "#c27bb0"
 typography:
   display:
-    fontFamily: "Jersey 25, Segoe UI, sans-serif"
-    fontSize: "75px"
+    fontFamily: "Onest, Segoe UI, system-ui, sans-serif"
+    fontSize: "clamp(40px, 10vw, 64px)"
+    fontWeight: 700
+    lineHeight: 1.02
+    letterSpacing: "-0.035em"
+  subtitle:
+    fontFamily: "Onest, Segoe UI, system-ui, sans-serif"
+    fontSize: "22px"
+    fontWeight: 600
+    letterSpacing: "-0.01em"
+  body:
+    fontFamily: "Onest, Segoe UI, system-ui, sans-serif"
+    fontSize: "17px"
     fontWeight: 400
-    lineHeight: 1
-  headline:
-    fontFamily: "Jersey 25, Segoe UI, sans-serif"
-    fontSize: "50px"
-    fontWeight: 400
-    lineHeight: 1
-  title:
-    fontFamily: "Jersey 25, Segoe UI, sans-serif"
+  label:
+    fontFamily: "Onest, Segoe UI, system-ui, sans-serif"
+    fontSize: "15px"
+    fontWeight: 500
+  small:
+    fontFamily: "Onest, Segoe UI, system-ui, sans-serif"
+    fontSize: "14px"
+    fontWeight: 600
+  brand:
+    fontFamily: "Jersey 25, Onest, sans-serif"
     fontSize: "25px"
     fontWeight: 400
-  body:
-    fontFamily: "Jersey 20, Segoe UI, sans-serif"
-    fontSize: "20px"
-    fontWeight: 400
-    lineHeight: 1.35
-  label:
-    fontFamily: "Jersey 20, Segoe UI, sans-serif"
-    fontSize: "20px"
-    fontWeight: 400
 rounded:
-  sm: "4px"
-  md: "6px"
+  sm: "8px"
+  md: "10px"
+  lg: "16px"
 spacing:
   xs: "4px"
   sm: "8px"
-  md: "16px"
-  lg: "24px"
+  md: "14px"
+  lg: "28px"
   xl: "36px"
 components:
-  button-oro:
-    backgroundColor: "{colors.oro}"
-    textColor: "{colors.aubergine}"
+  enlace-principal:
+    backgroundColor: "{colors.turquesa}"
+    textColor: "{colors.fondo}"
     typography: "{typography.label}"
     rounded: "{rounded.md}"
     height: "44px"
-  button-papel:
-    backgroundColor: "{colors.papel-claro}"
-    textColor: "{colors.aubergine}"
+  enlace-secundario:
+    backgroundColor: "{colors.superficie}"
+    textColor: "{colors.texto}"
     typography: "{typography.label}"
     rounded: "{rounded.md}"
     height: "44px"
-  fila-menu:
-    backgroundColor: "{colors.papel-claro}"
-    textColor: "{colors.aubergine}"
-    typography: "{typography.title}"
+  menu-opcion:
+    backgroundColor: "transparent"
+    textColor: "{colors.texto}"
     rounded: "{rounded.md}"
-    height: "60px"
-  nav-tab-activa:
-    backgroundColor: "{colors.papel-claro}"
-    textColor: "{colors.aubergine}"
-    rounded: "{rounded.sm}"
-    height: "44px"
-  panel:
-    backgroundColor: "{colors.papel}"
-    textColor: "{colors.aubergine}"
-    rounded: "{rounded.sm}"
-    padding: "24px 28px"
+    height: "64px"
+  tarjeta:
+    backgroundColor: "{colors.superficie}"
+    textColor: "{colors.texto}"
+    rounded: "{rounded.lg}"
+    padding: "8px"
+  control-segmentado:
+    backgroundColor: "{colors.superficie}"
+    textColor: "{colors.texto-suave}"
+    typography: "{typography.small}"
+    rounded: "{rounded.md}"
+    height: "36px"
 ---
 
 # Design System: ChamDev
 
 ## Overview
 
-**Creative North Star: "Otoño en Kioto"**
+**Creative North Star: "Modern Retro RPG"**
 
-ChamDev es un recorrido sereno por un templo japonés en otoño, contado con la memoria visual de un videojuego. La luz cálida de la tarde, la madera, el papel y las hojas crean el ambiente. El pixel art aparece en la marca, los iconos y los pequeños detalles, y aporta el guiño de videojuego sin convertir la web en un juego.
+ChamDev es la interfaz de un producto digital moderno que recuerda al menú de un videojuego de 16 bits. La base es limpia y profesional: tarjetas con bordes sutiles, mucho espacio negativo, esquinas levemente redondeadas y sombras discretas. El juego aparece en los acentos: el cursor pixel que acompaña la selección, los iconos de 16 bits, la trama de dithering del fondo y la marca ChamDev.
 
-Cada pantalla es un lugar: una escena ilustrada a pantalla completa y, sobre ella, un único soporte de papel con el contenido. La densidad es baja, el ritmo es tranquilo y la interacción responde con suavidad. La calidez es el hilo común, pero nunca compite con la lectura de los proyectos.
+La referencia es Inicio. Todas las vistas usan el mismo fondo, las mismas superficies y los mismos controles, y el contenido profesional siempre se lee primero.
 
 **Key Characteristics:**
-- Escenas japonesas otoñales a pantalla completa, una por sección.
-- Papel, madera oscura y terracota, con toques de oro, como materiales del sistema.
-- Marca y texto pixelados, de la misma familia tipográfica.
-- Sprites a escala entera con píxeles nítidos.
-- Interacción serena, con transiciones breves.
+- Fondo con brillos radiales suaves y una trama de dithering que solo aparece en los bordes de esos brillos.
+- Superficies claras con bordes de 1px y sombras cortas; en modo noche, superficies ciruela oscuro.
+- Onest para todo el texto; Jersey 25 solo para la marca.
+- Iconos pixel como máscaras que toman el color del tema.
+- Un único acento de interacción: turquesa.
+- Modo claro y modo oscuro reales, elegidos con el control de tema.
 
 ## Colors
 
-La paleta es cálida y otoñal: tintas profundas sobre papel, con oro y rojos reservados para los momentos que importan.
+Neutros cálidos con turquesa como color de acción, dorado como acento y ciruela como tercer color. Todos los colores salen de los tokens `--color-*` de `src/styles/global.css`, que cambian con `[data-tema='noche']`.
 
 ### Primary
-- **Aubergine Profundo:** color de la tinta sobre papel y de la marca en Inicio.
-- **Oro de Arce:** estado activo y acción seleccionada, como el idioma actual.
+- **Turquesa** (`--color-turquesa`): acción principal, estado activo, cursor del menú, foco y baldosas de iconos. Sus variantes suaves (`--color-turquesa-suave`, `--color-activo`) marcan fondos de selección.
 
 ### Secondary
-- **Terracota de Torii:** borde del papel en el kakejiku, hover de bordes y controles, y barra de desplazamiento.
+- **Ciruela** (`--color-ciruela`): tercer color del sistema, para diferenciar categorías y en los brillos del fondo nocturno.
 
 ### Tertiary
-- **Oro Claro:** marca sobre la barra oscura y anillo de foco sobre fondos oscuros.
-- **Oro Viejo:** filetes y bordes finos de paneles, kakejiku y barra de navegación.
+- **Dorado** (`--color-dorado`): acento puntual y brillo del fondo. Nunca como color de texto sobre fondo claro.
 
 ### Neutral
-- **Papel Washi:** superficie de paneles y del kakejiku.
-- **Papel Claro:** filas de menú, pestaña activa y botones claros.
-- **Borde de Papel:** contorno de filas y botones en reposo.
-- **Crema:** texto sobre madera y barra oscura.
-- **Madera y Madera Nocturna:** fondo de respaldo y barra de navegación.
-- **Óxido:** tela marrón rojiza del kakejiku y foco sobre papel.
-- **Tinta:** contraste máximo sobre superficies claras.
+- **Fondo** (`--color-fondo`): base de la página.
+- **Superficie** (`--color-superficie`): tarjetas, menú, controles e insignia.
+- **Elevada** y **Pastilla** (`--color-elevada`, `--color-pastilla`): capas sobre la superficie, como la pastilla del control segmentado.
+- **Borde** (`--color-borde`): contorno de 1px de todas las superficies.
+- **Texto** y **Texto suave** (`--color-texto`, `--color-texto-suave`): contenido principal y secundario.
 
-**The Warm Only Rule.** Todo neutro tiene sesgo cálido. No se usan grises puros, azules ni violetas ajenos a la escena.
+**The Warm Neutral Rule.** Los neutros tienen sesgo cálido de día y ciruela de noche. No se usan grises puros.
 
-**The Scarce Gold Rule.** El oro sólido marca un estado activo. No se usa como relleno decorativo.
+**The One Accent Rule.** Turquesa es el único color de interacción. Ciruela y dorado no indican estados interactivos.
 
 ## Typography
 
-**Display Font:** Jersey 25 (con Segoe UI, sans-serif)
-**Body Font:** Jersey 20 (con Segoe UI, sans-serif)
+**Interface Font:** Onest (con Segoe UI, system-ui, sans-serif), pesos 400, 500, 600 y 700.
+**Brand Font:** Jersey 25 (con Onest, sans-serif), peso 400.
 
-**Character:** Jersey 25 aporta la voz firme de una pantalla de consola. Jersey 20 lleva esa misma voz al texto y se mantiene nítida a 20px.
+**Character:** Onest es una sans-serif moderna y legible que da el tono de producto. Jersey 25 aporta la voz de consola y queda reservada a la marca y a acentos pixel.
 
 ### Hierarchy
-- **Display** (400, 75px, 1): marca en Inicio; baja a 50px en móvil y en pantallas de poca altura.
-- **Headline** (400, 50px, 1): títulos de sección y marca en la barra de navegación.
-- **Title** (400, 25px): filas de menú, nombres destacados y presentación de Perfil, en Jersey 25.
-- **Body** (400, 20px, 1.35): texto principal, con un ancho máximo recomendado de 65 a 75 caracteres.
-- **Label** (400, 20px): botones, pestañas y selector de idioma. El estado activo se marca con color y fondo, no con peso.
+- **Display** (700, `clamp(40px, 10vw, 64px)`, 1.02, -0.035em): nombre en Inicio.
+- **Subtitle** (600, 22px, -0.01em): rol profesional.
+- **Body** (400, 17px): texto principal y propuesta de valor, en Texto suave cuando acompaña a un título. Ancho máximo de 65 a 75 caracteres.
+- **Option** (600, 17px) con **descripción** (400, 15px): opciones de menú.
+- **Label** (500, 15px; 600 en la acción principal): botones y enlaces de acción.
+- **Small** (600, 14px): controles segmentados.
+- **Brand** (Jersey 25, 400, 25px): insignia ChamDev.
 
-**The 25 Grid Rule.** Jersey 25 solo se usa en múltiplos de 25px y con peso 400, para conservar píxeles nítidos.
+Pendiente: títulos de sección y subtítulos para las vistas internas, derivados de esta escala.
 
-**The Real Weights Rule.** Jersey 20 y Jersey 25 solo existen en peso 400. No se usa negrita sintética: la jerarquía sale de tamaño, familia y color. Jersey 20 solo se usa en múltiplos de 20px.
+**The Brand Only Rule.** Jersey 25 solo se usa en la marca y en acentos pixel, en múltiplos de 25px y con peso 400.
 
 ## Layout
 
-Cada pantalla es una escena fija en contexto y un contenido centrado. Inicio coloca el kakejiku en el centro. Las secciones usan barra superior y un contenedor de hasta 1080px, con 36px de margen vertical y 16px lateral.
+Inicio usa una columna centrada de hasta 520px con 96px de margen superior, para dejar lugar a los controles de idioma y tema. El contenido va centrado; los textos largos y los formularios se alinean a la izquierda dentro de su tarjeta.
 
-La escena llena el viewport con `object-fit: cover`, y cada ruta define su propio encuadre. En móvil el contenido ocupa casi todo el ancho y conserva 16px de margen. Hay ajustes específicos para menos de 521px de ancho, menos de 361px de ancho y menos de 701px de alto.
+Los controles de idioma y tema son una pieza global anclada a 24px del borde superior y a `max(16px, 3vw)` del derecho.
 
-El selector de idioma es una única pieza global, anclada a 10px del borde superior y a `max(16px, 3vw)` del derecho en todas las rutas. Ningún contenido reserva espacio dentro de sus componentes para él: la barra deja su hueco y, por debajo de 841px, las pestañas pasan a una fila propia.
+El margen lateral mínimo es de 16px en todas las rutas.
 
 ## Elevation & Depth
 
-La profundidad nace de los materiales: el papel flota sobre la escena con una sombra ambiental cálida. Los filetes de oro y terracota dan grosor al soporte. El gradiente solo se usa como textura de material, nunca como color de interfaz.
+La profundidad es sutil y nace de bordes y sombras cortas, nunca de ilustraciones de fondo.
 
 ### Shadow Vocabulary
-- **Sombra colgante** (`drop-shadow(0 10px 14px rgb(30 14 6 / 40%))`): kakejiku sobre la escena.
-- **Sombra de panel** (`0 14px 18px rgb(30 14 6 / 45%)`): paneles sobre la escena.
-- **Sombra de barra** (`0 6px 16px rgb(20 8 16 / 45%)`): barra de navegación.
+- **Sombra elevada** (`--sombra-elevada`): tarjetas y menú. De día, dos capas cortas en ciruela muy transparente; de noche, un filo de luz interior y una sombra negra.
+- **Sombra chica** (`--sombra-chica`): insignia, controles y la acción principal.
 
-**The Warm Shadow Rule.** Las sombras usan marrones oscuros y siempre tienen desplazamiento y desenfoque.
+**The Quiet Shadow Rule.** Una superficie lleva una sola sombra del vocabulario. No se combinan sombras ni se agregan brillos de color.
 
 ## Shapes
 
-Las esquinas son discretas: 4px en superficies y pestañas, 6px en controles. El kakejiku, con dos varillas de madera oscura, es la silueta distintiva del sitio. Los filetes de oro y terracota enmarcan el papel como una pieza montada.
+- 16px (`--radio-grande`) en tarjetas y menús.
+- 10px (`--radio`) en botones, opciones, baldosas, insignia y controles.
+- 8px (`--radio-chico`) en piezas internas, como la pastilla del control segmentado.
+
+El cursor y los iconos pixel son la única geometría pixelada; las superficies no usan marcos pixel.
 
 ## Components
 
-### Buttons
-Serenos y claros.
-- **Shape:** esquinas suaves (6px), altura mínima de 44px.
-- **Primary:** oro con tinta aubergine para el estado activo; aubergine con crema para la acción principal.
-- **Hover / Focus:** el borde pasa a terracota en 150ms; el foco es visible con 3px de contorno.
-- **Secondary:** papel claro con tinta aubergine.
-- **Active:** desplazamiento de 2px hacia abajo.
+### Fondo radial
+`FondoRadial`: tres brillos radiales (`--brillo-1`, `--brillo-2`, `--brillo-3`) sobre `--color-fondo`, con dos capas de trama de dithering de 6px enmascaradas en anillo. Las posiciones cambian entre día y noche.
 
-### Cards / Containers
-- **Corner Style:** 4px.
-- **Background:** Papel Washi.
-- **Shadow Strategy:** Sombra de panel.
-- **Border:** filete de 2px en Oro Viejo.
-- **Internal Padding:** 24px por 28px.
+### Menú de juego
+`MenuJuego`: tarjeta con opciones de 64px de alto. Cada opción tiene una baldosa turquesa suave de 40px con un icono pixel, el nombre y una descripción. Un cursor pixel turquesa de 10 por 18px se desplaza hasta la opción activa y oscila 2px con `steps(1)`. Se navega con flechas, Inicio y Fin. La opción activa usa `--color-activo` y la baldosa pasa a turquesa sólido. En pantallas táctiles el cursor solo aparece con foco de teclado.
 
-### Navigation
-Barra de Madera Nocturna con marca dorada en Jersey 25 y pestañas de texto. La pestaña activa pasa a Papel Claro con tinta aubergine. El hover usa un velo crema y Oro Claro en 150ms, solo en dispositivos con puntero.
+### Enlaces de acción
+`EnlaceAccion`: 44px de alto, radio de 10px e icono pixel de 24px.
+- **Principal:** fondo turquesa con texto en `--color-fondo`. En hover, brillo de 1.08.
+- **Secundaria:** superficie con borde. En hover, borde turquesa y desplazamiento de 1px hacia arriba.
+- **Active:** escala de 0.97.
 
-### Fila de menú
-Elemento principal de navegación en Inicio y base de las listas. Combina icono pixelado de 48px, texto y una flecha fina de 10 por 18px, sobre papel, con al menos 60px de alto. En hover, el borde y la flecha pasan a Terracota de Torii. La fila activa usa Madera con texto y flecha dorados.
+### Control segmentado
+`ControlSegmentado`: grupo de botones de 36px sobre una superficie con borde, con una pastilla que se desliza hasta la opción actual en 180ms. Se usa para idioma y tema.
 
-### Kakejiku
-Rollo japonés que presenta la identidad en Inicio, de hasta 530px de ancho. Tiene dos varillas de madera oscura en pixel art, con veta y tapas redondeadas (30px arriba y 32px abajo), tela Óxido y papel con filetes finos de oro y terracota. Las varillas son los únicos controles para abrirlo y cerrarlo, y el contenido cerrado no puede recibir foco.
+### Icono pixel
+`IconoPixel`: máscara PNG (`public/sprites/mascara-*.png`) pintada con `currentColor`, de 24px por defecto. Así los iconos siguen el tema y el estado.
 
-Se despliega en 800ms con movimiento suave. Al abrir, el contenido aparece cuando ya hay espacio; al cerrar, desaparece primero. Solo se anima solo en la primera carga, y es instantáneo con movimiento reducido.
+### Insignia de marca
+Pastilla de superficie con borde y sombra chica, con ChamDev en Jersey 25 a 25px.
 
-### Mapa de Recorrido
-Sendero de 248 por 100px mostrado a 3x, con paradas como botones superpuestos. El torii marca experiencia y el farol marca formación. Los faroles empiezan apagados y quedan encendidos al visitarlos. El detalle va debajo, con flechas sin contorno que se ocultan en los extremos. En móvil pasa a una lista vertical sin ilustración.
+## Motion
 
-### Enlaces de redes
-Enlaces discretos con símbolo marrón oscuro de 24px, sin fondo ni contenedor, nombre de 20px y un separador dorado de 4px. Nunca compiten con la navegación principal.
+- Transiciones de color de 150ms; movimientos con `--ease-salida` (`cubic-bezier(0.23, 1, 0.32, 1)`) entre 140 y 260ms.
+- Entrada escalonada de las opciones del menú: 260ms, con 40ms de diferencia entre cada una.
+- Respuesta al presionar: escala entre 0.96 y 0.98.
+- Con `prefers-reduced-motion` se quitan las animaciones y las transiciones.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** dar a cada sección una escena japonesa otoñal propia.
-- **Do** mostrar los sprites a escala entera con `image-rendering: pixelated`.
-- **Do** usar Jersey 25 solo en 25, 50 o 75px.
-- **Do** mantener transiciones de color breves y serenas, de unos 150ms, y respetar el movimiento reducido.
-- **Do** limitar los momentos animados a uno por pantalla.
-- **Do** verificar el significado de cualquier kanji o kana antes de usarlo.
-- **Do** priorizar iconos reconocibles sin leer el texto, dibujados en 20 por 20px dentro de un lienzo de 24 por 24px y mostrados a 2x, con contorno marrón oscuro y la paleta de crema, beige, marrón, terracota y toques dorados.
+- **Do** tomar todos los colores de los tokens `--color-*` y verificar cada vista en día y en noche.
+- **Do** usar turquesa para todo estado interactivo: activo, foco (2px con 2px de separación) y acción principal.
+- **Do** dibujar los iconos monocromos como máscaras y mostrarlos con `IconoPixel`.
+- **Do** mostrar los sprites a color (como los iconos de tecnologías) a escala entera, con `image-rendering: pixelated`.
+- **Do** mantener una sola animación protagonista por pantalla.
+- **Do** usar títulos profesionales y lenguaje directo.
 
 ### Don't:
-- **Don't** usar tipografías góticas europeas, iconografía de RPG medieval ni nombres medievalizados.
-- **Don't** escalar sprites a factores no enteros ni aplicarles `scale` en interacciones.
-- **Don't** recrear ni retocar las escenas elegidas.
-- **Don't** usar hojas flotantes ni decoración que compita con el contenido.
-- **Don't** usar texto japonés de relleno ni símbolos cargados, como los rayos del sol naciente.
-- **Don't** animar propiedades costosas en interacciones frecuentes.
+- **Don't** usar ilustraciones de escena como fondo ni marcos pixel en las superficies.
+- **Don't** usar elementos de cultura japonesa ni iconografía de RPG medieval.
+- **Don't** usar el dorado como texto sobre fondo claro.
+- **Don't** usar Jersey 25 fuera de la marca y los acentos pixel.
+- **Don't** escalar sprites a factores no enteros.
+- **Don't** inventar datos de proyectos, experiencia ni estadísticas.
