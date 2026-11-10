@@ -1,56 +1,75 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { createContext, useContext, useEffect, useMemo, useState, useSyncExternalStore } from 'react'
 import type { ReactNode } from 'react'
 
-export const temas = ['dia', 'noche'] as const
-export type Tema = (typeof temas)[number]
+export const preferenciasTema = ['sistema', 'dia', 'noche'] as const
+export type PreferenciaTema = (typeof preferenciasTema)[number]
+export type Tema = Exclude<PreferenciaTema, 'sistema'>
 
 type ValorTema = {
   tema: Tema
-  cambiarTema: (tema: Tema) => void
+  preferencia: PreferenciaTema
+  cambiarPreferencia: (preferencia: PreferenciaTema) => void
 }
 
 const claveTema = 'tema'
+const consultaOscuro = '(prefers-color-scheme: dark)'
 
-function leerTemaGuardado() {
+function leerPreferencia(): PreferenciaTema {
   try {
-    return localStorage.getItem(claveTema)
+    const guardada = localStorage.getItem(claveTema)
+    return preferenciasTema.find((preferencia) => preferencia === guardada) ?? 'sistema'
   } catch {
-    return null
+    return 'sistema'
   }
 }
 
-function guardarTema(tema: Tema) {
+function guardarPreferencia(preferencia: PreferenciaTema) {
   try {
-    localStorage.setItem(claveTema, tema)
+    localStorage.setItem(claveTema, preferencia)
   } catch {
     return
   }
 }
 
-function temaInicial(): Tema {
-  const guardado = temas.find((tema) => tema === leerTemaGuardado())
-  if (guardado) return guardado
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'noche' : 'dia'
+function suscribirSistema(avisar: () => void) {
+  const consulta = window.matchMedia(consultaOscuro)
+  consulta.addEventListener('change', avisar)
+  return () => consulta.removeEventListener('change', avisar)
+}
+
+function sistemaOscuro() {
+  return window.matchMedia(consultaOscuro).matches
 }
 
 const TemaContext = createContext<ValorTema | null>(null)
 
 export function TemaProvider({ children }: { children: ReactNode }) {
-  const [tema, setTema] = useState<Tema>(temaInicial)
+  const [preferencia, setPreferencia] = useState<PreferenciaTema>(leerPreferencia)
+  const oscuro = useSyncExternalStore(suscribirSistema, sistemaOscuro)
+  const tema: Tema = preferencia === 'sistema' ? (oscuro ? 'noche' : 'dia') : preferencia
 
   useEffect(() => {
     document.documentElement.dataset.tema = tema
   }, [tema])
 
+  useEffect(() => {
+    const sincronizar = (evento: StorageEvent) => {
+      if (evento.key === claveTema || evento.key === null) setPreferencia(leerPreferencia())
+    }
+    window.addEventListener('storage', sincronizar)
+    return () => window.removeEventListener('storage', sincronizar)
+  }, [])
+
   const valor = useMemo(
     () => ({
       tema,
-      cambiarTema: (nuevo: Tema) => {
-        guardarTema(nuevo)
-        setTema(nuevo)
+      preferencia,
+      cambiarPreferencia: (nueva: PreferenciaTema) => {
+        guardarPreferencia(nueva)
+        setPreferencia(nueva)
       },
     }),
-    [tema],
+    [tema, preferencia],
   )
 
   return <TemaContext.Provider value={valor}>{children}</TemaContext.Provider>

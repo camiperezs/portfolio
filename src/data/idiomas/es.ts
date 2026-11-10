@@ -24,7 +24,7 @@ const trabajos: Record<IdTrabajo, TextoTrabajo> = {
   },
   integracionesPago: {
     titulo: 'Integraciones de pago para e-commerce',
-    rol: 'Desarrolladora Backend · Integraciones de pago',
+    rol: 'Desarrolladora Full Stack · Integraciones de pago',
     resumen:
       'Desarrollo, mantenimiento y mejora de integraciones de pago para plataformas de e-commerce en producción.',
     lista: {
@@ -150,7 +150,7 @@ const categorias: Record<IdCategoria, string> = {
 export const es = {
   rol: 'Desarrolladora Backend',
   idioma: 'Idioma',
-  tema: { etiqueta: 'Tema', dia: 'Modo claro', noche: 'Modo oscuro' },
+  tema: { etiqueta: 'Tema', sistema: 'Sistema', dia: 'Claro', noche: 'Oscuro' },
   navegacion: {
     etiqueta: 'Secciones',
     menu: 'Menú',

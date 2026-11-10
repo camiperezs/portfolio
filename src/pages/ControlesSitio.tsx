@@ -1,11 +1,12 @@
 import ControlSegmentado from '../components/ui/ControlSegmentado'
+import SelectorTema from '../components/ui/SelectorTema'
 import { idiomas, useIdioma } from '../context/IdiomaContext'
-import { useTema } from '../context/TemaContext'
-import { iconosTema } from '../data/navegacion'
+import { preferenciasTema, useTema } from '../context/TemaContext'
+import { cursorMenu, iconosTema } from '../data/navegacion'
 
 export default function ControlesSitio() {
   const { idioma, textos, cambiarIdioma } = useIdioma()
-  const { tema, cambiarTema } = useTema()
+  const { preferencia, cambiarPreferencia } = useTema()
 
   return (
     <>
@@ -15,14 +16,12 @@ export default function ControlesSitio() {
         actual={idioma}
         onCambiar={cambiarIdioma}
       />
-      <ControlSegmentado
+      <SelectorTema
         etiqueta={textos.tema.etiqueta}
-        opciones={[
-          { id: 'dia' as const, icono: iconosTema.dia, etiqueta: textos.tema.dia },
-          { id: 'noche' as const, icono: iconosTema.noche, etiqueta: textos.tema.noche },
-        ]}
-        actual={tema}
-        onCambiar={cambiarTema}
+        cursor={cursorMenu}
+        opciones={preferenciasTema.map((id) => ({ id, texto: textos.tema[id], icono: iconosTema[id] }))}
+        actual={preferencia}
+        onCambiar={cambiarPreferencia}
       />
     </>
   )

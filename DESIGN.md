@@ -248,7 +248,10 @@ El cursor y los iconos pixel son la única geometría pixelada; las superficies 
 - **Active:** escala de 0.97.
 
 ### Control segmentado
-`ControlSegmentado`: grupo de botones de 36px sobre una superficie con borde, con una pastilla que se desliza hasta la opción actual en 180ms. Se usa para idioma y tema.
+`ControlSegmentado`: grupo de botones de 36px sobre una superficie con borde, con una pastilla que se desliza hasta la opción actual en 180ms. Se usa para el idioma.
+
+### Selector de tema
+`SelectorTema`: un botón de 44px con el icono del modo elegido (Sistema, Claro u Oscuro) que despliega un menú de juego con las tres opciones. Cada opción tiene el cursor pixel y una baldosa de 32px; la elegida pasa a turquesa sólido. Se abre con clic o flecha abajo, se recorre con flechas, se elige con Enter y se cierra con Escape, clic afuera o Tab. Abre en 160ms con `--ease-salida` desde su esquina. La preferencia se guarda, se sincroniza entre pestañas y, en Sistema, sigue a `prefers-color-scheme` en vivo; un script en `index.html` aplica el tema antes de pintar para evitar el destello.
 
 ### Icono pixel
 `IconoPixel`: máscara PNG (`public/sprites/mascara-*.png`) pintada con `currentColor`, de 24px por defecto. Así los iconos siguen el tema y el estado.

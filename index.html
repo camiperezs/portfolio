@@ -9,6 +9,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jersey+20&family=Jersey+25&family=Onest:wght@400;500;600;700&display=swap">
     <title>ChamDev</title>
+    <script>
+        (function () {
+            var preferencia = null;
+            try {
+                preferencia = localStorage.getItem('tema');
+            } catch (error) {}
+            var oscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var tema = preferencia === 'dia' || preferencia === 'noche' ? preferencia : oscuro ? 'noche' : 'dia';
+            document.documentElement.dataset.tema = tema;
+        })();
+    </script>
 </head>
 <body>
     <form name="contacto" data-netlify="true" netlify-honeypot="campo-trampa" hidden>

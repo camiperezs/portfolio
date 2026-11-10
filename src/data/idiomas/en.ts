@@ -4,7 +4,7 @@ import type { Textos } from './es'
 export const en: Textos = {
   rol: 'Backend Developer',
   idioma: 'Language',
-  tema: { etiqueta: 'Theme', dia: 'Light mode', noche: 'Dark mode' },
+  tema: { etiqueta: 'Theme', sistema: 'System', dia: 'Light', noche: 'Dark' },
   navegacion: {
     etiqueta: 'Sections',
     menu: 'Menu',
@@ -159,7 +159,7 @@ export const en: Textos = {
       },
       integracionesPago: {
         titulo: 'E-commerce Payment Gateway Integrations',
-        rol: 'Backend Developer · Payment Integrations',
+        rol: 'Full Stack Developer · Payment Integrations',
         resumen:
           'Developing, maintaining, and improving payment integrations for production e-commerce platforms.',
         lista: {

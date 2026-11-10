@@ -8,6 +8,7 @@ export const secciones = [
 export const cursorMenu = '/sprites/mascara-cursor.png'
 
 export const iconosTema = {
+  sistema: '/sprites/mascara-sistema.png',
   dia: '/sprites/mascara-sol.png',
   noche: '/sprites/mascara-luna.png',
 }

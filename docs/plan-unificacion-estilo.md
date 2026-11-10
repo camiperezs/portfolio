@@ -113,7 +113,9 @@ Estado: hecha.
 
 ### Etapa 5: modo noche
 
-Estado: hecha. Se revisaron de noche todas las rutas en escritorio y celular, las seis categorías de Tecnologías, una ficha completa, el menú móvil abierto y el foco con teclado en controles, pestañas y campos. Hallazgo corregido: los sprites con cuerpo aubergine (terminal, MySQL, PostgreSQL, OpenCart, Antigravity) se perdían sobre las baldosas oscuras; se agregó `--contorno-sprite` (contorno claro de 1px solo de noche). Pendiente de contenido: la ficha "Integraciones de pago" dice "Desarrolladora Backend" y el recorrido dice "Desarrolladora Full Stack" para WAIA.
+Estado: hecha. Se revisaron de noche todas las rutas en escritorio y celular, las seis categorías de Tecnologías, una ficha completa, el menú móvil abierto y el foco con teclado en controles, pestañas y campos. Hallazgo corregido: los sprites con cuerpo aubergine (terminal, MySQL, PostgreSQL, OpenCart, Antigravity) se perdían sobre las baldosas oscuras; se agregó `--contorno-sprite` (contorno claro de 1px solo de noche). La ficha "Integraciones de pago" pasó a "Desarrolladora Full Stack", coherente con el recorrido.
+
+Agregado a pedido de Camila: selector de tema con tres opciones (Sistema, Claro, Oscuro) como menú desplegable (`SelectorTema`), preferencia sincronizada entre pestañas del navegador, script en `index.html` que aplica el tema antes de pintar y `body` con `--color-fondo`. El reporte "al cambiar de pestaña vuelve a oscuro" no se reprodujo con una sola pestaña; la causa probable era tener dos pestañas abiertas (no se sincronizaban) o el destello madera de `body` antes de cargar React. Ambas quedan resueltas.
 
 - Recorrer todas las vistas en tema noche; el sistema viejo no tenía variante y es donde más regresiones puede haber.
 - Skills: `accessibility` (contraste en ambos temas).
