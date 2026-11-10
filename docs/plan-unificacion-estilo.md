@@ -57,6 +57,8 @@ Estado: hecha. `emil-design-eng` se revisó (un único `SKILL.md` de texto, con 
 
 ### Etapa 1: fundaciones globales
 
+Estado: hecha. Se agregaron los tokens `--color-borde-control`, `--color-error`, `--color-error-suave`, `--color-sobre-acento`, `--color-foco`, los tintes ciruela y dorado, la escala `--tipo-*`, `--tracking-*`, `--ancho-lectura` y la clase `.titulo-seccion`, con contraste medido en `DESIGN.md`. Inicio pasó a usar `--tipo-marca` y `--tipo-display`, con los mismos valores. Hallazgo: `--color-borde` no alcanza 3:1 y no sirve como contorno de campos de formulario; para eso está `--color-borde-control`.
+
 - Completar los tokens nuevos con lo que piden las secciones: color de error, éxito, texto sobre turquesa, escala tipográfica (título de sección, subtítulo, cuerpo, etiqueta) y un estilo de título de sección en Onest que reemplace `.titulo`.
 - Mantener los tokens viejos en esta etapa para no romper nada; se borran en la Etapa 6.
 - Skills: `frontend-design`, `accessibility` (contraste de cada par texto/fondo en día y noche; el dorado nunca como texto sobre claro).

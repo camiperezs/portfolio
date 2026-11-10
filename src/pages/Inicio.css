@@ -14,13 +14,13 @@
   border-radius: var(--radio);
   background: var(--color-superficie);
   box-shadow: var(--sombra-chica);
-  font: 400 25px/1.2 var(--fuente-marca);
+  font: var(--tipo-marca);
 }
 
 .inicio-nombre {
   margin: 22px 0 0;
-  font: 700 clamp(40px, 10vw, 64px) / 1.02 var(--fuente-interfaz);
-  letter-spacing: -0.035em;
+  font: var(--tipo-display);
+  letter-spacing: var(--tracking-display);
   text-wrap: balance;
 }
 

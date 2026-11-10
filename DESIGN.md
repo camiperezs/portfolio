@@ -6,6 +6,8 @@ colors:
   superficie: "#fffcf7"
   elevada: "#ffffff"
   borde: "#e9e1d3"
+  borde-control: "#8c7b72"
+  error: "#a8321f"
   texto: "#2a1e26"
   texto-suave: "#6b5b63"
   turquesa: "#0e7c77"
@@ -15,6 +17,8 @@ colors:
   noche-superficie: "#1e1824"
   noche-elevada: "#28212f"
   noche-borde: "#3a3142"
+  noche-borde-control: "#857790"
+  noche-error: "#ff8f80"
   noche-texto: "#f3ede4"
   noche-texto-suave: "#b9aeb8"
   noche-turquesa: "#4fd1c5"
@@ -27,15 +31,33 @@ typography:
     fontWeight: 700
     lineHeight: 1.02
     letterSpacing: "-0.035em"
+  headline:
+    fontFamily: "Onest, Segoe UI, system-ui, sans-serif"
+    fontSize: "clamp(30px, 6vw, 40px)"
+    fontWeight: 700
+    lineHeight: 1.1
+    letterSpacing: "-0.03em"
   subtitle:
     fontFamily: "Onest, Segoe UI, system-ui, sans-serif"
     fontSize: "22px"
     fontWeight: 600
+    lineHeight: 1.3
     letterSpacing: "-0.01em"
+  title:
+    fontFamily: "Onest, Segoe UI, system-ui, sans-serif"
+    fontSize: "17px"
+    fontWeight: 600
+    lineHeight: 1.35
   body:
     fontFamily: "Onest, Segoe UI, system-ui, sans-serif"
     fontSize: "17px"
     fontWeight: 400
+    lineHeight: 1.6
+  detail:
+    fontFamily: "Onest, Segoe UI, system-ui, sans-serif"
+    fontSize: "15px"
+    fontWeight: 400
+    lineHeight: 1.5
   label:
     fontFamily: "Onest, Segoe UI, system-ui, sans-serif"
     fontSize: "15px"
@@ -127,6 +149,33 @@ Neutros cálidos con turquesa como color de acción, dorado como acento y ciruel
 - **Borde** (`--color-borde`): contorno de 1px de todas las superficies.
 - **Texto** y **Texto suave** (`--color-texto`, `--color-texto-suave`): contenido principal y secundario.
 
+### Functional
+- **Borde de control** (`--color-borde-control`): contorno de campos de formulario y controles que necesitan verse como tales. `--color-borde` es solo decorativo.
+- **Error** (`--color-error`, `--color-error-suave`): mensajes de error y borde del campo con error, siempre junto a un texto que explique el problema.
+- **Sobre acento** (`--color-sobre-acento`): texto e iconos sobre turquesa sólido.
+- **Foco** (`--color-foco`): contorno de foco, hoy igual al turquesa.
+- **Tintes suaves** (`--color-turquesa-suave`, `--color-ciruela-suave`, `--color-dorado-suave`): fondos de baldosas, pastillas y etiquetas.
+
+### Contrast
+
+Medido según WCAG 2.2 (AA: 4.5:1 para texto normal, 3:1 para texto grande y controles).
+
+| Par | Día | Noche |
+|---|---|---|
+| Texto sobre superficie | 15.6 | 14.9 |
+| Texto suave sobre superficie | 6.2 | 8.1 |
+| Turquesa sobre superficie | 4.9 | 9.3 |
+| Turquesa sobre fondo | 4.7 | 10.1 |
+| Sobre acento sobre turquesa | 4.7 | 10.1 |
+| Error sobre superficie | 6.5 | 7.8 |
+| Borde de control sobre superficie | 4.0 | 4.2 |
+| Borde decorativo sobre superficie | 1.3 | 1.4 |
+| Dorado sobre superficie | 2.1 | 10.3 |
+| Turquesa sobre turquesa suave | 4.3 | 7.4 |
+| Ciruela sobre ciruela suave | 7.9 | 4.4 |
+
+**The Tint Rule.** Sobre un tinte suave, el texto va en `--color-texto`. El color del tinte se usa solo en iconos, puntos y bordes.
+
 **The Warm Neutral Rule.** Los neutros tienen sesgo cálido de día y ciruela de noche. No se usan grises puros.
 
 **The One Accent Rule.** Turquesa es el único color de interacción. Ciruela y dorado no indican estados interactivos.
@@ -139,15 +188,22 @@ Neutros cálidos con turquesa como color de acción, dorado como acento y ciruel
 **Character:** Onest es una sans-serif moderna y legible que da el tono de producto. Jersey 25 aporta la voz de consola y queda reservada a la marca y a acentos pixel.
 
 ### Hierarchy
-- **Display** (700, `clamp(40px, 10vw, 64px)`, 1.02, -0.035em): nombre en Inicio.
-- **Subtitle** (600, 22px, -0.01em): rol profesional.
-- **Body** (400, 17px): texto principal y propuesta de valor, en Texto suave cuando acompaña a un título. Ancho máximo de 65 a 75 caracteres.
-- **Option** (600, 17px) con **descripción** (400, 15px): opciones de menú.
-- **Label** (500, 15px; 600 en la acción principal): botones y enlaces de acción.
-- **Small** (600, 14px): controles segmentados.
-- **Brand** (Jersey 25, 400, 25px): insignia ChamDev.
 
-Pendiente: títulos de sección y subtítulos para las vistas internas, derivados de esta escala.
+Cada nivel es un token `--tipo-*` (shorthand de `font`) en `src/styles/global.css`; el espaciado entre letras va aparte, en `--tracking-*`.
+
+| Token | Valor | Uso |
+|---|---|---|
+| `--tipo-display` + `--tracking-display` | 700, `clamp(40px, 10vw, 64px)`, 1.02, -0.035em | Nombre en Inicio. Solo una vez en el sitio. |
+| `--tipo-titulo` + `--tracking-titulo` | 700, `clamp(30px, 6vw, 40px)`, 1.1, -0.03em | `h1` de cada sección, con la clase `.titulo-seccion`. |
+| `--tipo-subtitulo` + `--tracking-subtitulo` | 600, 22px, 1.3, -0.01em | Rol en Inicio y `h2` de bloques dentro de una sección. |
+| `--tipo-encabezado` | 600, 17px, 1.35 | Nombres de opciones de menú, títulos de tarjetas y `h3`. |
+| `--tipo-cuerpo` | 400, 17px, 1.6 | Párrafos. Ancho máximo `--ancho-lectura` (65ch). |
+| `--tipo-detalle` | 400, 15px, 1.5 | Descripciones, metadatos, ayudas de formulario y errores. |
+| `--tipo-etiqueta` | 500, 15px, 1.2 (600 en la acción principal) | Botones y enlaces de acción. |
+| `--tipo-chico` | 600, 14px, 1.2 | Controles segmentados y pastillas. |
+| `--tipo-marca` | Jersey 25, 400, 25px, 1.2 | Insignia ChamDev. |
+
+La propuesta de valor de Inicio es una frase corta y usa 17px con el interlineado heredado; los párrafos de las secciones usan `--tipo-cuerpo`.
 
 **The Brand Only Rule.** Jersey 25 solo se usa en la marca y en acentos pixel, en múltiplos de 25px y con peso 400.
 
