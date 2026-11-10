@@ -1,0 +1,54 @@
+.contacto-directo {
+  display: grid;
+  gap: 10px;
+}
+
+.contacto-directo h2 {
+  margin: 0;
+  font: 400 25px var(--fuente-titulo);
+}
+
+.contacto-directo-email,
+.contacto-directo-redes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+
+.contacto-directo-email img {
+  margin-right: -8px;
+}
+
+.contacto-directo a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  color: var(--texto-ventana);
+  font-size: 20px;
+  text-decoration: none;
+  text-underline-offset: 3px;
+  user-select: all;
+}
+
+.contacto-directo-redes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contacto-directo-redes a {
+  user-select: auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .contacto-directo a:hover {
+    color: var(--acento-ventana);
+    text-decoration: underline;
+  }
+}
+
+.contacto-directo a:focus-visible {
+  outline-color: var(--texto-ventana-suave);
+}

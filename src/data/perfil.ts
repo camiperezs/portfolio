@@ -1,6 +1,7 @@
 export const perfil = {
   marca: 'ChamDev',
   nombre: 'Camila Perez',
+  email: 'cperez.dev@outlook.com',
 }
 
 export const redes = [

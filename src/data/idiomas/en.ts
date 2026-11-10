@@ -4,8 +4,7 @@ import type { Textos } from './es'
 export const en: Textos = {
   rol: 'Backend Developer',
   idioma: 'Language',
-  modoNoche: 'Night mode',
-  pendiente: 'This section is coming next.',
+  tema: { etiqueta: 'Theme', dia: 'Light mode', noche: 'Dark mode' },
   navegacion: {
     etiqueta: 'Sections',
     menu: 'Menu',
@@ -15,10 +14,15 @@ export const en: Textos = {
     contacto: 'Contact',
   },
   inicio: {
-    menu: 'Main',
-    redes: 'Professional profiles',
-    abrir: 'Open scroll',
-    cerrar: 'Close scroll',
+    menu: 'Sections',
+    valor: 'Integrations, APIs and management systems',
+    escribir: 'Get in touch',
+    descripciones: {
+      sobreMi: 'Profile and journey',
+      tecnologias: 'Stack and tools',
+      trabajo: 'Projects and experience',
+      contacto: 'Send me a message',
+    },
   },
   sobreMi: {
     titulo: 'About me',
@@ -203,5 +207,32 @@ export const en: Textos = {
       },
     },
   },
-  contacto: { titulo: 'Contact' },
+  contacto: {
+    titulo: 'Contact',
+    para: 'To:',
+    etiquetas: {
+      nombre: 'Full name',
+      email: 'Email',
+      telefono: 'Phone',
+      motivo: 'Reason',
+      mensaje: 'Message',
+    },
+    opcional: '(optional)',
+    motivos: { puesto: 'Job position', freelance: 'Freelance project', otro: 'Other' },
+    enviar: 'Send',
+    enviando: 'Sending',
+    errores: {
+      nombre: 'Your name is missing.',
+      email: 'Your email is missing.',
+      emailInvalido: "This email doesn't look valid. Check that it has an @ and a domain.",
+      mensaje: 'The message is missing.',
+    },
+    errorEnvio: "The letter couldn't be sent. What you wrote is still here: try again or write to me at",
+    enviado: {
+      titulo: 'Letter sent',
+      texto: "Thanks for writing. I'll reply to the email you left.",
+      otra: 'Write another letter',
+    },
+    directo: { titulo: 'Direct contact', copiar: 'Copy email', copiado: 'Email copied' },
+  },
 }

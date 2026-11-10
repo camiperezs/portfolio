@@ -1,0 +1,58 @@
+.control-segmentado {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+  box-shadow: var(--sombra-chica);
+}
+
+.control-segmentado-pastilla {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 36px;
+  border-radius: var(--radio-chico);
+  background: var(--color-pastilla);
+  box-shadow: var(--sombra-chica);
+  transition: transform 180ms var(--ease-salida);
+}
+
+.control-segmentado button {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  min-width: 42px;
+  height: 36px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: var(--radio-chico);
+  background: transparent;
+  color: var(--color-texto-suave);
+  font: 600 14px var(--fuente-interfaz);
+  cursor: pointer;
+  transition: color 150ms ease, transform 140ms var(--ease-salida);
+}
+
+.control-segmentado button[aria-pressed='true'] {
+  color: var(--color-texto);
+}
+
+.control-segmentado button:active {
+  transform: scale(0.96);
+}
+
+.control-segmentado button:focus-visible {
+  outline: 2px solid var(--color-turquesa);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .control-segmentado-pastilla,
+  .control-segmentado button {
+    transition: none;
+  }
+}

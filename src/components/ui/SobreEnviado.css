@@ -1,0 +1,35 @@
+.sobre-enviado {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 28px 24px 30px;
+  border-radius: 4px;
+  background: var(--papel-claro);
+  box-shadow: 0 0 0 2px var(--papel-borde);
+  color: var(--texto-ventana);
+  text-align: center;
+  animation: sobre-aparecer 400ms steps(4) both;
+}
+
+.sobre-enviado h2 {
+  margin: 0;
+  font: 400 50px/1 var(--fuente-titulo);
+}
+
+.sobre-enviado p {
+  max-width: 44ch;
+  margin: 0;
+}
+
+@keyframes sobre-aparecer {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sobre-enviado {
+    animation: none;
+  }
+}

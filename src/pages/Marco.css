@@ -2,42 +2,24 @@
   position: relative;
 }
 
-.marco-idioma {
+.marco-controles {
   position: absolute;
-  top: 10px;
+  top: 24px;
   right: max(16px, 3vw);
   z-index: 3;
   display: flex;
-  align-items: center;
-  gap: 6px;
-  height: var(--alto-ventana-menu);
-  padding: 0 4px;
-  border: 12px solid transparent;
-  border-image: var(--marco-menu) 6 fill / 12px stretch;
-  filter: var(--sombra-ventana);
-}
-
-.marco-tema {
-  min-width: 52px;
-  min-height: 46px;
-  padding: 0;
-}
-
-.marco-tema img {
-  display: block;
+  gap: 10px;
 }
 
 @media (max-width: 420px) {
-  .marco-idioma {
+  .marco-controles {
+    top: 18px;
     right: 16px;
-    gap: 4px;
+    gap: 6px;
   }
 
-  .marco-idioma .selector {
-    gap: 4px;
-  }
-
-  .marco-idioma .boton {
-    min-width: 40px;
+  .marco-controles .control-segmentado button {
+    min-width: 36px;
+    padding-inline: 6px;
   }
 }

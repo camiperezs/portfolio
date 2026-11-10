@@ -29,6 +29,58 @@
   --fuente-texto: 'Jersey 20', 'Segoe UI', sans-serif;
 }
 
+:root {
+  --fuente-interfaz: 'Onest', 'Segoe UI', system-ui, sans-serif;
+  --fuente-marca: 'Jersey 25', 'Onest', sans-serif;
+  --ease-salida: cubic-bezier(0.23, 1, 0.32, 1);
+  --radio-chico: 8px;
+  --radio: 10px;
+  --radio-grande: 16px;
+  --color-fondo: #faf6ef;
+  --color-superficie: #fffcf7;
+  --color-elevada: #ffffff;
+  --color-pastilla: #ffffff;
+  --color-borde: #e9e1d3;
+  --color-texto: #2a1e26;
+  --color-texto-suave: #6b5b63;
+  --color-turquesa: #0e7c77;
+  --color-turquesa-suave: rgb(14 124 119 / 10%);
+  --color-activo: rgb(14 124 119 / 7%);
+  --color-dorado: #e2a92b;
+  --color-ciruela: #6e2d5b;
+  --brillo-1: rgb(79 209 197 / 30%);
+  --brillo-2: rgb(242 193 78 / 32%);
+  --brillo-3: rgb(194 123 176 / 14%);
+  --posicion-brillo-1: 16% 10%;
+  --posicion-brillo-2: 86% 90%;
+  --trama: rgb(14 124 119 / 14%);
+  --sombra-elevada: 0 1px 2px rgb(42 30 38 / 6%), 0 10px 28px rgb(42 30 38 / 8%);
+  --sombra-chica: 0 1px 2px rgb(42 30 38 / 10%);
+}
+
+:root[data-tema='noche'] {
+  --color-fondo: #14101a;
+  --color-superficie: #1e1824;
+  --color-elevada: #28212f;
+  --color-pastilla: #332b3b;
+  --color-borde: #3a3142;
+  --color-texto: #f3ede4;
+  --color-texto-suave: #b9aeb8;
+  --color-turquesa: #4fd1c5;
+  --color-turquesa-suave: rgb(79 209 197 / 12%);
+  --color-activo: rgb(79 209 197 / 9%);
+  --color-dorado: #f2c14e;
+  --color-ciruela: #c27bb0;
+  --brillo-1: rgb(194 123 176 / 24%);
+  --brillo-2: rgb(79 209 197 / 13%);
+  --brillo-3: rgb(242 193 78 / 7%);
+  --posicion-brillo-1: 50% -6%;
+  --posicion-brillo-2: 14% 104%;
+  --trama: rgb(194 123 176 / 26%);
+  --sombra-elevada: inset 0 1px 0 rgb(255 255 255 / 4%), 0 10px 28px rgb(0 0 0 / 32%);
+  --sombra-chica: 0 1px 2px rgb(0 0 0 / 40%);
+}
+
 * {
   box-sizing: border-box;
 }

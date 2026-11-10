@@ -1,58 +1,41 @@
-import { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import Kakejiku from '../components/decoracion/Kakejiku'
-import FondoEscena from '../components/layout/FondoEscena'
-import Divisor from '../components/ui/Divisor'
-import EnlacesRedes from '../components/ui/EnlacesRedes'
-import FilaMenu from '../components/ui/FilaMenu'
+import FondoRadial from '../components/layout/FondoRadial'
+import EnlaceAccion from '../components/ui/EnlaceAccion'
+import MenuJuego from '../components/ui/MenuJuego'
 import { useIdioma } from '../context/IdiomaContext'
-import { useTema } from '../context/TemaContext'
-import { ambienteInicio } from '../data/ambientes'
-import { faroles, secciones } from '../data/navegacion'
+import { cursorMenu, iconoEscribir, secciones } from '../data/navegacion'
 import { perfil, redes } from '../data/perfil'
 import './Inicio.css'
 
 export default function Inicio() {
-  const { key } = useLocation()
   const { textos } = useIdioma()
-  const { tema } = useTema()
-  const primeraCarga = key === 'default'
-  const [abierto, setAbierto] = useState(!primeraCarga)
-
-  useEffect(() => {
-    if (!primeraCarga) return
-    const despliegue = setTimeout(() => setAbierto(true), 250)
-    return () => clearTimeout(despliegue)
-  }, [primeraCarga])
+  const { inicio } = textos
+  const opciones = secciones.map(({ id, ruta, icono }) => ({
+    ruta,
+    icono,
+    nombre: textos.navegacion[id],
+    descripcion: inicio.descripciones[id],
+  }))
 
   return (
-    <FondoEscena imagen={ambienteInicio.imagenes[tema]} encuadre={ambienteInicio.encuadre} centrado>
-      <Kakejiku
-        abierto={abierto}
-        etiqueta={abierto ? textos.inicio.cerrar : textos.inicio.abrir}
-        onAlternar={() => setAbierto(!abierto)}
-      >
-        <div className="inicio">
-          <h1 className="inicio-marca">{perfil.marca}</h1>
-          <p className="inicio-nombre">{perfil.nombre}</p>
-          <p className="inicio-rol">{textos.rol}</p>
-          <Divisor />
-          <nav className="inicio-menu" aria-label={textos.inicio.menu}>
-            {secciones.map(({ id, ruta }) => (
-              <FilaMenu
-                key={ruta}
-                as={Link}
-                to={ruta}
-                texto={textos.navegacion[id]}
-                icono={faroles.apagado}
-                iconoActivo={faroles.encendido}
-                tamanoIcono={24}
-              />
-            ))}
-          </nav>
-          <EnlacesRedes etiqueta={textos.inicio.redes} redes={redes} />
+    <FondoRadial>
+      <main className="inicio">
+        <p className="inicio-insignia">{perfil.marca}</p>
+        <h1 className="inicio-nombre">{perfil.nombre}</h1>
+        <p className="inicio-rol">
+          <span className="inicio-punto" aria-hidden="true"></span>
+          {textos.rol}
+        </p>
+        <p className="inicio-valor">{inicio.valor}</p>
+        <div className="inicio-menu">
+          <MenuJuego etiqueta={inicio.menu} cursor={cursorMenu} opciones={opciones} />
         </div>
-      </Kakejiku>
-    </FondoEscena>
+        <div className="inicio-acciones">
+          <EnlaceAccion texto={inicio.escribir} icono={iconoEscribir} destino="/contacto" variante="principal" />
+          {redes.map(({ texto, url, icono }) => (
+            <EnlaceAccion key={url} texto={texto} icono={icono} destino={url} externo />
+          ))}
+        </div>
+      </main>
+    </FondoRadial>
   )
 }

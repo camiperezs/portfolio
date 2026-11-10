@@ -14,7 +14,8 @@
 
 ## Diseño
 
-- Estética de videojuego de 16 bits combinada con cultura japonesa y colores cálidos, con títulos profesionales y sin nombres medievalizados.
-- Tipografía: Jersey 25 para marca y títulos, en múltiplos de 25px; Jersey 20 para el texto, en múltiplos de 20px. Ambas solo tienen peso 400.
-- Los iconos pixel art van en `public/sprites` y se muestran a escala entera con `image-rendering: pixelated`.
+- Dirección "Modern Retro RPG": interfaz de producto digital moderno (tarjetas con bordes sutiles, mucho espacio negativo, esquinas levemente redondeadas, sombras discretas) con el menú de videojuego, el cursor pixel, iconos de 16 bits y trama de dithering como acentos. Títulos profesionales, sin nombres medievalizados ni ornamentos.
+- Paleta: neutros cálidos, turquesa, dorado y ciruela, con un modo oscuro real. Los colores salen de los tokens `--color-*` de `src/styles/global.css`; el dorado es solo acento, nunca texto sobre fondo claro.
+- Tipografía: Onest para texto e interfaz; Jersey 25 solo para la marca ChamDev y acentos pixel.
+- Los iconos pixel art van en `public/sprites` a escala entera. Los monocromos se dibujan como máscara (`mascara-*.png`) y se muestran con `IconoPixel` para tomar el color del tema.
 - No inventar datos de proyectos, experiencia ni estadísticas.

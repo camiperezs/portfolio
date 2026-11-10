@@ -150,8 +150,7 @@ const categorias: Record<IdCategoria, string> = {
 export const es = {
   rol: 'Desarrolladora Backend',
   idioma: 'Idioma',
-  modoNoche: 'Modo noche',
-  pendiente: 'Esta sección se construye en el próximo paso.',
+  tema: { etiqueta: 'Tema', dia: 'Modo claro', noche: 'Modo oscuro' },
   navegacion: {
     etiqueta: 'Secciones',
     menu: 'Menú',
@@ -161,10 +160,15 @@ export const es = {
     contacto: 'Contacto',
   },
   inicio: {
-    menu: 'Principal',
-    redes: 'Perfiles profesionales',
-    abrir: 'Abrir rollo',
-    cerrar: 'Cerrar rollo',
+    menu: 'Secciones',
+    valor: 'Integraciones, APIs y sistemas de gestión',
+    escribir: 'Escribime',
+    descripciones: {
+      sobreMi: 'Perfil y recorrido',
+      tecnologias: 'Stack y herramientas',
+      trabajo: 'Proyectos y experiencia',
+      contacto: 'Escribime un mensaje',
+    },
   },
   sobreMi: {
     titulo: 'Sobre mí',
@@ -211,7 +215,34 @@ export const es = {
     estados: { desarrollo: 'En desarrollo', produccion: 'En producción', publicado: 'Publicado' },
     items: trabajos,
   },
-  contacto: { titulo: 'Contacto' },
+  contacto: {
+    titulo: 'Contacto',
+    para: 'Para:',
+    etiquetas: {
+      nombre: 'Nombre y apellido',
+      email: 'Email',
+      telefono: 'Teléfono',
+      motivo: 'Motivo',
+      mensaje: 'Mensaje',
+    },
+    opcional: '(opcional)',
+    motivos: { puesto: 'Puesto de trabajo', freelance: 'Proyecto freelance', otro: 'Otro' },
+    enviar: 'Enviar',
+    enviando: 'Enviando',
+    errores: {
+      nombre: 'Falta tu nombre.',
+      email: 'Falta tu email.',
+      emailInvalido: 'Este email no parece válido. Revisá que tenga @ y un dominio.',
+      mensaje: 'Falta el mensaje.',
+    },
+    errorEnvio: 'No se pudo enviar la carta. Lo que escribiste sigue acá: probá de nuevo o escribime a',
+    enviado: {
+      titulo: 'Carta enviada',
+      texto: 'Gracias por escribir. Te respondo al email que dejaste.',
+      otra: 'Escribir otra carta',
+    },
+    directo: { titulo: 'Contacto directo', copiar: 'Copiar email', copiado: 'Email copiado' },
+  },
 }
 
 export type Textos = typeof es
