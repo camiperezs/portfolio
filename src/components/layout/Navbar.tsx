@@ -1,10 +1,13 @@
-import { useId, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
+import type { ReactNode } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import IconoPixel from '../ui/IconoPixel'
 import './Navbar.css'
 
 type Seccion = {
   ruta: string
   texto: string
+  icono: string
 }
 
 type Props = {
@@ -12,42 +15,64 @@ type Props = {
   etiqueta: string
   textoMenu: string
   secciones: Seccion[]
-  faroles: { encendido: string; apagado: string }
+  controles: ReactNode
 }
 
-export default function Navbar({ marca, etiqueta, textoMenu, secciones, faroles }: Props) {
-  const idOpciones = useId()
+export default function Navbar({ marca, etiqueta, textoMenu, secciones, controles }: Props) {
+  const idPanel = useId()
+  const caja = useRef<HTMLDivElement>(null)
+  const boton = useRef<HTMLButtonElement>(null)
   const [abierto, setAbierto] = useState(false)
 
+  useEffect(() => {
+    if (!abierto) return
+    const cerrarAfuera = (evento: PointerEvent) => {
+      if (!caja.current?.contains(evento.target as Node)) setAbierto(false)
+    }
+    document.addEventListener('pointerdown', cerrarAfuera)
+    return () => document.removeEventListener('pointerdown', cerrarAfuera)
+  }, [abierto])
+
   return (
-    <header className="menu-juego">
+    <header className="barra">
       <div
-        className={abierto ? 'menu-juego-ventana abierto' : 'menu-juego-ventana'}
+        ref={caja}
+        className={abierto ? 'barra-caja abierta' : 'barra-caja'}
         onKeyDown={(evento) => {
-          if (evento.key === 'Escape') setAbierto(false)
+          if (evento.key !== 'Escape' || !abierto) return
+          setAbierto(false)
+          boton.current?.focus()
         }}
       >
-        <Link className="menu-juego-marca" to="/">{marca}</Link>
+        <Link className="barra-marca" to="/">
+          {marca}
+        </Link>
         <button
+          ref={boton}
           type="button"
-          className="menu-juego-abrir"
+          className="barra-abrir"
           aria-expanded={abierto}
-          aria-controls={idOpciones}
+          aria-controls={idPanel}
           onClick={() => setAbierto(!abierto)}
         >
+          <span className="barra-abrir-icono" aria-hidden="true"></span>
           {textoMenu}
         </button>
-        <nav className="menu-juego-opciones" id={idOpciones} aria-label={etiqueta}>
-          {secciones.map(({ ruta, texto }) => (
-            <NavLink key={ruta} to={ruta} className="menu-opcion" onClick={() => setAbierto(false)}>
-              <span className="menu-farol" aria-hidden="true">
-                <img className="menu-farol-apagado" src={faroles.apagado} alt="" width={24} height={24} />
-                <img className="menu-farol-encendido" src={faroles.encendido} alt="" width={24} height={24} />
-              </span>
-              {texto}
-            </NavLink>
-          ))}
-        </nav>
+        <div className="barra-panel" id={idPanel}>
+          <nav aria-label={etiqueta}>
+            <ul className="barra-secciones">
+              {secciones.map(({ ruta, texto, icono }) => (
+                <li key={ruta}>
+                  <NavLink to={ruta} className="barra-seccion" onClick={() => setAbierto(false)}>
+                    <IconoPixel imagen={icono} />
+                    {texto}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="barra-controles">{controles}</div>
+        </div>
       </div>
     </header>
   )

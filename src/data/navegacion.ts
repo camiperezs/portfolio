@@ -13,8 +13,3 @@ export const iconosTema = {
 }
 
 export const iconoEscribir = '/sprites/mascara-sobre.png'
-
-export const faroles = {
-  encendido: '/sprites/parada-formacion.png',
-  apagado: '/sprites/parada-formacion-apagada.png',
-}

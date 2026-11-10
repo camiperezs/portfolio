@@ -1,153 +1,185 @@
-.menu-juego {
+.barra {
   position: relative;
-  z-index: 2;
-  display: flex;
-  padding: 10px calc(max(16px, 3vw) + 212px) 0 max(16px, 3vw);
+  z-index: 3;
+  padding: 16px max(16px, 3vw) 0;
 }
 
-.menu-juego-ventana {
+.barra-caja {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 24px;
-  height: var(--alto-ventana-menu);
-  padding: 0 12px;
-  border: 12px solid transparent;
-  border-image: var(--marco-menu) 6 fill / 12px stretch;
-  color: var(--texto-menu);
-  filter: var(--sombra-ventana);
+  gap: 16px;
+  max-width: 1080px;
+  margin-inline: auto;
+  padding: 8px 8px 8px 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-grande);
+  background: var(--color-superficie);
+  box-shadow: var(--sombra-elevada);
 }
 
-.menu-juego-marca {
-  color: var(--texto-menu-activo);
-  font-family: var(--fuente-titulo);
-  font-size: 50px;
-  line-height: 1;
+.barra-marca {
+  flex: none;
+  padding: 2px 6px;
+  border-radius: var(--radio);
+  color: var(--color-texto);
+  font: var(--tipo-marca);
   text-decoration: none;
 }
 
-.menu-juego-marca:focus-visible,
-.menu-opcion:focus-visible,
-.menu-juego-abrir:focus-visible {
-  outline-color: var(--oro-claro);
-}
-
-.menu-juego-opciones {
+.barra-panel {
   display: flex;
+  flex: 1;
+  align-items: center;
   gap: 16px;
+  min-width: 0;
 }
 
-.menu-opcion,
-.menu-juego-abrir {
+.barra-secciones {
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.barra-seccion {
   display: flex;
   align-items: center;
   gap: 8px;
   min-height: 44px;
-  padding: 0 8px 0 4px;
-  border: 0;
-  border-radius: 4px;
-  background: none;
-  color: var(--texto-menu);
-  font: 400 20px var(--fuente-texto);
+  padding: 0 12px 0 10px;
+  border-radius: var(--radio);
+  color: var(--color-texto-suave);
+  font: var(--tipo-etiqueta);
   text-decoration: none;
   white-space: nowrap;
-  cursor: pointer;
-  transition: color 150ms ease;
+  transition: background-color 150ms ease, color 150ms ease, transform 140ms var(--ease-salida);
 }
 
-.menu-farol {
-  display: grid;
-  flex: none;
+.barra-seccion[aria-current='page'] {
+  background: var(--color-turquesa-suave);
+  color: var(--color-texto);
 }
 
-.menu-farol img {
-  grid-area: 1 / 1;
-}
-
-.menu-farol-encendido {
-  opacity: 0;
-  transition: opacity 150ms ease;
-}
-
-.menu-opcion[aria-current='page'],
-.menu-juego-abrir[aria-expanded='true'] {
-  color: var(--texto-menu-activo);
-}
-
-.menu-opcion[aria-current='page'] .menu-farol-encendido,
-.menu-opcion:focus-visible .menu-farol-encendido {
-  opacity: 1;
+.barra-seccion[aria-current='page'] .icono-pixel {
+  color: var(--color-turquesa);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .menu-opcion:hover,
-  .menu-juego-abrir:hover {
-    color: var(--texto-menu-activo);
+  .barra-seccion:not([aria-current='page']):hover {
+    background: var(--color-activo);
+    color: var(--color-texto);
   }
 
-  .menu-opcion:hover .menu-farol-encendido {
-    opacity: 1;
+  .barra-abrir:hover {
+    border-color: var(--color-turquesa);
   }
 }
 
-.menu-juego-abrir {
+.barra-seccion:active,
+.barra-abrir:active {
+  transform: scale(0.97);
+}
+
+.barra-marca:focus-visible,
+.barra-seccion:focus-visible,
+.barra-abrir:focus-visible {
+  outline: 2px solid var(--color-foco);
+  outline-offset: 2px;
+}
+
+.barra-controles {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.barra-abrir {
   display: none;
-  padding-inline: 8px;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-left: auto;
+  padding: 0 14px 0 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+  color: var(--color-texto);
+  font: var(--tipo-etiqueta);
+  cursor: pointer;
+  transition: border-color 150ms ease, transform 140ms var(--ease-salida);
 }
 
-@media (max-width: 1080px) {
-  .menu-juego {
-    padding-right: calc(max(16px, 3vw) + 212px);
+.barra-abrir[aria-expanded='true'] {
+  border-color: var(--color-turquesa);
+  background: var(--color-turquesa-suave);
+}
+
+.barra-abrir-icono {
+  width: 16px;
+  height: 12px;
+  background:
+    linear-gradient(currentColor 0 0) 0 0 / 100% 2px no-repeat,
+    linear-gradient(currentColor 0 0) 0 5px / 100% 2px no-repeat,
+    linear-gradient(currentColor 0 0) 0 10px / 100% 2px no-repeat;
+}
+
+@media (max-width: 959px) {
+  .barra-abrir {
+    display: inline-flex;
   }
 
-  .menu-juego-ventana {
-    gap: 12px;
-  }
-
-  .menu-juego-abrir {
-    display: flex;
-  }
-
-  .menu-juego-opciones {
+  .barra-panel {
     position: absolute;
-    top: calc(100% + 18px);
-    left: -12px;
+    top: calc(100% + 8px);
+    right: 0;
+    left: 0;
     display: none;
     flex-direction: column;
-    gap: 2px;
-    min-width: 260px;
-    padding: 8px 12px;
-    border: 12px solid transparent;
-    border-image: var(--marco-menu) 6 fill / 12px stretch;
+    align-items: stretch;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-grande);
+    background: var(--color-superficie);
+    box-shadow: var(--sombra-elevada);
   }
 
-  .menu-juego-ventana.abierto .menu-juego-opciones {
+  .barra-caja.abierta .barra-panel {
     display: flex;
   }
 
-  .menu-opcion {
-    min-height: 48px;
+  .barra-secciones {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .barra-seccion {
+    gap: 12px;
+    min-height: 52px;
+    padding-inline: 14px;
+    color: var(--color-texto);
+    font: var(--tipo-encabezado);
+  }
+
+  .barra-controles {
+    flex-wrap: wrap;
+    margin-left: 0;
+    padding: 10px 6px 2px;
+    border-top: 1px solid var(--color-borde);
   }
 }
 
 @media (max-width: 420px) {
-  .menu-juego {
-    padding-right: calc(16px + 178px);
-  }
-
-  .menu-juego-ventana {
-    gap: 8px;
-    padding-inline: 6px;
-  }
-
-  .menu-juego-marca {
-    font-size: 25px;
+  .barra {
+    padding-inline: 16px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .menu-opcion,
-  .menu-farol-encendido {
+  .barra-seccion,
+  .barra-abrir {
     transition: none;
   }
 }

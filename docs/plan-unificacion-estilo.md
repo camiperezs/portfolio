@@ -65,6 +65,8 @@ Estado: hecha. Se agregaron los tokens `--color-borde-control`, `--color-error`,
 
 ### Etapa 2: shell de las secciones
 
+Estado: hecha. `Layout` usa `FondoRadial` y el contenido queda centrado (con `image-rendering: pixelated` para los sprites viejos hasta migrarlos). `Navbar` es una tarjeta con la marca, secciones con `IconoPixel` y los controles integrados; debajo de 960px pasa a botón "Menú" con panel (Escape, clic afuera o elegir sección lo cierran). Los controles viven en `pages/ControlesSitio.tsx`; `Marco` solo los muestra flotando en Inicio. Se quitó `faroles` de `data/navegacion.ts`. `FondoEscena` y `data/ambientes.ts` quedan sin uso hasta la Etapa 6. Verificado con capturas a 375, 960 y 1280px, día y noche, ES y EN.
+
 - `Layout`: reemplazar `FondoEscena` por `FondoRadial`; centrar el contenido con un ancho máximo y quitar `lado`/`velo`.
 - `Navbar`: barra superior. Superficie con borde sutil, insignia ChamDev en Jersey 25 como en Inicio, enlaces con `IconoPixel` (máscaras persona/código/maletín/sobre de `data/navegacion.ts`), activo con `--color-activo` y turquesa, menú móvil accesible (Escape, foco). Quitar faroles y el hueco fijo de 212px: integrar los controles de `Marco` en el flujo de la barra.
 - Skills: `frontend-design`, `composition-patterns` (variantes explícitas en lugar de booleanos), `accessibility` (landmarks, `aria-current`, teclado).
