@@ -122,6 +122,12 @@ Agregado a pedido de Camila: selector de tema con tres opciones (Sistema, Claro,
 
 ### Etapa 6: limpieza
 
+Estado: hecha.
+- `global.css` sin el bloque de tokens viejos ni el puente de alias; `body` con Onest a 17px; barra de desplazamiento, selección y foco global con los tokens nuevos; sin la clase `.titulo`.
+- Borrados: `FondoEscena`, `data/ambientes.ts`, `public/ambientes`, `scripts/ambientes`, `ventana.png`, `ventana-oscura.png`, `cursor.png`, `mapa-recorrido.png`, `parada-*.png`, `red-email.png` y `hoja-sello.png`.
+- `index.html`: sin Jersey 20, favicon nuevo (`public/favicon.svg`: baldosa turquesa con el cursor pixel) y `theme-color` para claro y oscuro.
+- Verificado: búsqueda sin referencias a tokens ni archivos borrados, compilación limpia y capturas de todas las vistas.
+
 - Borrar el primer bloque `:root` de `global.css`, `.titulo` y los estilos de `body` heredados (madera, Jersey 20, `pixelated`, scrollbar y selección terracota/oro); pasar `body` a `--color-fondo`, `--color-texto` y Onest.
 - Borrar `FondoEscena`, `data/ambientes.ts`, `public/ambientes`, `scripts/ambientes`, `ventana.png`, `ventana-oscura.png`, `cursor.png`, `mapa-recorrido.png`, `parada-*.png`, `faroles` en `data/navegacion.ts`, `MapaRecorrido`, y `Boton`/`FilaMenu`/`IconosContacto` si quedaron reemplazados.
 - Quitar Jersey 20 de la carga de Google Fonts en `index.html`.

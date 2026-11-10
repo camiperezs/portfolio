@@ -1,35 +1,4 @@
 :root {
-  --tinta: #140810;
-  --aubergine: #3a0f34;
-  --madera: #351607;
-  --terracota: #a8431f;
-  --oxido: #6e2a16;
-  --oro: #eaaa00;
-  --oro-claro: #f2c84b;
-  --crema: #f8efd8;
-  --papel-claro: var(--color-elevada);
-  --papel-borde: var(--color-borde);
-  --oro-borde: #b98a1e;
-  --papel: #f1e5ca;
-  --madera-noche: #26120c;
-  --superficie-ventana: var(--color-superficie);
-  --texto-ventana: var(--color-texto);
-  --texto-ventana-suave: var(--color-texto-suave);
-  --acento-ventana: var(--color-turquesa);
-  --resalte-ventana: var(--color-activo);
-  --texto-menu: var(--crema);
-  --texto-menu-activo: var(--oro-claro);
-  --marco-ventana: url(/sprites/ventana.png);
-  --marco-menu: url(/sprites/ventana-oscura.png);
-  --cursor: url(/sprites/cursor.png);
-  --alto-ventana-menu: 78px;
-  --sombra-ventana: drop-shadow(0 10px 12px rgb(30 14 6 / 45%));
-  --ease-despliegue: cubic-bezier(0.77, 0, 0.175, 1);
-  --fuente-titulo: 'Jersey 25', 'Segoe UI', sans-serif;
-  --fuente-texto: 'Jersey 20', 'Segoe UI', sans-serif;
-}
-
-:root {
   color-scheme: light;
   --fuente-interfaz: 'Onest', 'Segoe UI', system-ui, sans-serif;
   --fuente-marca: 'Jersey 25', 'Onest', sans-serif;
@@ -117,20 +86,20 @@
 }
 
 html {
-  scrollbar-color: var(--terracota) var(--madera);
+  scrollbar-color: var(--color-borde-control) var(--color-fondo);
 }
 
 ::selection {
-  background: var(--oro-claro);
-  color: var(--aubergine);
+  background: var(--color-turquesa);
+  color: var(--color-sobre-acento);
 }
 
 body {
   margin: 0;
   background: var(--color-fondo);
   color: var(--color-texto);
-  font-family: var(--fuente-texto);
-  font-size: 20px;
+  font-family: var(--fuente-interfaz);
+  font-size: 17px;
   font-synthesis: none;
   line-height: 1.35;
   image-rendering: pixelated;
@@ -144,15 +113,8 @@ p {
 }
 
 :focus-visible {
-  outline: 3px solid var(--oro-claro);
+  outline: 2px solid var(--color-foco);
   outline-offset: 2px;
-}
-
-.titulo {
-  font-family: var(--fuente-titulo);
-  font-size: 50px;
-  font-weight: 400;
-  line-height: 1;
 }
 
 .titulo-seccion {
