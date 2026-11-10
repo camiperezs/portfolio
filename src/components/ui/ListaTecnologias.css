@@ -22,4 +22,5 @@
 
 .lista-tecnologias img {
   flex: none;
+  filter: var(--contorno-sprite);
 }

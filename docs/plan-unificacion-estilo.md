@@ -113,6 +113,8 @@ Estado: hecha.
 
 ### Etapa 5: modo noche
 
+Estado: hecha. Se revisaron de noche todas las rutas en escritorio y celular, las seis categorías de Tecnologías, una ficha completa, el menú móvil abierto y el foco con teclado en controles, pestañas y campos. Hallazgo corregido: los sprites con cuerpo aubergine (terminal, MySQL, PostgreSQL, OpenCart, Antigravity) se perdían sobre las baldosas oscuras; se agregó `--contorno-sprite` (contorno claro de 1px solo de noche). Pendiente de contenido: la ficha "Integraciones de pago" dice "Desarrolladora Backend" y el recorrido dice "Desarrolladora Full Stack" para WAIA.
+
 - Recorrer todas las vistas en tema noche; el sistema viejo no tenía variante y es donde más regresiones puede haber.
 - Skills: `accessibility` (contraste en ambos temas).
 

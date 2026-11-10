@@ -70,6 +70,7 @@
   --tracking-subtitulo: -0.01em;
   --ancho-lectura: 65ch;
   --icono-cursor: url(/sprites/mascara-cursor.png);
+  --contorno-sprite: none;
   --brillo-1: rgb(79 209 197 / 30%);
   --brillo-2: rgb(242 193 78 / 32%);
   --brillo-3: rgb(194 123 176 / 14%);
@@ -99,6 +100,8 @@
   --color-error-suave: rgb(255 143 128 / 12%);
   --color-ciruela-suave: rgb(194 123 176 / 16%);
   --color-dorado-suave: rgb(242 193 78 / 14%);
+  --contorno-sprite: drop-shadow(1px 0 0 rgb(243 237 228 / 38%)) drop-shadow(-1px 0 0 rgb(243 237 228 / 38%))
+    drop-shadow(0 1px 0 rgb(243 237 228 / 38%)) drop-shadow(0 -1px 0 rgb(243 237 228 / 38%));
   --brillo-1: rgb(194 123 176 / 24%);
   --brillo-2: rgb(79 209 197 / 13%);
   --brillo-3: rgb(242 193 78 / 7%);

@@ -269,7 +269,7 @@ Pastilla de superficie con borde y sombra chica, con ChamDev en Jersey 25 a 25px
 - **Do** tomar todos los colores de los tokens `--color-*` y verificar cada vista en día y en noche.
 - **Do** usar turquesa para todo estado interactivo: activo, foco (2px con 2px de separación) y acción principal.
 - **Do** dibujar los iconos monocromos como máscaras y mostrarlos con `IconoPixel`.
-- **Do** mostrar los sprites a color (como los iconos de tecnologías) a escala entera, con `image-rendering: pixelated`.
+- **Do** mostrar los sprites a color (como los iconos de tecnologías) a escala entera, con `image-rendering: pixelated` y `filter: var(--contorno-sprite)`, que de noche les dibuja un contorno claro de 1px para que los sprites oscuros no se pierdan sobre superficies oscuras.
 - **Do** mantener una sola animación protagonista por pantalla.
 - **Do** usar títulos profesionales y lenguaje directo.
 

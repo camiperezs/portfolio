@@ -42,6 +42,7 @@
 
 .carta-iconos img {
   display: block;
+  filter: var(--contorno-sprite);
 }
 
 @media (hover: hover) and (pointer: fine) {

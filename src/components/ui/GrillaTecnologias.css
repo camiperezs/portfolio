@@ -25,6 +25,7 @@
 
 .tecnologia img {
   display: block;
+  filter: var(--contorno-sprite);
 }
 
 @media (max-width: 520px) {

@@ -41,6 +41,7 @@
 
 .fila-baldosa img {
   display: block;
+  filter: var(--contorno-sprite);
 }
 
 .fila-texto {
