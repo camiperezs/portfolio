@@ -1,10 +1,13 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
+import CierreContacto from '../components/ui/CierreContacto'
 import EnlaceAccion from '../components/ui/EnlaceAccion'
 import Etiqueta from '../components/ui/Etiqueta'
 import ListaTecnologias from '../components/ui/ListaTecnologias'
 import MarcoImagen from '../components/ui/MarcoImagen'
 import Panel from '../components/ui/Panel'
 import { useIdioma } from '../context/IdiomaContext'
+import { useTituloPagina } from '../hooks/useTituloPagina'
+import { iconoEscribir } from '../data/navegacion'
 import { iconoSinImagen, proyectos } from '../data/proyectos'
 import { iconosTecnologia } from '../data/tecnologias'
 import './Proyectos.css'
@@ -14,6 +17,7 @@ export default function ProyectoDetalle() {
   const { textos } = useIdioma()
   const { proyectos: textosProyectos } = textos
   const actual = proyectos.find((proyecto) => proyecto.slug === slug)
+  useTituloPagina(actual ? textos.proyectos.items[actual.id].titulo : undefined)
 
   if (!actual) return <Navigate to="/proyectos" replace />
 
@@ -35,7 +39,12 @@ export default function ProyectoDetalle() {
       </header>
       <div className="ficha-cuerpo">
         <div className="ficha-lateral">
-          <MarcoImagen imagen={actual.imagen} alt={`${textosProyectos.imagenDe} ${texto.titulo}`} respaldo={iconoSinImagen} />
+          <MarcoImagen
+            imagen={actual.imagen}
+            alt={`${textosProyectos.imagenDe} ${texto.titulo}`}
+            respaldo={iconoSinImagen}
+            carga="inmediata"
+          />
           {tecnologias.length > 0 && (
             <section className="ficha-bloque">
               <h2>{textosProyectos.tecnologias}</h2>
@@ -44,7 +53,7 @@ export default function ProyectoDetalle() {
           )}
           {actual.sitio && (
             <div className="ficha-accion">
-              <EnlaceAccion texto={textosProyectos.verSitio} destino={actual.sitio} externo variante="principal" />
+              <EnlaceAccion texto={textosProyectos.verSitio} destino={actual.sitio} externo />
             </div>
           )}
         </div>
@@ -74,6 +83,10 @@ export default function ProyectoDetalle() {
           )}
         </div>
       </div>
+      <CierreContacto titulo={textosProyectos.cierre.titulo} texto={textosProyectos.cierre.texto}>
+        <EnlaceAccion texto={textos.inicio.escribir} icono={iconoEscribir} destino="/contacto" variante="principal" />
+        <EnlaceAccion texto={textosProyectos.cierre.experiencia} destino="/experiencia" />
+      </CierreContacto>
     </Panel>
   )
 }

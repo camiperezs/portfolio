@@ -261,6 +261,9 @@ El cursor y los iconos pixel son la única geometría pixelada; las superficies 
 ### Área de experiencia
 `AreaExperiencia`: tarjeta elevada con radio grande para cada área de trabajo profesional. Cabecera con baldosa de acento suave de 40px y título de 20px; debajo, en dos columnas (una en móvil), "El problema" y "Qué hice" con viñetas ciruela, y una fila de tecnologías como pastillas de texto de 14px, sin sprites, para no repetir la sección Tecnologías. No muestra empresas ni imágenes; las tarjetas con imagen quedan para Proyectos.
 
+### Cierre de contacto
+`CierreContacto`: bloque final de una vista, separado por un borde superior, con un título de subtítulo, una línea de texto suave y las acciones a la derecha (abajo en móvil). La acción principal es siempre "Escribime"; la secundaria lleva a otra sección. Se usa en Experiencia, Tecnologías, Proyectos y la ficha de proyecto.
+
 ### Icono pixel
 `IconoPixel`: máscara PNG (`public/sprites/mascara-*.png`) pintada con `currentColor`, de 24px por defecto. Así los iconos siguen el tema y el estado. Se dibujan en una grilla de 12×12 con píxeles de 2px.
 

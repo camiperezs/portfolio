@@ -246,7 +246,12 @@ Estado: hecha.
 
 ### Etapa 7: verificación final
 
-Estado: pendiente. Se ejecuta después de la segunda parte de la Etapa 4 (Experiencia y Proyectos), para auditar la estructura definitiva; la revisión de CLS de imágenes aplica a Proyectos.
+Estado: hecha. Resultados:
+- Capturas de las 7 rutas a 375px y 1280px, de día y de noche: ninguna desborda en horizontal y todas siguen el estilo de Inicio.
+- Accesibilidad: un `h1` por vista y sin saltos de nivel, enlaces y botones con nombre, imágenes con `alt` y sin IDs duplicados. Se agregó un título de pestaña por página (`useTituloPagina`), que antes era siempre "ChamDev". En las tarjetas de Proyectos la imagen pasa a ser decorativa, porque el título ya nombra el enlace.
+- Rendimiento: las capturas de proyectos y el retrato pasan a WebP de doble densidad (823 KB, 93 KB y 507 KB pasan a 19 KB, 19 KB y 15 KB). La imagen de la ficha carga de inmediato con prioridad alta y el retrato también. CLS medido: entre 0 y 0.007. Cada vista pesa entre 104 y 144 KB transferidos.
+- CRO: `CierreContacto` (título, texto y acciones) cierra Experiencia, Tecnologías, Proyectos y la ficha con "Escribime" como acción principal. En la ficha, "Ver sitio publicado" pasa a secundaria. Los botones de contacto de Sobre mí se ven también en Recorrido.
+- Pendiente fuera de alcance: `public/img/hero.jpeg` no se usa, y separar el código por ruta podría bajar el JS inicial (96 KB gzip).
 
 - `webapp-testing`: capturas de cada ruta a 375px y 1280px, en día y noche, comparadas con Inicio.
 - `web-design-guidelines` sobre los archivos tocados.

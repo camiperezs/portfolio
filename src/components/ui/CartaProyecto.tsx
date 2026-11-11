@@ -9,15 +9,14 @@ type Props = {
   tipo: { texto: string; variante: string }
   estado: string
   imagen?: string
-  imagenAlt: string
   respaldo: string
   iconos: { nombre: string; icono: string }[]
 }
 
-export default function CartaProyecto({ ruta, titulo, tipo, estado, imagen, imagenAlt, respaldo, iconos }: Props) {
+export default function CartaProyecto({ ruta, titulo, tipo, estado, imagen, respaldo, iconos }: Props) {
   return (
     <Link className="carta" to={ruta}>
-      <MarcoImagen imagen={imagen} alt={imagenAlt} respaldo={respaldo} />
+      <MarcoImagen imagen={imagen} alt="" respaldo={respaldo} />
       <span className="carta-meta">
         <Etiqueta texto={tipo.texto} variante={tipo.variante} />
         <span className="carta-estado">{estado}</span>

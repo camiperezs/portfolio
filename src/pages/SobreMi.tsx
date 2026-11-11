@@ -5,6 +5,7 @@ import LineaTiempo from '../components/ui/LineaTiempo'
 import Panel from '../components/ui/Panel'
 import Pestanas from '../components/ui/Pestanas'
 import { useIdioma } from '../context/IdiomaContext'
+import { useTituloPagina } from '../hooks/useTituloPagina'
 import { iconoEscribir } from '../data/navegacion'
 import { perfil, redes } from '../data/perfil'
 import { paradasRecorrido, pestanasSobreMi, retrato } from '../data/sobreMi'
@@ -15,6 +16,7 @@ const parametroSeccion = 'seccion'
 
 export default function SobreMi() {
   const { textos } = useIdioma()
+  useTituloPagina(textos.sobreMi.titulo)
   const { sobreMi } = textos
   const { recorrido } = sobreMi
   const idBase = useId()
@@ -43,6 +45,7 @@ export default function SobreMi() {
             alt={`${sobreMi.retrato} ${perfil.nombre}`}
             width={128}
             height={160}
+            fetchPriority="high"
           />
         </div>
         <div className="sobre-mi-identidad">
@@ -64,18 +67,14 @@ export default function SobreMi() {
         {actual === 'recorrido' ? (
           <LineaTiempo etiqueta={recorrido.etiqueta} pasos={pasos} />
         ) : (
-          <>
-            {sobreMi.perfil.map((parrafo) => (
-              <p key={parrafo}>{parrafo}</p>
-            ))}
-            <div className="sobre-mi-acciones" role="group" aria-label={sobreMi.contacto}>
-              <EnlaceAccion texto={textos.inicio.escribir} icono={iconoEscribir} destino="/contacto" variante="principal" />
-              {redes.map(({ texto, url, icono }) => (
-                <EnlaceAccion key={url} texto={texto} icono={icono} destino={url} externo />
-              ))}
-            </div>
-          </>
+          sobreMi.perfil.map((parrafo) => <p key={parrafo}>{parrafo}</p>)
         )}
+        <div className="sobre-mi-acciones" role="group" aria-label={sobreMi.contacto}>
+          <EnlaceAccion texto={textos.inicio.escribir} icono={iconoEscribir} destino="/contacto" variante="principal" />
+          {redes.map(({ texto, url, icono }) => (
+            <EnlaceAccion key={url} texto={texto} icono={icono} destino={url} externo />
+          ))}
+        </div>
       </div>
     </Panel>
   )

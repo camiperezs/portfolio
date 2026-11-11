@@ -5,6 +5,7 @@ import ContactoDirecto from '../components/ui/ContactoDirecto'
 import Panel from '../components/ui/Panel'
 import SobreEnviado from '../components/ui/SobreEnviado'
 import { useIdioma } from '../context/IdiomaContext'
+import { useTituloPagina } from '../hooks/useTituloPagina'
 import { camposObligatorios, formularioContacto, iconoSobre, motivos } from '../data/contacto'
 import type { Campo } from '../data/contacto'
 import { perfil, redes } from '../data/perfil'
@@ -17,6 +18,7 @@ const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export default function Contacto() {
   const { textos } = useIdioma()
+  useTituloPagina(textos.contacto.titulo)
   const { contacto } = textos
   const idBase = useId()
   const [valores, setValores] = useState(vacio)

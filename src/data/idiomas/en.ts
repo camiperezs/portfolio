@@ -119,6 +119,11 @@ export const en: Textos = {
       herramientas: 'Tools',
       ia: 'AI',
     },
+    cierre: {
+      titulo: 'Want to see how I use them?',
+      texto: 'In Experience I explain the problems I solved with them.',
+      experiencia: 'See experience',
+    },
   },
   experiencia: {
     titulo: 'Experience',
@@ -169,6 +174,11 @@ export const en: Textos = {
     titulo: 'Projects',
     intro: 'Personal and published projects.',
     etiqueta: 'Project list',
+    cierre: {
+      titulo: 'Have a project in mind?',
+      texto: "Tell me what you need and I'll reply by email.",
+      experiencia: 'See experience',
+    },
     volver: 'Back to Projects',
     desafio: 'The challenge',
     contexto: 'Context',

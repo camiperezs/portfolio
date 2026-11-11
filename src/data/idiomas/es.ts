@@ -190,6 +190,11 @@ export const es = {
     titulo: 'Tecnologías',
     etiqueta: 'Categorías de tecnologías',
     categorias,
+    cierre: {
+      titulo: '¿Querés ver cómo las uso?',
+      texto: 'En Experiencia cuento qué problemas resolví con ellas.',
+      experiencia: 'Ver experiencia',
+    },
   },
   experiencia: {
     titulo: 'Experiencia',
@@ -209,6 +214,11 @@ export const es = {
     titulo: 'Proyectos',
     intro: 'Desarrollos propios y proyectos publicados.',
     etiqueta: 'Lista de proyectos',
+    cierre: {
+      titulo: '¿Tenés un proyecto en mente?',
+      texto: 'Contame qué necesitás y te respondo por email.',
+      experiencia: 'Ver experiencia',
+    },
     volver: 'Volver a Proyectos',
     desafio: 'El desafío',
     contexto: 'Contexto',

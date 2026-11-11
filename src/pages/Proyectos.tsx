@@ -1,12 +1,17 @@
 import CartaProyecto from '../components/ui/CartaProyecto'
+import CierreContacto from '../components/ui/CierreContacto'
+import EnlaceAccion from '../components/ui/EnlaceAccion'
 import Panel from '../components/ui/Panel'
 import { useIdioma } from '../context/IdiomaContext'
+import { useTituloPagina } from '../hooks/useTituloPagina'
+import { iconoEscribir } from '../data/navegacion'
 import { iconoSinImagen, proyectos } from '../data/proyectos'
 import { iconosTecnologia } from '../data/tecnologias'
 import './Proyectos.css'
 
 export default function Proyectos() {
   const { textos } = useIdioma()
+  useTituloPagina(textos.proyectos.titulo)
   const { proyectos: textosProyectos } = textos
 
   return (
@@ -31,7 +36,6 @@ export default function Proyectos() {
                 tipo={{ texto: textosProyectos.tipos[tipo], variante: tipo }}
                 estado={textosProyectos.estados[estado]}
                 imagen={imagen}
-                imagenAlt={`${textosProyectos.imagenDe} ${titulo}`}
                 respaldo={iconoSinImagen}
                 iconos={iconos}
               />
@@ -39,6 +43,10 @@ export default function Proyectos() {
           )
         })}
       </ul>
+      <CierreContacto titulo={textosProyectos.cierre.titulo} texto={textosProyectos.cierre.texto}>
+        <EnlaceAccion texto={textos.inicio.escribir} icono={iconoEscribir} destino="/contacto" variante="principal" />
+        <EnlaceAccion texto={textosProyectos.cierre.experiencia} destino="/experiencia" />
+      </CierreContacto>
     </Panel>
   )
 }

@@ -21,28 +21,3 @@
   list-style: none;
 }
 
-.experiencia-cierre {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px 24px;
-  padding-top: 20px;
-  border-top: 1px solid var(--color-borde);
-}
-
-.experiencia-cierre h2 {
-  margin: 0 0 4px;
-  font: var(--tipo-subtitulo);
-  letter-spacing: var(--tracking-subtitulo);
-}
-
-.experiencia-cierre p {
-  color: var(--color-texto-suave);
-}
-
-.experiencia-acciones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}

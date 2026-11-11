@@ -11,7 +11,7 @@ export type TextoParada = {
 }
 
 export const retrato = {
-  imagen: '/sprites/me.png',
+  imagen: '/img/retrato.webp',
   ciudad: 'Rosario, Argentina',
 }
 

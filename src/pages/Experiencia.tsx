@@ -1,13 +1,16 @@
 import AreaExperiencia from '../components/ui/AreaExperiencia'
+import CierreContacto from '../components/ui/CierreContacto'
 import EnlaceAccion from '../components/ui/EnlaceAccion'
 import Panel from '../components/ui/Panel'
 import { useIdioma } from '../context/IdiomaContext'
+import { useTituloPagina } from '../hooks/useTituloPagina'
 import { areasExperiencia } from '../data/experiencia'
 import { iconoEscribir } from '../data/navegacion'
 import './Experiencia.css'
 
 export default function Experiencia() {
   const { textos } = useIdioma()
+  useTituloPagina(textos.experiencia.titulo)
   const { experiencia } = textos
   const etiquetas = {
     problema: experiencia.problema,
@@ -28,16 +31,10 @@ export default function Experiencia() {
           </li>
         ))}
       </ul>
-      <section className="experiencia-cierre" aria-labelledby="experiencia-cierre-titulo">
-        <div>
-          <h2 id="experiencia-cierre-titulo">{experiencia.cierre.titulo}</h2>
-          <p>{experiencia.cierre.texto}</p>
-        </div>
-        <div className="experiencia-acciones">
-          <EnlaceAccion texto={textos.inicio.escribir} icono={iconoEscribir} destino="/contacto" variante="principal" />
-          <EnlaceAccion texto={experiencia.cierre.recorrido} destino="/sobre-mi?seccion=recorrido" />
-        </div>
-      </section>
+      <CierreContacto titulo={experiencia.cierre.titulo} texto={experiencia.cierre.texto}>
+        <EnlaceAccion texto={textos.inicio.escribir} icono={iconoEscribir} destino="/contacto" variante="principal" />
+        <EnlaceAccion texto={experiencia.cierre.recorrido} destino="/sobre-mi?seccion=recorrido" />
+      </CierreContacto>
     </Panel>
   )
 }

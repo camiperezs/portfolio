@@ -2,12 +2,14 @@ import FondoRadial from '../components/layout/FondoRadial'
 import EnlaceAccion from '../components/ui/EnlaceAccion'
 import MenuJuego from '../components/ui/MenuJuego'
 import { useIdioma } from '../context/IdiomaContext'
+import { useTituloPagina } from '../hooks/useTituloPagina'
 import { cursorMenu, iconoEscribir, secciones } from '../data/navegacion'
 import { perfil, redes } from '../data/perfil'
 import './Inicio.css'
 
 export default function Inicio() {
   const { textos } = useIdioma()
+  useTituloPagina()
   const { inicio } = textos
   const opciones = secciones.map(({ id, ruta, icono }) => ({
     ruta,

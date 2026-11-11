@@ -35,7 +35,7 @@ export const proyectos: Proyecto[] = [
     tipo: 'formacion',
     estado: 'publicado',
     tecnologias: [],
-    imagen: '/img/rockyedmfest.png',
+    imagen: '/img/rockyedmfest.webp',
     sitio: 'https://camiperezs-festival-musica.netlify.app/',
   },
   {
@@ -44,7 +44,7 @@ export const proyectos: Proyecto[] = [
     tipo: 'formacion',
     estado: 'publicado',
     tecnologias: [],
-    imagen: '/img/frontendstore.jpg',
+    imagen: '/img/frontendstore.webp',
     sitio: 'https://cemiperezs-frontend-store.netlify.app/',
   },
 ]
