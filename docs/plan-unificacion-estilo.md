@@ -111,6 +111,106 @@ Estado: hecha.
 
 - Skills por vista: `frontend-design` antes; `copy-editing` si cambian títulos o textos de `data/idiomas`; `cro` después de Contacto y de los CTAs de Trabajo.
 
+#### Etapa 4, segunda parte: separar Trabajo en Experiencia y Proyectos
+
+Estado: pendiente. Se ejecuta antes de la Etapa 7, que debe auditar la estructura definitiva.
+
+**Por qué va acá.** Es una reorganización de vistas y contenido, el mismo alcance de la Etapa 4. No justifica una etapa nueva. Las Etapas 5 (modo noche) y 6 (limpieza) ya están hechas, así que sus controles se repiten dentro de esta parte para lo nuevo: revisar de noche las dos vistas y borrar lo que quede de Trabajo.
+
+**Objetivo.** Reemplazar la sección Trabajo por dos secciones:
+- **Experiencia:** áreas de trabajo profesional, con lo que hice, los problemas que resolví y las tecnologías usadas. Sin las tarjetas con imagen.
+- **Proyectos:** desarrollos propios, freelance, aplicaciones funcionales y proyectos de formación relevantes. Conserva las tarjetas con imagen actuales (`CartaTrabajo`, `MarcoImagen`) y la ficha de detalle.
+
+Navegación nueva, en este orden: Sobre mí, Tecnologías, Experiencia, Proyectos, Contacto.
+
+**Áreas iniciales de Experiencia** (punto de partida, a revisar antes de implementar):
+1. Integraciones y sistemas e-commerce: pasarelas de pago, personalización de checkout, automatizaciones y funcionalidades comerciales.
+2. Autenticación, roles y permisos: RBAC, autenticación con JWT, protección de endpoints y control de permisos.
+3. Automatización y sistemas con IA: funcionalidades para plataformas de reclutamiento, integración de servicios externos, automatización de procesos y migración de flujos a código.
+
+**Pasos.**
+1. **Contenido primero** (`copywriting`, modo A: armar textos solo con datos confirmados):
+   - redactar cada área (qué hice, qué problema resolví, tecnologías clave) en ES y EN;
+   - definir qué entra en Proyectos;
+   - escribir las descripciones nuevas del menú de Inicio y los textos de navegación.
+2. **Diseño de Experiencia** (`frontend-design`): elegir una de las opciones de abajo con wireframes y validarla antes de escribir código.
+3. **Datos y rutas** (`composition-patterns`, `react-best-practices`):
+   - separar `data/trabajo.ts` en datos de proyectos y de experiencia;
+   - separar `textos.trabajo` en ES y EN;
+   - rutas `/experiencia`, `/proyectos` y `/proyectos/:slug`, con redirecciones desde `/trabajo` y `/trabajo/:slug` para no romper enlaces ya compartidos;
+   - pasar `TrabajoDetalle` a ficha de proyecto.
+4. **Componentes:**
+   - un componente nuevo para las áreas de Experiencia, sin reutilizar las cartas;
+   - reutilizar `ListaTecnologias` o una variante más compacta para las tecnologías de cada área;
+   - las cartas y la ficha pasan a Proyectos sin cambiar su estética.
+5. **Navegación:**
+   - 5 entradas en `data/navegacion.ts`, la barra y el `MenuJuego` de Inicio, que crece una opción;
+   - un icono máscara nuevo para Proyectos, con el trazo 12×12 de los demás; el maletín queda para Experiencia;
+   - recalcular el corte de 960px de la barra con 5 entradas en ES y EN.
+6. **Controles de las Etapas 5 y 6:** capturas de día y noche, celular, ES y EN; borrar textos, tipos (`experiencia` e `implementacion` en `TipoTrabajo`), slugs y estilos de Trabajo que queden sin uso.
+7. **Documentación:** secciones en `PRODUCT.md`, rutas en `portfolio-workflow`, componente nuevo en `DESIGN.md` y `.claude/product-marketing.md`.
+
+**Qué afecta de lo ya hecho.**
+- Inicio cambia de contenido (5 opciones en lugar de 4), aunque no de estilo; revisar el alto en pantallas bajas (regla `max-height: 760px` de `Inicio.css`).
+- La barra superior suma una entrada y puede necesitar un corte mayor que 960px.
+- Las fichas `/trabajo/integraciones-pago` y `/trabajo/control-acceso-roles` dejan de existir como proyectos: su contenido pasa a las áreas de Experiencia y sus URLs redirigen a `/experiencia`.
+- El vínculo `parteDe` entre RBAC y el sistema de salones ("Incluye: Control de acceso por roles") se rompe; hay que decidir qué queda en la ficha del salón.
+- El recorrido de Sobre mí ya lista logros por puesto; Experiencia debe complementarlo (por área) sin repetir las mismas viñetas.
+- La Etapa 7 se mantiene igual, pero se ejecuta después de esta parte.
+
+**Opciones de diseño para Experiencia** (decidir antes de implementar):
+
+```
+A. Lista de áreas abiertas (recomendada)
+┌───────────────────────────────────────────────┐
+│ Experiencia                                   │
+│ ┌───────────────────────────────────────────┐ │
+│ │ [▣] Integraciones y sistemas e-commerce   │ │
+│ │ Problema: … (una línea)                   │ │
+│ │ ■ Integré …  ■ Personalicé …  ■ Automat…  │ │
+│ │ PHP · MySQL · OpenCart · REST             │ │
+│ └───────────────────────────────────────────┘ │
+│ ┌──── Autenticación, roles y permisos ──────┐ │
+│ └───────────────────────────────────────────┘ │
+└───────────────────────────────────────────────┘
+
+B. Maestro-detalle, como Tecnologías
+┌──────────────┐ ┌─────────────────────────────┐
+│ ▶ [▣] E-com. │ │ Integraciones y e-commerce  │
+│   [▣] Auth   │ │ Problema / Qué hice / Stack │
+│   [▣] IA     │ │                             │
+└──────────────┘ └─────────────────────────────┘
+
+C. Acordeón con cursor pixel
+▶ Integraciones y sistemas e-commerce        [−]
+    Problema · Qué hice · Stack
+  Autenticación, roles y permisos            [+]
+  Automatización y sistemas con IA           [+]
+```
+
+- **A** muestra todo sin clics: lo más rápido de escanear para un reclutador, y con tres áreas no queda largo.
+- **B** reutiliza un patrón ya existente, pero esconde dos de las tres áreas detrás de clics.
+- **C** es compacta, pero también esconde contenido y suma una interacción más que probar.
+
+**Decisiones a resolver al llegar a esta parte.**
+
+*Contenido*
+1. **Empresas:** ¿Experiencia nombra empresas, o solo áreas? Si no las nombra, ¿se mantiene WAIA en el recorrido de Sobre mí y en el texto de contexto actual? Conviene una sola política para todo el sitio.
+2. **RBAC:** ¿el área "Autenticación, roles y permisos" sale del trabajo profesional actual, del sistema de salones o de ambos? ¿La ficha del salón conserva la mención a RBAC como funcionalidad propia?
+3. **Plataformas de reclutamiento y migración de flujos a código:** confirmar que mencionarlo no expone información del contrato actual. Hoy solo se nombra el rubro "automatización con IA".
+4. **Problemas resueltos:** qué problema concreto describe cada área, sin métricas inventadas; si no hay datos, se describe el problema sin cifras.
+5. **Proyectos:** ¿el sistema de salones (en desarrollo y sin captura) se muestra ya, o cuando tenga imagen? ¿Hace falta un tipo nuevo "Freelance" en las etiquetas, con su color?
+6. **Textos de Inicio:** descripciones de las dos opciones nuevas del menú (hoy Trabajo dice "Proyectos y experiencia").
+
+*Diseño*
+7. Opción A, B o C para Experiencia.
+8. Cuánta información de tecnologías mostrar por área (pocas, sin repetir la sección Tecnologías): solo nombres o con sprites de 24px.
+9. Icono pixel para Proyectos (ventana, carpeta o pantalla con código).
+10. Si `CartaTrabajo` y la ficha se renombran (por ejemplo `CartaProyecto`) para que el código refleje la sección nueva.
+11. Llamado a la acción al final de Experiencia hacia Contacto (`cro`).
+
+**Skills.** Antes: `copywriting`, `frontend-design`, `composition-patterns`. Después: `web-design-guidelines`, `accessibility`, `webapp-testing` (capturas y redirecciones), `cro`.
+
 ### Etapa 5: modo noche
 
 Estado: hecha. Se revisaron de noche todas las rutas en escritorio y celular, las seis categorías de Tecnologías, una ficha completa, el menú móvil abierto y el foco con teclado en controles, pestañas y campos. Hallazgo corregido: los sprites con cuerpo aubergine (terminal, MySQL, PostgreSQL, OpenCart, Antigravity) se perdían sobre las baldosas oscuras; se agregó `--contorno-sprite` (contorno claro de 1px solo de noche). La ficha "Integraciones de pago" pasó a "Desarrolladora Full Stack", coherente con el recorrido.
@@ -135,6 +235,8 @@ Estado: hecha.
 - Verificar con búsqueda que no queden referencias a `--papel`, `--madera`, `--fuente-texto`, `--fuente-titulo`, `--marco-*` ni `--cursor`.
 
 ### Etapa 7: verificación final
+
+Estado: pendiente. Se ejecuta después de la segunda parte de la Etapa 4 (Experiencia y Proyectos), para auditar la estructura definitiva; la revisión de CLS de imágenes aplica a Proyectos.
 
 - `webapp-testing`: capturas de cada ruta a 375px y 1280px, en día y noche, comparadas con Inicio.
 - `web-design-guidelines` sobre los archivos tocados.
