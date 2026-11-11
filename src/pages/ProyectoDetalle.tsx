@@ -5,56 +5,46 @@ import ListaTecnologias from '../components/ui/ListaTecnologias'
 import MarcoImagen from '../components/ui/MarcoImagen'
 import Panel from '../components/ui/Panel'
 import { useIdioma } from '../context/IdiomaContext'
+import { iconoSinImagen, proyectos } from '../data/proyectos'
 import { iconosTecnologia } from '../data/tecnologias'
-import { iconoSinImagen, trabajos } from '../data/trabajo'
-import './Trabajo.css'
+import './Proyectos.css'
 
-export default function TrabajoDetalle() {
+export default function ProyectoDetalle() {
   const { slug } = useParams()
   const { textos } = useIdioma()
-  const { trabajo } = textos
-  const actual = trabajos.find((item) => item.slug === slug)
+  const { proyectos: textosProyectos } = textos
+  const actual = proyectos.find((proyecto) => proyecto.slug === slug)
 
-  if (!actual) return <Navigate to="/trabajo" replace />
+  if (!actual) return <Navigate to="/proyectos" replace />
 
-  const texto = trabajo.items[actual.id]
-  const padre = trabajos.find((item) => item.id === actual.parteDe)
-  const hijos = trabajos.filter((item) => item.parteDe === actual.id)
+  const texto = textosProyectos.items[actual.id]
   const tecnologias = actual.tecnologias.map((nombre) => ({ nombre, icono: iconosTecnologia[nombre] }))
-  const vinculos = [
-    ...(padre ? [{ etiqueta: trabajo.parteDe, item: padre }] : []),
-    ...hijos.map((item) => ({ etiqueta: trabajo.incluye, item })),
-  ]
 
   return (
     <Panel className="ficha">
-      <Link className="ficha-volver" to="/trabajo">
-        {trabajo.volver}
+      <Link className="ficha-volver" to="/proyectos">
+        {textosProyectos.volver}
       </Link>
       <header className="ficha-cabecera">
         <div className="ficha-meta">
-          <Etiqueta texto={trabajo.tipos[actual.tipo]} variante={actual.tipo} />
-          <span>{trabajo.estados[actual.estado]}</span>
+          <Etiqueta texto={textosProyectos.tipos[actual.tipo]} variante={actual.tipo} />
+          <span>{textosProyectos.estados[actual.estado]}</span>
         </div>
         <h1 className="titulo-seccion">{texto.titulo}</h1>
         {texto.rol && <p className="ficha-rol">{texto.rol}</p>}
       </header>
       <div className="ficha-cuerpo">
         <div className="ficha-lateral">
-          <MarcoImagen
-            imagen={actual.imagen}
-            alt={`${trabajo.imagenDe} ${texto.titulo}`}
-            respaldo={iconoSinImagen}
-          />
+          <MarcoImagen imagen={actual.imagen} alt={`${textosProyectos.imagenDe} ${texto.titulo}`} respaldo={iconoSinImagen} />
           {tecnologias.length > 0 && (
             <section className="ficha-bloque">
-              <h2>{trabajo.tecnologias}</h2>
-              <ListaTecnologias etiqueta={trabajo.tecnologias} tecnologias={tecnologias} />
+              <h2>{textosProyectos.tecnologias}</h2>
+              <ListaTecnologias etiqueta={textosProyectos.tecnologias} tecnologias={tecnologias} />
             </section>
           )}
           {actual.sitio && (
             <div className="ficha-accion">
-              <EnlaceAccion texto={trabajo.verSitio} destino={actual.sitio} externo variante="principal" />
+              <EnlaceAccion texto={textosProyectos.verSitio} destino={actual.sitio} externo variante="principal" />
             </div>
           )}
         </div>
@@ -62,7 +52,7 @@ export default function TrabajoDetalle() {
           <p>{texto.resumen}</p>
           {texto.desafio && (
             <section className="ficha-bloque">
-              <h2>{trabajo.desafio}</h2>
+              <h2>{textosProyectos.desafio}</h2>
               <p>{texto.desafio}</p>
             </section>
           )}
@@ -78,18 +68,10 @@ export default function TrabajoDetalle() {
           )}
           {texto.contexto && (
             <section className="ficha-bloque">
-              <h2>{trabajo.contexto}</h2>
+              <h2>{textosProyectos.contexto}</h2>
               <p>{texto.contexto}</p>
             </section>
           )}
-          {vinculos.map(({ etiqueta, item }) => (
-            <p key={item.id}>
-              {etiqueta}:{' '}
-              <Link className="ficha-enlace" to={`/trabajo/${item.slug}`}>
-                {trabajo.items[item.id].titulo}
-              </Link>
-            </p>
-          ))}
         </div>
       </div>
     </Panel>

@@ -65,6 +65,16 @@
   }
 
   .inicio-menu {
-    margin-top: 24px;
+    margin-top: 20px;
+  }
+
+  .inicio-acciones {
+    margin-top: 20px;
+  }
+}
+
+@media (max-height: 720px) {
+  .inicio {
+    padding-block: 72px 32px;
   }
 }

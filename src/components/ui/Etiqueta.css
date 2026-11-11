@@ -32,9 +32,3 @@
   --punto-etiqueta: var(--color-acento);
   box-shadow: none;
 }
-
-.etiqueta-implementacion {
-  --fondo-etiqueta: var(--color-ciruela-suave);
-  --punto-etiqueta: var(--color-ciruela);
-  box-shadow: none;
-}

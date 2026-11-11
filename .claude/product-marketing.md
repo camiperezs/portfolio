@@ -3,7 +3,7 @@
 Las skills de marketing (copywriting, copy-editing, cro, schema, marketing-psychology) leen este archivo antes de preguntar. La fuente principal es `PRODUCT.md`; si hay diferencias, manda `PRODUCT.md`.
 
 ## Qué es
-ChamDev, el portfolio web de Camila Perez (React + Vite, en Netlify), con las secciones Inicio, Sobre mí, Tecnologías, Trabajo y Contacto, en español e inglés.
+ChamDev, el portfolio web de Camila Perez (React + Vite, en Netlify), con las secciones Inicio, Sobre mí, Tecnologías, Experiencia, Proyectos y Contacto, en español e inglés.
 
 ## Quién es
 - Camila Perez (sin tilde), Desarrolladora Backend, de Rosario, Argentina.
@@ -21,11 +21,12 @@ Llegan desde un enlace directo, en escritorio o en el celular, y deciden rápido
 
 ## Objetivo de conversión
 - **Principal:** que contacten a Camila por el formulario de Contacto o por email.
-- **Secundario:** que revisen los proyectos de Trabajo, las tecnologías y los perfiles de LinkedIn y GitHub.
+- **Secundario:** que revisen Experiencia, Proyectos, las tecnologías y los perfiles de LinkedIn y GitHub.
 
 ## Prueba disponible
 - Proyectos publicados: Rock & EDM Festival y Frontend Store, en Netlify.
 - Experiencia en WAIA, con logros descritos en Sobre mí.
+- Tres áreas de experiencia profesional en la sección Experiencia: integraciones y e-commerce; autenticación, roles y permisos; automatización y sistemas con IA (incluye funcionalidades para una plataforma de reclutamiento).
 - Certificados: Full Stack de Egg (2023) e Introducción a la Ciberseguridad de Educación IT (2025).
 - Perfiles: LinkedIn y GitHub. Email público: cperez.dev@outlook.com.
 
@@ -35,4 +36,5 @@ Español rioplatense (voseo), cercano y profesional. Lenguaje directo y títulos
 ## Restricciones
 - No inventar testimonios, clientes, métricas ni estadísticas: no hay ninguno confirmado.
 - No nombrar la empresa actual ni hacerla identificable; el rubro (automatización con IA) sí se puede mencionar.
+- La sección Experiencia no nombra empresas: presenta áreas, problemas y soluciones técnicas.
 - Cada afirmación debe poder respaldarse con un proyecto o un dato confirmado.

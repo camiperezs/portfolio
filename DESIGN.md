@@ -255,8 +255,14 @@ El cursor y los iconos pixel son la única geometría pixelada; las superficies 
 ### Selector de tema
 `SelectorTema`: un botón de 44px con el icono del modo elegido (Sistema, Claro u Oscuro) que despliega un menú de juego con las tres opciones. Cada opción tiene el cursor pixel y una baldosa de 32px; la elegida pasa a acento sólido. Se abre con clic o flecha abajo, se recorre con flechas, se elige con Enter y se cierra con Escape, clic afuera o Tab. Abre en 160ms con `--ease-salida` desde su esquina. La preferencia se guarda, se sincroniza entre pestañas y, en Sistema, sigue a `prefers-color-scheme` en vivo; un script en `index.html` aplica el tema antes de pintar para evitar el destello.
 
+### Barra de navegación
+`Navbar`: tarjeta con la marca, cinco secciones (Sobre mí, Tecnologías, Experiencia, Proyectos y Contacto) con su icono pixel, y los controles de idioma y tema. Por debajo de 1100px pasa a un botón "Menú" con panel desplegable.
+
+### Área de experiencia
+`AreaExperiencia`: tarjeta elevada con radio grande para cada área de trabajo profesional. Cabecera con baldosa de acento suave de 40px y título de 20px; debajo, en dos columnas (una en móvil), "El problema" y "Qué hice" con viñetas ciruela, y una fila de tecnologías como pastillas de texto de 14px, sin sprites, para no repetir la sección Tecnologías. No muestra empresas ni imágenes; las tarjetas con imagen quedan para Proyectos.
+
 ### Icono pixel
-`IconoPixel`: máscara PNG (`public/sprites/mascara-*.png`) pintada con `currentColor`, de 24px por defecto. Así los iconos siguen el tema y el estado.
+`IconoPixel`: máscara PNG (`public/sprites/mascara-*.png`) pintada con `currentColor`, de 24px por defecto. Así los iconos siguen el tema y el estado. Se dibujan en una grilla de 12×12 con píxeles de 2px.
 
 ### Insignia de marca
 Pastilla de superficie con borde y sombra chica, con ChamDev en Jersey 25 a 25px.

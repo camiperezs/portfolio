@@ -113,7 +113,17 @@ Estado: hecha.
 
 #### Etapa 4, segunda parte: separar Trabajo en Experiencia y Proyectos
 
-Estado: pendiente. Se ejecuta antes de la Etapa 7, que debe auditar la estructura definitiva.
+Estado: hecha. Decisiones tomadas (revisables):
+- Experiencia no nombra empresas; el recorrido de Sobre mí sigue nombrando a WAIA.
+- Diseño A (áreas abiertas) con `AreaExperiencia`: problema, qué hice (viñetas ciruela) y tecnologías como pastillas de texto, más un cierre con "Escribime" y "Ver mi recorrido".
+- RBAC: el área "Autenticación, roles y permisos" sale del trabajo profesional actual (JWT, roles y permisos, ya descritos en el recorrido). El caso RBAC del sistema de salones era un desarrollo independiente: su desafío pasó a la ficha de ese proyecto, que suma Spring Security y JWT a sus tecnologías.
+- "Plataforma de reclutamiento" y "migración de flujos a código" se incluyeron tal como los propuso Camila; quedan para confirmar contra el contrato.
+- Sin etiqueta "Freelance" hasta que haya un proyecto de ese tipo; el sistema de salones se muestra sin captura, con la máscara de ventana como respaldo.
+- Código renombrado: `data/proyectos.ts`, `data/experiencia.ts`, `CartaProyecto`, páginas `Proyectos`, `ProyectoDetalle`, `Experiencia` y `RedireccionTrabajo`.
+- Iconos máscara nuevos: ventana (Proyectos), carrito, candado e IA.
+- Redirecciones: `/trabajo` → `/proyectos`; `/trabajo/integraciones-pago` → `/experiencia`; `/trabajo/control-acceso-roles` → `/proyectos/sistema-salon`; el resto de `/trabajo/:slug` → `/proyectos/:slug`.
+- La barra pasa al menú móvil por debajo de 1100px (con 5 entradas deja de entrar cerca de 1040px en ES y EN). En pantallas de 760px de alto o menos, el menú de Inicio se compacta para que las acciones sigan a la vista.
+- Controles de las Etapas 5 y 6 hechos: capturas de día, noche, celular, ES, EN y altos de 650 a 800px; se borraron tipos, textos, estilos (`etiqueta-implementacion`, `ficha-enlace`) y vínculos `parteDe` sin uso.
 
 **Por qué va acá.** Es una reorganización de vistas y contenido, el mismo alcance de la Etapa 4. No justifica una etapa nueva. Las Etapas 5 (modo noche) y 6 (limpieza) ya están hechas, así que sus controles se repiten dentro de esta parte para lo nuevo: revisar de noche las dos vistas y borrar lo que quede de Trabajo.
 

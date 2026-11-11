@@ -26,10 +26,10 @@ Un cliente o reclutador llega normalmente desde un enlace directo, en escritorio
 
 ## Capabilities and Constraints
 
-- Secciones: Inicio, Sobre mí, Tecnologías, Trabajo y Contacto.
+- Secciones: Inicio, Sobre mí, Tecnologías, Experiencia, Proyectos y Contacto. Experiencia muestra áreas de trabajo profesional (problema, qué hice y tecnologías) sin nombrar empresas; Proyectos muestra desarrollos propios, freelance y de formación con tarjetas e imagen.
 - Stack actual: React, TypeScript y Vite, desplegado en Netlify.
 - Tecnologías declaradas: Java, Spring Boot, React, HTML, CSS, Bootstrap, Tailwind CSS, Node.js, Docker, GitHub, Linux, PHP, OpenCart, JavaScript, TypeScript, MySQL y PostgreSQL. IA: Claude, Antigravity y ChatGPT.
-- Integraciones no es una categoría de tecnologías; se muestra mediante proyectos.
+- Integraciones no es una categoría de tecnologías; se muestra en Experiencia.
 - El selector ES/EN traduce el sitio con los textos de `src/data/idiomas`. Los buscadores solo indexan el español hasta que existan rutas por idioma.
 - El formulario de Contacto envía con Netlify Forms.
 - Pendiente de definir: la prerenderización de rutas.

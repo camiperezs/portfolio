@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Etiqueta from './Etiqueta'
 import MarcoImagen from './MarcoImagen'
-import './CartaTrabajo.css'
+import './CartaProyecto.css'
 
 type Props = {
   ruta: string
@@ -14,7 +14,7 @@ type Props = {
   iconos: { nombre: string; icono: string }[]
 }
 
-export default function CartaTrabajo({ ruta, titulo, tipo, estado, imagen, imagenAlt, respaldo, iconos }: Props) {
+export default function CartaProyecto({ ruta, titulo, tipo, estado, imagen, imagenAlt, respaldo, iconos }: Props) {
   return (
     <Link className="carta" to={ruta}>
       <MarcoImagen imagen={imagen} alt={imagenAlt} respaldo={respaldo} />

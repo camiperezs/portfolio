@@ -10,7 +10,8 @@ export const en: Textos = {
     menu: 'Menu',
     sobreMi: 'About me',
     tecnologias: 'Technologies',
-    trabajo: 'Work',
+    experiencia: 'Experience',
+    proyectos: 'Projects',
     contacto: 'Contact',
   },
   inicio: {
@@ -20,7 +21,8 @@ export const en: Textos = {
     descripciones: {
       sobreMi: 'Profile and journey',
       tecnologias: 'Stack and tools',
-      trabajo: 'Projects and experience',
+      experiencia: 'Integrations, security and automation',
+      proyectos: 'Own and published work',
       contacto: 'Send me a message',
     },
   },
@@ -118,32 +120,71 @@ export const en: Textos = {
       ia: 'AI',
     },
   },
-  trabajo: {
-    titulo: 'Work',
-    etiqueta: 'Projects and experience',
-    volver: 'Back to Work',
-    verFicha: 'View details',
-    rol: 'Role',
+  experiencia: {
+    titulo: 'Experience',
+    intro: 'Areas I have worked on professionally: what the problem was, what I did and which technologies I used.',
+    etiqueta: 'Experience areas',
+    problema: 'The problem',
+    queHice: 'What I did',
+    tecnologias: 'Technologies',
+    cierre: {
+      titulo: 'Need to solve something similar?',
+      texto: "Tell me what you need and I'll reply by email.",
+      recorrido: 'See my journey',
+    },
+    areas: {
+      ecommerce: {
+        titulo: 'E-commerce integrations and systems',
+        problema:
+          'Production stores that needed to accept local payment methods and adapt checkout to their business rules.',
+        logros: [
+          'Integrated Mercado Pago, MODO and GOcuotas through REST APIs, OAuth and webhooks, and maintained and improved those integrations.',
+          'Adapted checkout and payment flows to each business’s requirements.',
+          'Implemented business rules for promotions, discounts and gift cards.',
+          'Automated processes and reports, and gathered requirements directly from clients.',
+        ],
+      },
+      autenticacion: {
+        titulo: 'Authentication, roles and permissions',
+        problema: 'Each user must access only the features and data that belong to them.',
+        logros: [
+          'Implement JWT authentication.',
+          'Implement role and permission control in backend services.',
+          'Protect endpoints by validating permissions before each operation.',
+        ],
+      },
+      automatizacion: {
+        titulo: 'Automation and AI systems',
+        problema: 'Manual processes that needed to be automated and integrated with other services.',
+        logros: [
+          'Build features for a recruitment platform.',
+          'Integrate external services and automate processes.',
+          'Migrate automation workflows to custom code.',
+          'Build services with Node.js and Fastify, plus AWS Lambda functions and API Gateway.',
+        ],
+      },
+    },
+  },
+  proyectos: {
+    titulo: 'Projects',
+    intro: 'Personal and published projects.',
+    etiqueta: 'Project list',
+    volver: 'Back to Projects',
     desafio: 'The challenge',
     contexto: 'Context',
     tecnologias: 'Technologies',
     verSitio: 'View live site',
-    parteDe: 'Part of',
-    incluye: 'Includes',
     imagenDe: 'Screenshot of',
-    tipos: {
-      proyecto: 'Personal project',
-      experiencia: 'Professional experience',
-      implementacion: 'Implementation',
-      formacion: 'Training',
-    },
-    estados: { desarrollo: 'In development', produccion: 'In production', publicado: 'Published' },
+    tipos: { proyecto: 'Personal project', formacion: 'Training' },
+    estados: { desarrollo: 'In development', publicado: 'Published' },
     items: {
       sistemaSalon: {
         titulo: 'Beauty Salon Management System',
         rol: 'Full Stack Developer · Project Owner',
         resumen:
           'Full-stack web application designed to simplify daily operations for beauty salons and independent professionals.',
+        desafio:
+          'Different users need access to different features and information: an administrator manages system configuration, a receptionist handles appointments and clients, and a professional accesses information relevant to their own work. I designed a centralized security model with JWT, BCrypt and Spring Security, with three roles (ADMIN, RECEPTIONIST and PROFESSIONAL) and permissions validated before each protected operation.',
         lista: {
           titulo: 'Key features',
           items: [
@@ -156,44 +197,6 @@ export const en: Textos = {
         },
         contexto:
           'Independently developed, from database design and REST APIs to frontend implementation. Currently in development.',
-      },
-      integracionesPago: {
-        titulo: 'E-commerce Payment Gateway Integrations',
-        rol: 'Full Stack Developer · Payment Integrations',
-        resumen:
-          'Developing, maintaining, and improving payment integrations for production e-commerce platforms.',
-        lista: {
-          titulo: 'Key contributions',
-          items: [
-            'Integrated Mercado Pago, MODO, and GOcuotas.',
-            'Developed and maintained payment gateway functionality.',
-            'Worked with REST APIs and external services.',
-            'Adapted checkout and payment flows to business requirements.',
-            'Troubleshot payment issues and improved existing integrations.',
-          ],
-        },
-        contexto: 'Work performed at WAIA, maintaining and improving real-world e-commerce applications.',
-      },
-      rbac: {
-        titulo: 'Role-Based Access Control (RBAC)',
-        rol: 'Backend Developer · Authentication & Authorization',
-        resumen:
-          "Authentication and role-based authorization in a full-stack beauty salon management application, providing different levels of access depending on each user's responsibilities.",
-        desafio:
-          'Different users need access to different features and information: an administrator manages system configuration, a receptionist handles appointments and clients, and a professional accesses information relevant to their own work. The application needed a centralized security model to enforce these restrictions consistently.',
-        lista: {
-          titulo: 'What I implemented',
-          items: [
-            'Authentication with JSON Web Tokens (JWT) and BCrypt password protection, integrated with Spring Security.',
-            'Three user roles: ADMIN, RECEPTIONIST, and PROFESSIONAL.',
-            'Role-based authorization for protected backend operations.',
-            'Access restrictions based on user identity and resource ownership.',
-            'Permission validation before protected operations, on a stateless architecture.',
-            'Separation between authentication and business logic.',
-          ],
-        },
-        contexto:
-          'Independently designed and implemented the authentication and authorization architecture, focusing on maintainability, clear separation of responsibilities, and protecting application resources from unauthorized access.',
       },
       festival: {
         titulo: 'Rock & EDM Festival',

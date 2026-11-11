@@ -70,6 +70,10 @@
   animation-delay: 120ms;
 }
 
+.menu-seleccion li:nth-child(5) .menu-seleccion-opcion {
+  animation-delay: 160ms;
+}
+
 @keyframes menu-seleccion-entrada {
   from {
     opacity: 0;
@@ -138,6 +142,13 @@
   .menu-seleccion-opcion.activa:not(:focus-visible) .menu-seleccion-baldosa {
     background: var(--color-acento-suave);
     color: var(--color-acento);
+  }
+}
+
+@media (max-height: 760px) {
+  .menu-seleccion-opcion {
+    min-height: 56px;
+    padding-block: 6px;
   }
 }
 

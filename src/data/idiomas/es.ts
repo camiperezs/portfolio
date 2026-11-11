@@ -1,14 +1,50 @@
 import { certificados } from '../sobreMi'
 import type { IdParada, TextoParada } from '../sobreMi'
 import type { IdCategoria } from '../tecnologias'
-import type { IdTrabajo, TextoTrabajo } from '../trabajo'
+import type { IdArea, TextoArea } from '../experiencia'
+import type { IdProyecto, TextoProyecto } from '../proyectos'
 
-const trabajos: Record<IdTrabajo, TextoTrabajo> = {
+const areas: Record<IdArea, TextoArea> = {
+  ecommerce: {
+    titulo: 'Integraciones y sistemas e-commerce',
+    problema:
+      'Tiendas en producción que necesitaban cobrar con medios de pago locales y adaptar el checkout a sus reglas comerciales.',
+    logros: [
+      'Integré Mercado Pago, MODO y GOcuotas mediante APIs REST, OAuth y webhooks, y mantuve y mejoré esas integraciones.',
+      'Adapté los flujos de checkout y pago a los requisitos de cada negocio.',
+      'Implementé reglas comerciales para promociones, descuentos y gift cards.',
+      'Automaticé procesos y reportes, y relevé requerimientos directamente con clientes.',
+    ],
+  },
+  autenticacion: {
+    titulo: 'Autenticación, roles y permisos',
+    problema: 'Cada usuario tiene que acceder solo a las funciones y los datos que le corresponden.',
+    logros: [
+      'Implemento autenticación con JWT.',
+      'Implemento control de roles y permisos en los servicios del backend.',
+      'Protejo los endpoints validando los permisos antes de cada operación.',
+    ],
+  },
+  automatizacion: {
+    titulo: 'Automatización y sistemas con IA',
+    problema: 'Procesos manuales que necesitaban automatizarse e integrarse con otros servicios.',
+    logros: [
+      'Desarrollo funcionalidades para una plataforma de reclutamiento.',
+      'Integro servicios externos y automatizo procesos.',
+      'Migro flujos de automatización a código propio.',
+      'Desarrollo servicios con Node.js y Fastify, y funciones en AWS Lambda y API Gateway.',
+    ],
+  },
+}
+
+const proyectos: Record<IdProyecto, TextoProyecto> = {
   sistemaSalon: {
     titulo: 'Sistema de gestión para salones de belleza',
     rol: 'Desarrolladora Full Stack · Responsable del proyecto',
     resumen:
       'Aplicación web full stack pensada para simplificar la operación diaria de salones de belleza y profesionales independientes.',
+    desafio:
+      'Cada usuario necesita acceder a funciones e información distintas: la administración configura el sistema, recepción gestiona turnos y clientes, y cada profesional accede a lo relativo a su propio trabajo. Diseñé un modelo de seguridad centralizado con JWT, BCrypt y Spring Security, con tres roles (ADMIN, RECEPTIONIST y PROFESSIONAL) y permisos validados antes de cada operación protegida.',
     lista: {
       titulo: 'Funcionalidades principales',
       items: [
@@ -21,44 +57,6 @@ const trabajos: Record<IdTrabajo, TextoTrabajo> = {
     },
     contexto:
       'Desarrollado de forma independiente, desde el diseño de la base de datos y las APIs REST hasta la implementación del frontend. Actualmente en desarrollo.',
-  },
-  integracionesPago: {
-    titulo: 'Integraciones de pago para e-commerce',
-    rol: 'Desarrolladora Full Stack · Integraciones de pago',
-    resumen:
-      'Desarrollo, mantenimiento y mejora de integraciones de pago para plataformas de e-commerce en producción.',
-    lista: {
-      titulo: 'Qué hice',
-      items: [
-        'Integré Mercado Pago, MODO y GOcuotas.',
-        'Desarrollé y mantuve la funcionalidad de las pasarelas de pago.',
-        'Trabajé con APIs REST y servicios externos.',
-        'Adapté los flujos de checkout y pago a los requisitos del negocio.',
-        'Resolví problemas de pagos y mejoré integraciones existentes.',
-      ],
-    },
-    contexto: 'Trabajo realizado en WAIA, manteniendo y mejorando aplicaciones de e-commerce reales.',
-  },
-  rbac: {
-    titulo: 'Control de acceso por roles (RBAC)',
-    rol: 'Desarrolladora Backend · Autenticación y autorización',
-    resumen:
-      'Autenticación y autorización por roles en una aplicación full stack de gestión para salones de belleza, con distintos niveles de acceso según las responsabilidades de cada usuario.',
-    desafio:
-      'Cada usuario necesita acceder a funciones e información distintas: la administración configura el sistema, recepción gestiona turnos y clientes, y cada profesional accede a lo relativo a su propio trabajo. La aplicación necesitaba un modelo de seguridad centralizado que aplicara esas restricciones de forma consistente.',
-    lista: {
-      titulo: 'Qué implementé',
-      items: [
-        'Autenticación con JSON Web Tokens (JWT) y contraseñas protegidas con BCrypt, integradas con Spring Security.',
-        'Tres roles: ADMIN, RECEPTIONIST y PROFESSIONAL.',
-        'Autorización por rol en las operaciones protegidas del backend.',
-        'Restricciones según la identidad del usuario y la propiedad de cada recurso.',
-        'Validación de permisos antes de cada operación protegida, con una arquitectura sin estado.',
-        'Separación entre la autenticación y la lógica de negocio.',
-      ],
-    },
-    contexto:
-      'Diseñé e implementé de forma independiente la arquitectura de autenticación y autorización, con foco en la mantenibilidad, la separación de responsabilidades y la protección de los recursos frente a accesos no autorizados.',
   },
   festival: {
     titulo: 'Rock & EDM Festival',
@@ -156,7 +154,8 @@ export const es = {
     menu: 'Menú',
     sobreMi: 'Sobre mí',
     tecnologias: 'Tecnologías',
-    trabajo: 'Trabajo',
+    experiencia: 'Experiencia',
+    proyectos: 'Proyectos',
     contacto: 'Contacto',
   },
   inicio: {
@@ -166,7 +165,8 @@ export const es = {
     descripciones: {
       sobreMi: 'Perfil y recorrido',
       tecnologias: 'Stack y herramientas',
-      trabajo: 'Proyectos y experiencia',
+      experiencia: 'Integraciones, seguridad y automatización',
+      proyectos: 'Desarrollos propios y publicados',
       contacto: 'Escribime un mensaje',
     },
   },
@@ -191,27 +191,33 @@ export const es = {
     etiqueta: 'Categorías de tecnologías',
     categorias,
   },
-  trabajo: {
-    titulo: 'Trabajo',
-    etiqueta: 'Proyectos y experiencia',
-    volver: 'Volver a Trabajo',
-    verFicha: 'Ver ficha',
-    rol: 'Rol',
+  experiencia: {
+    titulo: 'Experiencia',
+    intro: 'Áreas en las que trabajé de forma profesional: qué problema había, qué hice y con qué tecnologías.',
+    etiqueta: 'Áreas de experiencia',
+    problema: 'El problema',
+    queHice: 'Qué hice',
+    tecnologias: 'Tecnologías',
+    cierre: {
+      titulo: '¿Tenés que resolver algo parecido?',
+      texto: 'Contame qué necesitás y te respondo por email.',
+      recorrido: 'Ver mi recorrido',
+    },
+    areas,
+  },
+  proyectos: {
+    titulo: 'Proyectos',
+    intro: 'Desarrollos propios y proyectos publicados.',
+    etiqueta: 'Lista de proyectos',
+    volver: 'Volver a Proyectos',
     desafio: 'El desafío',
     contexto: 'Contexto',
     tecnologias: 'Tecnologías',
     verSitio: 'Ver sitio publicado',
-    parteDe: 'Parte de',
-    incluye: 'Incluye',
     imagenDe: 'Captura de',
-    tipos: {
-      proyecto: 'Proyecto propio',
-      experiencia: 'Experiencia laboral',
-      implementacion: 'Implementación',
-      formacion: 'Formación',
-    },
-    estados: { desarrollo: 'En desarrollo', produccion: 'En producción', publicado: 'Publicado' },
-    items: trabajos,
+    tipos: { proyecto: 'Proyecto propio', formacion: 'Formación' },
+    estados: { desarrollo: 'En desarrollo', publicado: 'Publicado' },
+    items: proyectos,
   },
   contacto: {
     titulo: 'Contacto',

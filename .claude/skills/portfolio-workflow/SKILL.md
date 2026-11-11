@@ -10,7 +10,7 @@ Este skill no implementa nada por sí mismo: decide **qué skills usar, en qué 
 ## Contexto del proyecto
 
 - SPA en **React 19 + TypeScript + Vite**, con `react-router-dom`. Deploy en Netlify (`netlify.toml`); el formulario de Contacto usa Netlify Forms.
-- Rutas: `/` (Inicio), `/sobre-mi`, `/tecnologias`, `/trabajo`, `/trabajo/:slug`, `/contacto`.
+- Rutas: `/` (Inicio), `/sobre-mi`, `/tecnologias`, `/experiencia`, `/proyectos`, `/proyectos/:slug`, `/contacto`. `/trabajo` y `/trabajo/:slug` redirigen a las rutas nuevas.
 - Idiomas ES/EN con `IdiomaContext` y los textos de `src/data/idiomas/es.ts` y `en.ts`. Tema día/noche con `TemaContext`.
 - Reglas obligatorias: `CLAUDE.md` (sin comentarios en el código, componentes tontos, datos solo desde `src/pages`).
 - Sistema de diseño: `DESIGN.md` (Modern Retro RPG, con Inicio como referencia). Producto y posicionamiento: `PRODUCT.md`.
@@ -23,13 +23,13 @@ Antes de tocar código, identificá a qué categorías pertenece el pedido. Pued
 
 | Categoría | Señales |
 |---|---|
-| **A. Contenido / textos** | Textos de `src/data/idiomas`, perfil, recorrido, fichas de trabajo, CTAs |
+| **A. Contenido / textos** | Textos de `src/data/idiomas`, perfil, recorrido, áreas de experiencia, fichas de proyectos, CTAs |
 | **B. Diseño visual / UI** | Tokens, tipografía, layout, animaciones, nueva vista, rediseño |
 | **C. Estructura y estilos** | Responsive, grid/flex, semántica, CSS de componentes |
 | **D. Interactividad** | Menús, pestañas, formulario, teclado, estado en páginas |
 | **E. Imágenes y recursos** | Capturas en `public/img`, sprites y máscaras en `public/sprites`, fuentes |
 | **F. SEO / visibilidad** | Meta tags, Open Graph, `hreflang`, datos estructurados |
-| **G. Nuevo trabajo o proyecto** | Entrada nueva en `src/data/trabajo.ts` y sus textos |
+| **G. Nuevo proyecto o área de experiencia** | Entrada nueva en `src/data/proyectos.ts` o `src/data/experiencia.ts` y sus textos |
 | **H. Componentes React** | Componentes nuevos, refactor, props, contexto, rendimiento de render |
 | **I. Auditoría general** | "revisá el sitio", "qué mejorarías", "está listo para mandar a empresas" |
 
