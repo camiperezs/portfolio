@@ -17,8 +17,8 @@
   height: 80px;
   margin-bottom: 4px;
   border-radius: var(--radio-grande);
-  background: var(--color-turquesa-suave);
-  color: var(--color-turquesa);
+  background: var(--color-acento-suave);
+  color: var(--color-acento);
 }
 
 .sobre-enviado h2 {

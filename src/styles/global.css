@@ -13,14 +13,14 @@
   --color-borde: #e9e1d3;
   --color-texto: #2a1e26;
   --color-texto-suave: #6b5b63;
-  --color-turquesa: #0e7c77;
-  --color-turquesa-suave: rgb(14 124 119 / 10%);
-  --color-activo: rgb(14 124 119 / 7%);
+  --color-acento: #c64a16;
+  --color-acento-suave: rgb(198 74 22 / 10%);
+  --color-activo: rgb(198 74 22 / 7%);
   --color-dorado: #e2a92b;
   --color-ciruela: #6e2d5b;
   --color-borde-control: #8c7b72;
-  --color-sobre-acento: var(--color-fondo);
-  --color-foco: var(--color-turquesa);
+  --color-sobre-acento: #ffffff;
+  --color-foco: var(--color-acento);
   --color-error: #a8321f;
   --color-error-suave: rgb(168 50 31 / 8%);
   --color-ciruela-suave: rgb(110 45 91 / 10%);
@@ -40,12 +40,12 @@
   --ancho-lectura: 65ch;
   --icono-cursor: url(/sprites/mascara-cursor.png);
   --contorno-sprite: none;
-  --brillo-1: rgb(79 209 197 / 30%);
-  --brillo-2: rgb(242 193 78 / 32%);
-  --brillo-3: rgb(194 123 176 / 14%);
+  --brillo-1: rgb(245 177 140 / 42%);
+  --brillo-2: rgb(245 207 121 / 38%);
+  --brillo-3: rgb(194 123 176 / 12%);
   --posicion-brillo-1: 16% 10%;
   --posicion-brillo-2: 86% 90%;
-  --trama: rgb(14 124 119 / 14%);
+  --trama: rgb(198 74 22 / 12%);
   --sombra-elevada: 0 1px 2px rgb(42 30 38 / 6%), 0 10px 28px rgb(42 30 38 / 8%);
   --sombra-chica: 0 1px 2px rgb(42 30 38 / 10%);
 }
@@ -59,24 +59,25 @@
   --color-borde: #3a3142;
   --color-texto: #f3ede4;
   --color-texto-suave: #b9aeb8;
-  --color-turquesa: #4fd1c5;
-  --color-turquesa-suave: rgb(79 209 197 / 12%);
-  --color-activo: rgb(79 209 197 / 9%);
+  --color-acento: #ff925c;
+  --color-acento-suave: rgb(255 146 92 / 12%);
+  --color-activo: rgb(255 146 92 / 9%);
   --color-dorado: #f2c14e;
   --color-ciruela: #c27bb0;
   --color-borde-control: #857790;
+  --color-sobre-acento: var(--color-fondo);
   --color-error: #ff8f80;
   --color-error-suave: rgb(255 143 128 / 12%);
   --color-ciruela-suave: rgb(194 123 176 / 16%);
   --color-dorado-suave: rgb(242 193 78 / 14%);
   --contorno-sprite: drop-shadow(1px 0 0 rgb(243 237 228 / 38%)) drop-shadow(-1px 0 0 rgb(243 237 228 / 38%))
     drop-shadow(0 1px 0 rgb(243 237 228 / 38%)) drop-shadow(0 -1px 0 rgb(243 237 228 / 38%));
-  --brillo-1: rgb(194 123 176 / 24%);
-  --brillo-2: rgb(79 209 197 / 13%);
-  --brillo-3: rgb(242 193 78 / 7%);
+  --brillo-1: rgb(90 41 45 / 85%);
+  --brillo-2: rgb(87 53 29 / 70%);
+  --brillo-3: rgb(194 123 176 / 10%);
   --posicion-brillo-1: 50% -6%;
   --posicion-brillo-2: 14% 104%;
-  --trama: rgb(194 123 176 / 26%);
+  --trama: rgb(255 146 92 / 16%);
   --sombra-elevada: inset 0 1px 0 rgb(255 255 255 / 4%), 0 10px 28px rgb(0 0 0 / 32%);
   --sombra-chica: 0 1px 2px rgb(0 0 0 / 40%);
 }
@@ -90,7 +91,7 @@ html {
 }
 
 ::selection {
-  background: var(--color-turquesa);
+  background: var(--color-acento);
   color: var(--color-sobre-acento);
 }
 

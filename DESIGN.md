@@ -10,7 +10,7 @@ colors:
   error: "#a8321f"
   texto: "#2a1e26"
   texto-suave: "#6b5b63"
-  turquesa: "#0e7c77"
+  acento: "#c64a16"
   dorado: "#e2a92b"
   ciruela: "#6e2d5b"
   noche-fondo: "#14101a"
@@ -21,7 +21,7 @@ colors:
   noche-error: "#ff8f80"
   noche-texto: "#f3ede4"
   noche-texto-suave: "#b9aeb8"
-  noche-turquesa: "#4fd1c5"
+  noche-acento: "#ff925c"
   noche-dorado: "#f2c14e"
   noche-ciruela: "#c27bb0"
 typography:
@@ -82,7 +82,7 @@ spacing:
   xl: "36px"
 components:
   enlace-principal:
-    backgroundColor: "{colors.turquesa}"
+    backgroundColor: "{colors.acento}"
     textColor: "{colors.fondo}"
     typography: "{typography.label}"
     rounded: "{rounded.md}"
@@ -122,25 +122,25 @@ ChamDev es la interfaz de un producto digital moderno que recuerda al menú de u
 La referencia es Inicio. Todas las vistas usan el mismo fondo, las mismas superficies y los mismos controles, y el contenido profesional siempre se lee primero.
 
 **Key Characteristics:**
-- Fondo con brillos radiales suaves y una trama de dithering que solo aparece en los bordes de esos brillos.
+- Fondo con brillos radiales cálidos (durazno y ámbar de día, brasa y cobre de noche) y una trama de dithering que solo aparece en los bordes de esos brillos.
 - Superficies claras con bordes de 1px y sombras cortas; en modo noche, superficies ciruela oscuro.
 - Onest para todo el texto; Jersey 25 solo para la marca.
 - Iconos pixel como máscaras que toman el color del tema.
-- Un único acento de interacción: turquesa.
+- Un único acento de interacción: el naranja de la paleta Fuego vibrante.
 - Modo claro y modo oscuro reales, elegidos con el control de tema.
 
 ## Colors
 
-Neutros cálidos con turquesa como color de acción, dorado como acento y ciruela como tercer color. Todos los colores salen de los tokens `--color-*` de `src/styles/global.css`, que cambian con `[data-tema='noche']`.
+Neutros cálidos con el naranja **Fuego vibrante** como color de acción, dorado como acento y ciruela como tercer color. Todos los colores salen de los tokens `--color-*` de `src/styles/global.css`, que cambian con `[data-tema='noche']`.
 
 ### Primary
-- **Turquesa** (`--color-turquesa`): acción principal, estado activo, cursor del menú, foco y baldosas de iconos. Sus variantes suaves (`--color-turquesa-suave`, `--color-activo`) marcan fondos de selección.
+- **Acento** (`--color-acento`): naranja de acción principal, estado activo, cursor del menú, foco y baldosas de iconos. Sus variantes suaves (`--color-acento-suave`, `--color-activo`) marcan fondos de selección. Como texto solo va sobre superficie o elevada; sobre el fondo de página se usa en iconos, bordes, subrayados y foco.
 
 ### Secondary
-- **Ciruela** (`--color-ciruela`): tercer color del sistema, para diferenciar categorías y en los brillos del fondo nocturno.
+- **Ciruela** (`--color-ciruela`): tercer color del sistema, para diferenciar categorías, viñetas de listas y el brillo inferior del fondo.
 
 ### Tertiary
-- **Dorado** (`--color-dorado`): acento puntual y brillo del fondo. Nunca como color de texto sobre fondo claro.
+- **Dorado** (`--color-dorado`): acento puntual, como el punto del rol en Inicio. Nunca como color de texto sobre fondo claro.
 
 ### Neutral
 - **Fondo** (`--color-fondo`): base de la página.
@@ -152,9 +152,9 @@ Neutros cálidos con turquesa como color de acción, dorado como acento y ciruel
 ### Functional
 - **Borde de control** (`--color-borde-control`): contorno de campos de formulario y controles que necesitan verse como tales. `--color-borde` es solo decorativo.
 - **Error** (`--color-error`, `--color-error-suave`): mensajes de error y borde del campo con error, siempre junto a un texto que explique el problema.
-- **Sobre acento** (`--color-sobre-acento`): texto e iconos sobre turquesa sólido.
-- **Foco** (`--color-foco`): contorno de foco, hoy igual al turquesa.
-- **Tintes suaves** (`--color-turquesa-suave`, `--color-ciruela-suave`, `--color-dorado-suave`): fondos de baldosas, pastillas y etiquetas.
+- **Sobre acento** (`--color-sobre-acento`): texto e iconos sobre acento sólido. Blanco de día (el crema del fondo no llega a 4.5:1 sobre `#c64a16`) y `--color-fondo` de noche.
+- **Foco** (`--color-foco`): contorno de foco, igual al acento.
+- **Tintes suaves** (`--color-acento-suave`, `--color-ciruela-suave`, `--color-dorado-suave`): fondos de baldosas, pastillas y etiquetas.
 
 ### Contrast
 
@@ -164,21 +164,23 @@ Medido según WCAG 2.2 (AA: 4.5:1 para texto normal, 3:1 para texto grande y con
 |---|---|---|
 | Texto sobre superficie | 15.6 | 14.9 |
 | Texto suave sobre superficie | 6.2 | 8.1 |
-| Turquesa sobre superficie | 4.9 | 9.3 |
-| Turquesa sobre fondo | 4.7 | 10.1 |
-| Sobre acento sobre turquesa | 4.7 | 10.1 |
+| Acento sobre superficie | 4.7 | 7.9 |
+| Acento sobre elevada | 4.8 | 7.1 |
+| Acento sobre fondo (solo no texto) | 4.4 | 8.5 |
+| Acento sobre el centro del brillo 1 (solo no texto) | 3.6 | 5.8 |
+| Sobre acento sobre acento | 4.8 | 8.5 |
 | Error sobre superficie | 6.5 | 7.8 |
 | Borde de control sobre superficie | 4.0 | 4.2 |
 | Borde decorativo sobre superficie | 1.3 | 1.4 |
 | Dorado sobre superficie | 2.1 | 10.3 |
-| Turquesa sobre turquesa suave | 4.3 | 7.4 |
+| Acento sobre acento suave (solo iconos) | 4.1 | 6.4 |
 | Ciruela sobre ciruela suave | 7.9 | 4.4 |
 
 **The Tint Rule.** Sobre un tinte suave, el texto va en `--color-texto`. El color del tinte se usa solo en iconos, puntos y bordes.
 
 **The Warm Neutral Rule.** Los neutros tienen sesgo cálido de día y ciruela de noche. No se usan grises puros.
 
-**The One Accent Rule.** Turquesa es el único color de interacción. Ciruela y dorado no indican estados interactivos.
+**The One Accent Rule.** El acento naranja es el único color de interacción. Ciruela y dorado no indican estados interactivos.
 
 ## Typography
 
@@ -236,22 +238,22 @@ El cursor y los iconos pixel son la única geometría pixelada; las superficies 
 ## Components
 
 ### Fondo radial
-`FondoRadial`: tres brillos radiales (`--brillo-1`, `--brillo-2`, `--brillo-3`) sobre `--color-fondo`, con dos capas de trama de dithering de 6px enmascaradas en anillo. Las posiciones cambian entre día y noche.
+`FondoRadial`: tres brillos radiales (`--brillo-1`, `--brillo-2`, `--brillo-3`) sobre `--color-fondo`. De día: durazno `#f5b18c` y ámbar `#f5cf79` translúcidos sobre crema, con un toque ciruela abajo. De noche: brasa `#5a292d` y cobre `#57351d` sobre `#14101a`, para que el fondo parezca de brasas y no una versión marrón del modo claro. Dos capas de trama de dithering de 6px en el color del acento, enmascaradas en anillo. Las posiciones cambian entre día y noche.
 
 ### Menú de juego
-`MenuJuego`: tarjeta con opciones de 64px de alto. Cada opción tiene una baldosa turquesa suave de 40px con un icono pixel, el nombre y una descripción. Un cursor pixel turquesa de 10 por 18px se desplaza hasta la opción activa y oscila 2px con `steps(1)`. Se navega con flechas, Inicio y Fin. La opción activa usa `--color-activo` y la baldosa pasa a turquesa sólido. En pantallas táctiles el cursor solo aparece con foco de teclado.
+`MenuJuego`: tarjeta con opciones de 64px de alto. Cada opción tiene una baldosa de acento suave de 40px con un icono pixel, el nombre y una descripción. Un cursor pixel en acento de 10 por 18px se desplaza hasta la opción activa y oscila 2px con `steps(1)`. Se navega con flechas, Inicio y Fin. La opción activa usa `--color-activo` y la baldosa pasa a acento sólido. En pantallas táctiles el cursor solo aparece con foco de teclado.
 
 ### Enlaces de acción
 `EnlaceAccion`: 44px de alto, radio de 10px e icono pixel de 24px.
-- **Principal:** fondo turquesa con texto en `--color-fondo`. En hover, brillo de 1.08.
-- **Secundaria:** superficie con borde. En hover, borde turquesa y desplazamiento de 1px hacia arriba.
+- **Principal:** fondo de acento con texto en `--color-sobre-acento`. En hover, brillo de 1.08.
+- **Secundaria:** superficie con borde. En hover, borde de acento y desplazamiento de 1px hacia arriba.
 - **Active:** escala de 0.97.
 
 ### Control segmentado
 `ControlSegmentado`: grupo de botones de 36px sobre una superficie con borde, con una pastilla que se desliza hasta la opción actual en 180ms. Se usa para el idioma.
 
 ### Selector de tema
-`SelectorTema`: un botón de 44px con el icono del modo elegido (Sistema, Claro u Oscuro) que despliega un menú de juego con las tres opciones. Cada opción tiene el cursor pixel y una baldosa de 32px; la elegida pasa a turquesa sólido. Se abre con clic o flecha abajo, se recorre con flechas, se elige con Enter y se cierra con Escape, clic afuera o Tab. Abre en 160ms con `--ease-salida` desde su esquina. La preferencia se guarda, se sincroniza entre pestañas y, en Sistema, sigue a `prefers-color-scheme` en vivo; un script en `index.html` aplica el tema antes de pintar para evitar el destello.
+`SelectorTema`: un botón de 44px con el icono del modo elegido (Sistema, Claro u Oscuro) que despliega un menú de juego con las tres opciones. Cada opción tiene el cursor pixel y una baldosa de 32px; la elegida pasa a acento sólido. Se abre con clic o flecha abajo, se recorre con flechas, se elige con Enter y se cierra con Escape, clic afuera o Tab. Abre en 160ms con `--ease-salida` desde su esquina. La preferencia se guarda, se sincroniza entre pestañas y, en Sistema, sigue a `prefers-color-scheme` en vivo; un script en `index.html` aplica el tema antes de pintar para evitar el destello.
 
 ### Icono pixel
 `IconoPixel`: máscara PNG (`public/sprites/mascara-*.png`) pintada con `currentColor`, de 24px por defecto. Así los iconos siguen el tema y el estado.
@@ -270,7 +272,7 @@ Pastilla de superficie con borde y sombra chica, con ChamDev en Jersey 25 a 25px
 
 ### Do:
 - **Do** tomar todos los colores de los tokens `--color-*` y verificar cada vista en día y en noche.
-- **Do** usar turquesa para todo estado interactivo: activo, foco (2px con 2px de separación) y acción principal.
+- **Do** usar el acento para todo estado interactivo: activo, foco (2px con 2px de separación) y acción principal.
 - **Do** dibujar los iconos monocromos como máscaras y mostrarlos con `IconoPixel`.
 - **Do** mostrar los sprites a color (como los iconos de tecnologías) a escala entera, con `image-rendering: pixelated` y `filter: var(--contorno-sprite)`, que de noche les dibuja un contorno claro de 1px para que los sprites oscuros no se pierdan sobre superficies oscuras.
 - **Do** mantener una sola animación protagonista por pantalla.

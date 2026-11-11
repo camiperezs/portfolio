@@ -22,7 +22,7 @@
 
 .accion.principal {
   border-color: transparent;
-  background: var(--color-turquesa);
+  background: var(--color-acento);
   box-shadow: var(--sombra-chica);
   color: var(--color-sobre-acento);
   font-weight: 600;
@@ -30,7 +30,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .accion.secundaria:hover {
-    border-color: var(--color-turquesa);
+    border-color: var(--color-acento);
     transform: translateY(-1px);
   }
 

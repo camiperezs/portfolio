@@ -16,7 +16,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 12px;
-  color: var(--color-turquesa);
+  color: var(--color-acento);
 }
 
 .contacto-directo-email a {
@@ -32,8 +32,9 @@
 
 @media (hover: hover) and (pointer: fine) {
   .contacto-directo-email a:hover {
-    color: var(--color-turquesa);
     text-decoration: underline;
+    text-decoration-color: var(--color-acento);
+    text-decoration-thickness: 2px;
   }
 }
 

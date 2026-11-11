@@ -37,7 +37,7 @@ Un cliente o reclutador llega normalmente desde un enlace directo, en escritorio
 ## Brand Commitments
 
 - Marca: ChamDev. Nombre visible: Camila Perez, sin tilde.
-- Compromiso de identidad: "Modern Retro RPG", una interfaz de producto moderno con acentos de videojuego de 16 bits (cursor pixel, iconos pixel y trama de dithering), con neutros cálidos, turquesa, dorado y ciruela. El detalle está en `DESIGN.md`.
+- Compromiso de identidad: "Modern Retro RPG", una interfaz de producto moderno con acentos de videojuego de 16 bits (cursor pixel, iconos pixel y trama de dithering), con neutros cálidos, naranja Fuego vibrante (`--color-acento`), dorado y ciruela. El detalle está en `DESIGN.md`.
 - Títulos profesionales, sin nombres medievalizados.
 - Email público: cperez.dev@outlook.com.
 

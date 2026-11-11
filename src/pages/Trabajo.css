@@ -48,7 +48,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .ficha-volver:hover {
-    color: var(--color-turquesa);
+    color: var(--color-acento);
   }
 }
 
@@ -125,7 +125,7 @@
   width: 6px;
   height: 6px;
   margin-top: 11px;
-  background: var(--color-turquesa);
+  background: var(--color-ciruela);
 }
 
 .ficha-accion {
@@ -133,7 +133,7 @@
 }
 
 .ficha-enlace {
-  color: var(--color-turquesa);
+  color: var(--color-acento);
   font-weight: 500;
   text-underline-offset: 3px;
 }

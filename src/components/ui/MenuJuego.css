@@ -23,7 +23,7 @@
   left: 16px;
   width: 10px;
   height: 18px;
-  color: var(--color-turquesa);
+  color: var(--color-acento);
   pointer-events: none;
   animation: menu-seleccion-vaiven 700ms steps(1) infinite;
 }
@@ -86,7 +86,7 @@
 }
 
 .menu-seleccion-opcion:focus-visible {
-  outline: 2px solid var(--color-turquesa);
+  outline: 2px solid var(--color-acento);
   outline-offset: 2px;
 }
 
@@ -96,14 +96,14 @@
   width: 40px;
   height: 40px;
   border-radius: var(--radio);
-  background: var(--color-turquesa-suave);
-  color: var(--color-turquesa);
+  background: var(--color-acento-suave);
+  color: var(--color-acento);
   transition: background-color 150ms ease, color 150ms ease;
 }
 
 .menu-seleccion-opcion.activa .menu-seleccion-baldosa {
-  background: var(--color-turquesa);
-  color: var(--color-fondo);
+  background: var(--color-acento);
+  color: var(--color-sobre-acento);
 }
 
 .menu-seleccion-texto {
@@ -136,8 +136,8 @@
   }
 
   .menu-seleccion-opcion.activa:not(:focus-visible) .menu-seleccion-baldosa {
-    background: var(--color-turquesa-suave);
-    color: var(--color-turquesa);
+    background: var(--color-acento-suave);
+    color: var(--color-acento);
   }
 }
 

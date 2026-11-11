@@ -28,8 +28,8 @@
 }
 
 .etiqueta-experiencia {
-  --fondo-etiqueta: var(--color-turquesa-suave);
-  --punto-etiqueta: var(--color-turquesa);
+  --fondo-etiqueta: var(--color-acento-suave);
+  --punto-etiqueta: var(--color-acento);
   box-shadow: none;
 }
 

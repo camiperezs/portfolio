@@ -19,7 +19,7 @@
 }
 
 .fila-cursor {
-  color: var(--color-turquesa);
+  color: var(--color-acento);
   visibility: hidden;
 }
 
@@ -35,7 +35,7 @@
   width: 40px;
   height: 40px;
   border-radius: var(--radio);
-  background: var(--color-turquesa-suave);
+  background: var(--color-acento-suave);
   transition: box-shadow 150ms ease;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .fila.activa .fila-baldosa {
-  box-shadow: inset 0 0 0 2px var(--color-turquesa);
+  box-shadow: inset 0 0 0 2px var(--color-acento);
 }
 
 .fila.activa .fila-cursor,

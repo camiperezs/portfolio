@@ -36,8 +36,8 @@
 }
 
 .linea-experiencia .linea-punto {
-  background: var(--color-turquesa);
-  outline-color: var(--color-turquesa);
+  background: var(--color-acento);
+  outline-color: var(--color-acento);
 }
 
 .linea-tarjeta {
@@ -100,7 +100,7 @@
   width: 6px;
   height: 6px;
   margin-top: 11px;
-  background: var(--color-turquesa);
+  background: var(--color-ciruela);
 }
 
 .linea-enlace {
@@ -108,7 +108,7 @@
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  color: var(--color-turquesa);
+  color: var(--color-acento);
   font-weight: 500;
   text-underline-offset: 3px;
 }
