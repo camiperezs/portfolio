@@ -1,38 +1,24 @@
-import { useId } from 'react'
-import { useSearchParams } from 'react-router-dom'
 import EnlaceAccion from '../components/ui/EnlaceAccion'
-import LineaTiempo from '../components/ui/LineaTiempo'
 import Panel from '../components/ui/Panel'
-import Pestanas from '../components/ui/Pestanas'
+import ResumenTrayectoria from '../components/ui/ResumenTrayectoria'
 import { useIdioma } from '../context/IdiomaContext'
 import { useTituloPagina } from '../hooks/useTituloPagina'
 import { iconoEscribir } from '../data/navegacion'
 import { perfil, redes } from '../data/perfil'
-import { paradasRecorrido, pestanasSobreMi, retrato } from '../data/sobreMi'
-import type { PestanaSobreMi } from '../data/sobreMi'
+import { columnasTrayectoria, retrato } from '../data/sobreMi'
 import './SobreMi.css'
-
-const parametroSeccion = 'seccion'
 
 export default function SobreMi() {
   const { textos } = useIdioma()
   useTituloPagina(textos.sobreMi.titulo)
   const { sobreMi } = textos
-  const { recorrido } = sobreMi
-  const idBase = useId()
-  const [parametros, setParametros] = useSearchParams()
-  const pedida = parametros.get(parametroSeccion)
-  const actual: PestanaSobreMi = pestanasSobreMi.find((id) => id === pedida) ?? pestanasSobreMi[0]
+  const { trayectoria } = sobreMi
 
-  const cambiar = (id: string) => {
-    setParametros(id === pestanasSobreMi[0] ? {} : { [parametroSeccion]: id }, { replace: true })
-  }
-
-  const pestanas = pestanasSobreMi.map((id) => ({ id, texto: sobreMi.pestanas[id] }))
-  const pasos = paradasRecorrido.map(({ id, tipo }) => ({
-    ...recorrido.paradas[id],
+  const columnas = columnasTrayectoria.map(({ id, icono, entradas }) => ({
     id,
-    tipo: { texto: recorrido.tipos[tipo], variante: tipo },
+    icono,
+    titulo: trayectoria.columnas[id],
+    entradas: entradas.map((entrada) => ({ id: entrada, ...trayectoria.entradas[entrada] })),
   }))
 
   return (
@@ -56,25 +42,13 @@ export default function SobreMi() {
           </p>
         </div>
       </div>
-      <Pestanas etiqueta={sobreMi.secciones} idBase={idBase} pestanas={pestanas} actual={actual} onCambiar={cambiar} />
-      <div
-        className="sobre-mi-panel"
-        id={`${idBase}-panel`}
-        role="tabpanel"
-        aria-labelledby={`${idBase}-pestana-${actual}`}
-        tabIndex={0}
-      >
-        {actual === 'recorrido' ? (
-          <LineaTiempo etiqueta={recorrido.etiqueta} pasos={pasos} />
-        ) : (
-          sobreMi.perfil.map((parrafo) => <p key={parrafo}>{parrafo}</p>)
-        )}
-        <div className="sobre-mi-acciones" role="group" aria-label={sobreMi.contacto}>
-          <EnlaceAccion texto={textos.inicio.escribir} icono={iconoEscribir} destino="/contacto" variante="principal" />
-          {redes.map(({ texto, url, icono }) => (
-            <EnlaceAccion key={url} texto={texto} icono={icono} destino={url} externo />
-          ))}
-        </div>
+      <p className="sobre-mi-presentacion">{sobreMi.presentacion}</p>
+      <ResumenTrayectoria etiqueta={trayectoria.etiqueta} columnas={columnas} />
+      <div className="sobre-mi-acciones" role="group" aria-label={sobreMi.contacto}>
+        <EnlaceAccion texto={textos.inicio.escribir} icono={iconoEscribir} destino="/contacto" variante="principal" />
+        {redes.map(({ texto, url, icono }) => (
+          <EnlaceAccion key={url} texto={texto} icono={icono} destino={url} externo />
+        ))}
       </div>
     </Panel>
   )

@@ -1,4 +1,3 @@
-import { certificados } from '../sobreMi'
 import type { Textos } from './es'
 
 export const en: Textos = {
@@ -28,83 +27,18 @@ export const en: Textos = {
   },
   sobreMi: {
     titulo: 'About me',
-    secciones: 'About me sections',
-    pestanas: { perfil: 'Profile', recorrido: 'Journey' },
     retrato: 'Pixel art portrait of',
     contacto: 'Contact links',
-    perfil: [
-      "I'm a software developer with a backend focus. I'm interested in working on the structure and logic that make an application run, from data modeling to service integration.",
-      'I especially enjoy the analysis and design stage, where I can evaluate different approaches and turn requirements into technical solutions. My frontend experience complements this perspective and lets me approach web projects as a whole.',
-    ],
-    recorrido: {
-      etiqueta: 'Career and education journey',
-      tipos: { experiencia: 'Experience', formacion: 'Education' },
-      paradas: {
-        inicios: {
-          fecha: '2022',
-          titulo: 'Programación desde cero Latam',
-          lugar: 'Egg',
-          parrafos: [
-            'I learned programming logic with PSeInt, an open-source tool for students, and wrote my first algorithms.',
-          ],
-        },
-        fullStack: {
-          fecha: '2023',
-          titulo: 'Full Stack Latam',
-          lugar: 'Egg Live',
-          parrafos: [
-            'I took an intensive Full Stack development program, with hands-on practice in frontend and backend, databases and REST API development.',
-            'I worked in teams with students from different Latin American countries on collaborative activities and projects.',
-          ],
-          enlaces: [{ texto: 'View certificate', url: certificados.fullStack }],
-        },
-        desarrolloWeb: {
-          fecha: '2023',
-          titulo: 'Desarrollo Web Completo',
-          lugar: 'Udemy',
-          parrafos: [
-            "I took Juan Pablo De la Torre Valdez's course, covering HTML, CSS, Sass, JavaScript, PHP, object-oriented programming, MVC, MySQL and API integration.",
-            'During this stage I built my first personal projects and deepened my PHP knowledge. I stopped the course when I joined my first job as a developer.',
-          ],
-        },
-        waia: {
-          fecha: '2024 – 2026',
-          titulo: 'Full Stack Developer',
-          lugar: 'WAIA',
-          parrafos: ['I built features for production OpenCart stores using PHP and MySQL.'],
-          logros: [
-            'Integrated Mercado Pago and MODO payments through REST APIs, OAuth and webhooks.',
-            'Implemented business rules for promotions, discounts and gift cards.',
-            'Automated processes and reports.',
-            'Gathered requirements directly from clients.',
-          ],
-        },
-        ciberseguridad: {
-          fecha: '2025 – present',
-          titulo: 'Arquitectura en Ciberseguridad',
-          lugar: 'Educación IT',
-          parrafos: [
-            'I study the fundamentals of information security, networks and Linux systems, along with secure development and DevSecOps practices.',
-            'I completed Introduction to Cybersecurity and I am continuing with network security, Linux system administration and secure development.',
-          ],
-          enlaces: [
-            { texto: 'View Introduction to Cybersecurity certificate', url: certificados.introduccionCiberseguridad },
-          ],
-        },
-        actual: {
-          fecha: '2026 – present',
-          titulo: 'Backend Developer',
-          lugar: 'AI automation startup',
-          parrafos: [
-            'I work at a startup that uses AI to automate processes and reduce manual work. Alongside this, I am deepening my knowledge of Java and Spring Boot.',
-          ],
-          logros: [
-            'Build services with Node.js and Fastify, on PostgreSQL and Redis.',
-            'Implement JWT authentication and role and permission control.',
-            'Implement AWS Lambda functions and API Gateway.',
-            'Implement external service integrations and automations.',
-          ],
-        },
+    presentacion:
+      "I'm a software developer with a backend focus. I like designing solutions, working on application logic and integrating services. I especially enjoy turning needs into concrete features.",
+    trayectoria: {
+      etiqueta: 'Career summary',
+      columnas: { experiencia: 'Work experience', formacion: 'Education' },
+      entradas: {
+        actual: { fecha: '2026 – present', titulo: 'Backend Developer', lugar: 'AI automation startup' },
+        waia: { fecha: '2024 – 2026', titulo: 'Full Stack Developer', lugar: 'WAIA' },
+        ciberseguridad: { fecha: '2025 – present', titulo: 'Cybersecurity', lugar: 'Educación IT' },
+        fullStack: { fecha: '2023', titulo: 'Full Stack Development', lugar: 'Egg Live · Udemy' },
       },
     },
   },
@@ -127,10 +61,9 @@ export const en: Textos = {
   },
   experiencia: {
     titulo: 'Experience',
-    intro: 'Areas I have worked on professionally: what the problem was, what I did and which technologies I used.',
+    intro: 'Solutions and features I built professionally.',
     etiqueta: 'Experience areas',
-    problema: 'The problem',
-    queHice: 'What I did',
+    queHice: 'What I built',
     tecnologias: 'Technologies',
     cierre: {
       titulo: 'Need to solve something similar?',
@@ -139,33 +72,33 @@ export const en: Textos = {
     },
     areas: {
       ecommerce: {
+        pestana: 'E-commerce',
         titulo: 'E-commerce integrations and systems',
-        problema:
-          'Production stores that needed to accept local payment methods and adapt checkout to their business rules.',
+        descripcion: 'Payment integrations, checkout customization and commercial features for online stores.',
         logros: [
-          'Integrated Mercado Pago, MODO and GOcuotas through REST APIs, OAuth and webhooks, and maintained and improved those integrations.',
-          'Adapted checkout and payment flows to each business’s requirements.',
-          'Implemented business rules for promotions, discounts and gift cards.',
-          'Automated processes and reports, and gathered requirements directly from clients.',
+          'Integrated, maintained and improved Mercado Pago, MODO and GOcuotas.',
+          'Adapted checkout, promotions, discounts and gift cards.',
+          'Automated processes and reports.',
         ],
       },
       autenticacion: {
+        pestana: 'Security & roles',
         titulo: 'Authentication, roles and permissions',
-        problema: 'Each user must access only the features and data that belong to them.',
+        descripcion: 'Authentication and authorization mechanisms for applications with different types of users.',
         logros: [
-          'Implement JWT authentication.',
-          'Implement role and permission control in backend services.',
-          'Protect endpoints by validating permissions before each operation.',
+          'Authentication with JWT.',
+          'Role- and permission-based access control.',
+          'Protection of backend endpoints and operations.',
         ],
       },
       automatizacion: {
+        pestana: 'Automation & AI',
         titulo: 'Automation and AI systems',
-        problema: 'Manual processes that needed to be automated and integrated with other services.',
+        descripcion: 'Backend development for a recruiting platform with automated processes and external integrations.',
         logros: [
-          'Build features for a recruitment platform.',
-          'Integrate external services and automate processes.',
-          'Migrate automation workflows to custom code.',
-          'Build services with Node.js and Fastify, plus AWS Lambda functions and API Gateway.',
+          'Built features for recruiting processes.',
+          'Integrated external services and migrated automated workflows to code.',
+          'Implemented backend services and serverless functions.',
         ],
       },
     },

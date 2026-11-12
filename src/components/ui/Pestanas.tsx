@@ -42,7 +42,7 @@ export default function Pestanas({ etiqueta, idBase, pestanas, actual, onCambiar
           id={`${idBase}-pestana-${id}`}
           className="pestana-seccion"
           aria-selected={id === actual}
-          aria-controls={`${idBase}-panel`}
+          aria-controls={`${idBase}-panel-${id}`}
           tabIndex={id === actual ? 0 : -1}
           onClick={() => onCambiar(id)}
           onKeyDown={(evento) => moverCon(evento, indice)}

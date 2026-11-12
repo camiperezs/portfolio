@@ -1,8 +1,9 @@
 export type IdArea = 'ecommerce' | 'autenticacion' | 'automatizacion'
 
 export type TextoArea = {
+  pestana: string
   titulo: string
-  problema: string
+  descripcion: string
   logros: string[]
 }
 
@@ -15,7 +16,7 @@ export const areasExperiencia: { id: IdArea; icono: string; tecnologias: string[
   {
     id: 'autenticacion',
     icono: '/sprites/mascara-candado.png',
-    tecnologias: ['JWT', 'Node.js', 'Fastify'],
+    tecnologias: ['Node.js', 'Fastify', 'JWT'],
   },
   {
     id: 'automatizacion',

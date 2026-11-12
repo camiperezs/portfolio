@@ -1,6 +1,6 @@
 .experiencia {
   gap: 22px;
-  max-width: 900px;
+  max-width: 820px;
 }
 
 .experiencia-cabecera {
@@ -13,11 +13,11 @@
   color: var(--color-texto-suave);
 }
 
-.experiencia-areas {
+.experiencia-explorador {
   display: grid;
-  gap: 14px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  gap: 22px;
 }
 
+.experiencia-paneles {
+  display: grid;
+}
