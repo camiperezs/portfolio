@@ -74,21 +74,23 @@ export const en: Texts = {
         role: 'Backend Developer',
         period: 'Sep 2026 – present',
         description: [
-          'Unio uses artificial intelligence and automation to speed up hiring processes and reduce the operational load on HR teams.',
+          'Unio speeds up hiring processes and reduces the operational load on company teams, using artificial intelligence and automation.',
         ],
         achievements: [
           'Business logic, endpoints and APIs with Node.js and Fastify.',
           'Authentication and role- and permission-based access control with JWT.',
           'Serverless services with AWS Lambda and API Gateway.',
           'Automation workflows in n8n, integrations with external services and migration of automated workflows to code.',
-          'Database changes that I prepare and test locally, coordinated with the team for their production rollout.',
-          'Occasional frontend work.',
+          'Database changes.',
+          'Collaboration on the frontend.',
         ],
       },
       waia: {
         role: 'Full Stack Developer',
         period: 'Mar 2024 – Jul 2026',
-        description: ['Development and maintenance of a production e-commerce platform built on OpenCart.'],
+        description: [
+          'Development and maintenance of production e-commerce platforms built on OpenCart, analyzing client requirements and needs to deliver updates and task automation.',
+        ],
         achievements: [
           'Mercado Pago and MODO integrations with REST APIs, OAuth and webhooks.',
           'Checkout, payment methods, shipping and shopping experience components.',

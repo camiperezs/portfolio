@@ -8,21 +8,23 @@ const jobs: Record<JobId, JobText> = {
     role: 'Desarrolladora Backend',
     period: 'sept. 2026 – actualidad',
     description: [
-      'Unio usa inteligencia artificial y automatización para agilizar los procesos de selección de personal y reducir la carga operativa de los equipos de recursos humanos.',
+      'Unio agiliza procesos de selección de personal y reduce la carga operativa de los equipos en empresas, utilizando la inteligencia artificial y automatizaciones.',
     ],
     achievements: [
       'Lógica de negocio, endpoints y APIs con Node.js y Fastify.',
       'Autenticación y control de acceso por roles y permisos con JWT.',
       'Servicios serverless con AWS Lambda y API Gateway.',
       'Flujos de automatización en n8n, integraciones con servicios externos y migración de flujos automatizados a código.',
-      'Cambios de base de datos que preparo y pruebo en local, coordinados con el equipo para su ejecución en producción.',
-      'Colaboración ocasional en frontend.',
+      'Cambios en la base de datos.',
+      'Colaboración con el frontend.',
     ],
   },
   waia: {
     role: 'Desarrolladora Full Stack',
     period: 'mar. 2024 – jul. 2026',
-    description: ['Desarrollo y mantenimiento de una plataforma e-commerce en producción sobre OpenCart.'],
+    description: [
+      'Desarrollo y mantenimiento de plataformas e-commerce en producción sobre OpenCart, analizando los requerimientos y necesidades de los clientes para realizar actualizaciones y automatizaciones de tareas.',
+    ],
     achievements: [
       'Integración de Mercado Pago y MODO con REST APIs, OAuth y webhooks.',
       'Checkout, medios de pago, envíos y componentes de la experiencia de compra.',
