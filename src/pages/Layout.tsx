@@ -16,7 +16,7 @@ export default function Layout() {
     window.scrollTo(0, 0)
   }, [pathname])
 
-  const seccionesNavbar = secciones.map(({ id, ruta, icono }) => ({ ruta, icono, texto: textos.navegacion[id] }))
+  const seccionesNavbar = secciones.map(({ id, ruta }) => ({ ruta, texto: textos.navegacion[id] }))
 
   return (
     <FondoRadial>

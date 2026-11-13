@@ -1,13 +1,11 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import IconoPixel from '../ui/IconoPixel'
 import './Navbar.css'
 
 type Seccion = {
   ruta: string
   texto: string
-  icono: string
 }
 
 type Props = {
@@ -61,10 +59,9 @@ export default function Navbar({ marca, etiqueta, textoMenu, secciones, controle
         <div className="barra-panel" id={idPanel}>
           <nav aria-label={etiqueta}>
             <ul className="barra-secciones">
-              {secciones.map(({ ruta, texto, icono }) => (
+              {secciones.map(({ ruta, texto }) => (
                 <li key={ruta}>
                   <NavLink to={ruta} className="barra-seccion" onClick={() => setAbierto(false)}>
-                    <IconoPixel imagen={icono} />
                     {texto}
                   </NavLink>
                 </li>

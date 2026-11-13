@@ -22,7 +22,12 @@ export default function ControlSegmentado<T extends string>({ etiqueta, opciones
 
   useLayoutEffect(() => {
     const boton = botones.current[actual]
-    if (boton) setPastilla({ x: boton.offsetLeft, ancho: boton.offsetWidth })
+    if (!boton) return
+    const medir = () => setPastilla({ x: boton.offsetLeft, ancho: boton.offsetWidth })
+    medir()
+    const observador = new ResizeObserver(medir)
+    observador.observe(boton)
+    return () => observador.disconnect()
   }, [actual, opciones])
 
   return (

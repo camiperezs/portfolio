@@ -89,7 +89,7 @@ export default function SelectorTema<T extends string>({ etiqueta, cursor, opcio
           setAbierto(true)
         }}
       >
-        <IconoPixel imagen={elegida.icono} />
+        <IconoPixel imagen={elegida.icono} tamano={18} />
         <span className="selector-tema-flecha" aria-hidden="true"></span>
       </button>
       {abierto && (
@@ -113,7 +113,7 @@ export default function SelectorTema<T extends string>({ etiqueta, cursor, opcio
                 <IconoPixel imagen={cursor} tamano={10} />
               </span>
               <span className="selector-tema-baldosa" aria-hidden="true">
-                <IconoPixel imagen={icono} />
+                <IconoPixel imagen={icono} tamano={16} />
               </span>
               {texto}
             </button>
