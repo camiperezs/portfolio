@@ -32,8 +32,6 @@ export const en: Texts = {
     location: 'Working remotely',
     introduction: [
       "I like solving problems end to end: understanding what's needed, weighing alternatives, proposing a solution with a clear scope and building it until it works.",
-      'I currently work as a Backend Developer at Unio and take on freelance projects, always remotely.',
-      'I work across frontend and backend, and backend is where I most want to keep growing: APIs, integrations, databases and automation.',
     ],
     career: {
       label: 'Career summary',

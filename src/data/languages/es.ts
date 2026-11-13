@@ -115,8 +115,6 @@ export const es = {
     location: 'Trabajo remoto',
     introduction: [
       'Me gusta resolver problemas completos: entender qué se necesita, evaluar alternativas, proponer una solución con un alcance claro y desarrollarla hasta que funcione.',
-      'Hoy trabajo como Desarrolladora Backend en Unio y tomo proyectos freelance, siempre en modalidad remota.',
-      'Me muevo tanto en frontend como en backend, y es en el backend donde más quiero seguir creciendo: APIs, integraciones, bases de datos y automatizaciones.',
     ],
     career: {
       label: 'Trayectoria resumida',
