@@ -1,4 +1,4 @@
-.contenido {
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,12 +6,12 @@
   image-rendering: pixelated;
 }
 
-.contenido > * {
+.content > * {
   width: 100%;
 }
 
 @media (max-width: 840px) {
-  .contenido {
+  .content {
     align-items: stretch;
     padding: 24px 16px 48px;
   }

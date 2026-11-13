@@ -1,0 +1,23 @@
+.experience {
+  gap: 22px;
+  max-width: 820px;
+}
+
+.experience-header {
+  display: grid;
+  gap: 8px;
+}
+
+.experience-intro {
+  max-width: var(--reading-width);
+  color: var(--color-text-muted);
+}
+
+.experience-explorer {
+  display: grid;
+  gap: 22px;
+}
+
+.experience-panels {
+  display: grid;
+}

@@ -1,0 +1,191 @@
+.contact-card {
+  display: grid;
+  gap: 18px;
+  transition: opacity 150ms ease;
+}
+
+.card-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.card-to {
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-border);
+  font: var(--type-heading);
+}
+
+.card-to span {
+  color: var(--color-text-muted);
+  font: var(--type-detail);
+}
+
+.card-line,
+.card-body {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.card-line label,
+.card-line legend,
+.card-body label {
+  padding: 0;
+  color: var(--color-text);
+  font: var(--type-label);
+  font-weight: 600;
+}
+
+.card-line legend {
+  margin-bottom: 6px;
+}
+
+.card-optional {
+  margin-left: 6px;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.contact-card input:not([type='radio']),
+.contact-card textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-control-border);
+  border-radius: var(--radius);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  background: var(--color-raised);
+  color: var(--color-text);
+  font: var(--type-body);
+  caret-color: var(--color-accent);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.contact-card textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.contact-card input:not([type='radio']):focus,
+.contact-card textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+.contact-card input[aria-invalid='true'],
+.contact-card textarea[aria-invalid='true'] {
+  border-color: var(--color-error);
+}
+
+.contact-card input[aria-invalid='true']:focus,
+.contact-card textarea[aria-invalid='true']:focus {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px var(--color-error-soft);
+}
+
+.card-reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card-chip {
+  position: relative;
+  cursor: pointer;
+}
+
+.card-chip input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.card-chip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 16px 0 14px;
+  border: 1px solid var(--color-control-border);
+  border-radius: var(--radius);
+  background: var(--color-raised);
+  color: var(--color-text);
+  font: var(--type-label);
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.card-chip span::before {
+  content: '';
+  flex: none;
+  width: 8px;
+  height: 8px;
+  box-shadow: inset 0 0 0 2px var(--color-control-border);
+}
+
+.card-chip input:checked + span {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  font-weight: 600;
+}
+
+.card-chip input:checked + span::before {
+  background: var(--color-accent);
+  box-shadow: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-chip:hover input:not(:checked) + span {
+    border-color: var(--color-accent);
+  }
+}
+
+.card-chip input:focus-visible + span {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.card-error {
+  margin: 0;
+  color: var(--color-error);
+  font: var(--type-detail);
+  font-weight: 500;
+}
+
+.card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px 20px;
+  padding-top: 4px;
+}
+
+.card-error-send {
+  flex: 1 1 240px;
+}
+
+.card-error-send:empty {
+  display: none;
+}
+
+.contact-card.sending {
+  opacity: 0.85;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-card,
+  .contact-card input,
+  .contact-card textarea,
+  .card-chip span {
+    transition: none;
+  }
+}

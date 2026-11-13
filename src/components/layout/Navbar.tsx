@@ -3,72 +3,72 @@ import type { ReactNode } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import './Navbar.css'
 
-type Seccion = {
-  ruta: string
-  texto: string
+type Section = {
+  path: string
+  text: string
 }
 
 type Props = {
-  marca: string
-  etiqueta: string
-  textoMenu: string
-  secciones: Seccion[]
-  controles: ReactNode
+  brand: string
+  label: string
+  menuText: string
+  sections: Section[]
+  controls: ReactNode
 }
 
-export default function Navbar({ marca, etiqueta, textoMenu, secciones, controles }: Props) {
-  const idPanel = useId()
-  const caja = useRef<HTMLDivElement>(null)
-  const boton = useRef<HTMLButtonElement>(null)
-  const [abierto, setAbierto] = useState(false)
+export default function Navbar({ brand, label, menuText, sections, controls }: Props) {
+  const panelId = useId()
+  const box = useRef<HTMLDivElement>(null)
+  const button = useRef<HTMLButtonElement>(null)
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
-    if (!abierto) return
-    const cerrarAfuera = (evento: PointerEvent) => {
-      if (!caja.current?.contains(evento.target as Node)) setAbierto(false)
+    if (!isOpen) return
+    const closeOnOutside = (event: PointerEvent) => {
+      if (!box.current?.contains(event.target as Node)) setIsOpen(false)
     }
-    document.addEventListener('pointerdown', cerrarAfuera)
-    return () => document.removeEventListener('pointerdown', cerrarAfuera)
-  }, [abierto])
+    document.addEventListener('pointerdown', closeOnOutside)
+    return () => document.removeEventListener('pointerdown', closeOnOutside)
+  }, [isOpen])
 
   return (
-    <header className="barra">
+    <header className="navbar">
       <div
-        ref={caja}
-        className={abierto ? 'barra-caja abierta' : 'barra-caja'}
-        onKeyDown={(evento) => {
-          if (evento.key !== 'Escape' || !abierto) return
-          setAbierto(false)
-          boton.current?.focus()
+        ref={box}
+        className={isOpen ? 'navbar-box open' : 'navbar-box'}
+        onKeyDown={(event) => {
+          if (event.key !== 'Escape' || !isOpen) return
+          setIsOpen(false)
+          button.current?.focus()
         }}
       >
-        <Link className="barra-marca" to="/">
-          {marca}
+        <Link className="navbar-brand" to="/">
+          {brand}
         </Link>
         <button
-          ref={boton}
+          ref={button}
           type="button"
-          className="barra-abrir"
-          aria-expanded={abierto}
-          aria-controls={idPanel}
-          onClick={() => setAbierto(!abierto)}
+          className="navbar-toggle"
+          aria-expanded={isOpen}
+          aria-controls={panelId}
+          onClick={() => setIsOpen(!isOpen)}
         >
-          <span className="barra-abrir-icono" aria-hidden="true"></span>
-          {textoMenu}
+          <span className="navbar-toggle-icon" aria-hidden="true"></span>
+          {menuText}
         </button>
-        <div className="barra-panel" id={idPanel}>
-          <nav aria-label={etiqueta}>
-            <ul className="barra-secciones">
-              {secciones.map(({ ruta, texto }) => (
-                <li key={ruta}>
-                  <NavLink to={ruta} className="barra-seccion" onClick={() => setAbierto(false)}>
-                    {texto}
+        <div className="navbar-panel" id={panelId}>
+          <nav aria-label={label}>
+            <ul className="navbar-sections">
+              {sections.map(({ path, text }) => (
+                <li key={path}>
+                  <NavLink to={path} className="navbar-section" onClick={() => setIsOpen(false)}>
+                    {text}
                   </NavLink>
                 </li>
               ))}
             </ul>
           </nav>
-          <div className="barra-controles">{controles}</div>
+          <div className="navbar-controls">{controls}</div>
         </div>
       </div>
     </header>

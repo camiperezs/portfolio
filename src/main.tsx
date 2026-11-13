@@ -2,18 +2,18 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
-import { IdiomaProvider } from './context/IdiomaContext'
-import { TemaProvider } from './context/TemaContext'
+import { LanguageProvider } from './context/LanguageContext'
+import { ThemeProvider } from './context/ThemeContext'
 import './styles/global.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      <IdiomaProvider>
-        <TemaProvider>
+      <LanguageProvider>
+        <ThemeProvider>
           <App />
-        </TemaProvider>
-      </IdiomaProvider>
+        </ThemeProvider>
+      </LanguageProvider>
     </BrowserRouter>
   </StrictMode>,
 )

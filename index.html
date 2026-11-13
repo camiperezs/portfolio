@@ -13,24 +13,24 @@
     <title>ChamDev</title>
     <script>
         (function () {
-            var preferencia = null;
+            var preference = null;
             try {
-                preferencia = localStorage.getItem('tema');
+                preference = localStorage.getItem('theme');
             } catch (error) {}
-            var oscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            var tema = preferencia === 'dia' || preferencia === 'noche' ? preferencia : oscuro ? 'noche' : 'dia';
-            document.documentElement.dataset.tema = tema;
+            var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = preference === 'light' || preference === 'dark' ? preference : dark ? 'dark' : 'light';
+            document.documentElement.dataset.theme = theme;
         })();
     </script>
 </head>
 <body>
-    <form name="contacto" data-netlify="true" netlify-honeypot="campo-trampa" hidden>
-        <input type="text" name="nombre">
+    <form name="contacto" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name">
         <input type="email" name="email">
-        <input type="tel" name="telefono">
-        <input type="text" name="motivo">
-        <textarea name="mensaje"></textarea>
-        <input type="text" name="campo-trampa">
+        <input type="tel" name="phone">
+        <input type="text" name="reason">
+        <textarea name="message"></textarea>
+        <input type="text" name="bot-field">
     </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

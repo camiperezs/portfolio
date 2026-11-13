@@ -1,10 +1,10 @@
-.barra {
+.navbar {
   position: relative;
   z-index: 3;
   padding: 16px max(16px, 3vw) 0;
 }
 
-.barra-caja {
+.navbar-box {
   position: relative;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -14,32 +14,32 @@
   margin-inline: auto;
 }
 
-.barra-marca,
-.barra-secciones,
-.barra-controles,
-.barra-abrir {
-  border: 1px solid var(--color-borde);
-  border-radius: var(--radio-grande);
-  background: var(--color-superficie);
-  box-shadow: var(--sombra-elevada);
+.navbar-brand,
+.navbar-sections,
+.navbar-controls,
+.navbar-toggle {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-raised);
 }
 
-.barra-marca {
+.navbar-brand {
   display: flex;
   align-items: center;
   justify-self: start;
   min-height: 56px;
   padding: 0 20px;
-  color: var(--color-texto);
-  font: var(--tipo-marca);
+  color: var(--color-text);
+  font: var(--type-brand);
   text-decoration: none;
 }
 
-.barra-panel {
+.navbar-panel {
   display: contents;
 }
 
-.barra-secciones {
+.navbar-sections {
   display: flex;
   gap: 4px;
   margin: 0;
@@ -47,103 +47,103 @@
   list-style: none;
 }
 
-.barra-seccion {
+.navbar-section {
   display: flex;
   align-items: center;
   min-height: 44px;
   padding: 0 14px;
-  border-radius: var(--radio);
-  color: var(--color-texto-suave);
-  font: var(--tipo-etiqueta);
+  border-radius: var(--radius);
+  color: var(--color-text-muted);
+  font: var(--type-label);
   text-decoration: none;
   white-space: nowrap;
-  transition: background-color 150ms ease, color 150ms ease, transform 140ms var(--ease-salida);
+  transition: background-color 150ms ease, color 150ms ease, transform 140ms var(--ease-out);
 }
 
-.barra-seccion[aria-current='page'] {
-  background: var(--color-acento-suave);
-  color: var(--color-texto);
+.navbar-section[aria-current='page'] {
+  background: var(--color-accent-soft);
+  color: var(--color-text);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .barra-seccion:not([aria-current='page']):hover {
-    background: var(--color-activo);
-    color: var(--color-texto);
+  .navbar-section:not([aria-current='page']):hover {
+    background: var(--color-active);
+    color: var(--color-text);
   }
 
-  .barra-abrir:hover {
-    border-color: var(--color-acento);
+  .navbar-toggle:hover {
+    border-color: var(--color-accent);
   }
 }
 
-.barra-seccion,
-.barra-abrir {
+.navbar-section,
+.navbar-toggle {
   touch-action: manipulation;
 }
 
-.barra-seccion:active,
-.barra-abrir:active {
+.navbar-section:active,
+.navbar-toggle:active {
   transform: scale(0.97);
 }
 
-.barra-marca:focus-visible,
-.barra-seccion:focus-visible,
-.barra-abrir:focus-visible {
-  outline: 2px solid var(--color-foco);
+.navbar-brand:focus-visible,
+.navbar-section:focus-visible,
+.navbar-toggle:focus-visible {
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 
-.barra-controles {
+.navbar-controls {
   display: flex;
   justify-self: end;
   gap: 6px;
   padding: 5px;
 }
 
-.barra-controles .control-segmentado {
+.navbar-controls .segmented-control {
   border-color: transparent;
-  background: var(--color-fondo);
+  background: var(--color-background);
   box-shadow: none;
 }
 
-.barra-controles .selector-tema-boton {
+.navbar-controls .theme-selector-button {
   border-color: transparent;
   background: transparent;
   box-shadow: none;
-  transition: background-color 150ms ease, transform 140ms var(--ease-salida);
+  transition: background-color 150ms ease, transform 140ms var(--ease-out);
 }
 
-.barra-controles .selector-tema-boton[aria-expanded='true'] {
+.navbar-controls .theme-selector-button[aria-expanded='true'] {
   border-color: transparent;
-  background: var(--color-activo);
+  background: var(--color-active);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .barra-controles .selector-tema-boton:hover {
+  .navbar-controls .theme-selector-button:hover {
     border-color: transparent;
-    background: var(--color-activo);
+    background: var(--color-active);
   }
 }
 
-.barra-abrir {
+.navbar-toggle {
   display: none;
   align-items: center;
   gap: 8px;
   min-height: 56px;
   margin-left: auto;
   padding: 0 18px 0 16px;
-  color: var(--color-texto);
-  font: var(--tipo-etiqueta);
+  color: var(--color-text);
+  font: var(--type-label);
   cursor: pointer;
-  transition: border-color 150ms ease, transform 140ms var(--ease-salida);
+  transition: border-color 150ms ease, transform 140ms var(--ease-out);
 }
 
-.barra-abrir[aria-expanded='true'] {
-  border-color: var(--color-acento);
-  background: linear-gradient(var(--color-acento-suave), var(--color-acento-suave)) var(--color-superficie);
+.navbar-toggle[aria-expanded='true'] {
+  border-color: var(--color-accent);
+  background: linear-gradient(var(--color-accent-soft), var(--color-accent-soft)) var(--color-surface);
 }
 
-.barra-abrir-icono {
+.navbar-toggle-icon {
   width: 16px;
   height: 12px;
   background:
@@ -153,15 +153,15 @@
 }
 
 @media (max-width: 1099px) {
-  .barra-caja {
+  .navbar-box {
     display: flex;
   }
 
-  .barra-abrir {
+  .navbar-toggle {
     display: inline-flex;
   }
 
-  .barra-panel {
+  .navbar-panel {
     position: absolute;
     top: calc(100% + 8px);
     right: 0;
@@ -171,45 +171,45 @@
     align-items: stretch;
     gap: 8px;
     padding: 8px;
-    border: 1px solid var(--color-borde);
-    border-radius: var(--radio-grande);
-    background: var(--color-superficie);
-    box-shadow: var(--sombra-elevada);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-raised);
   }
 
-  .barra-caja.abierta .barra-panel {
+  .navbar-box.open .navbar-panel {
     display: flex;
   }
 
-  .barra-secciones,
-  .barra-controles {
+  .navbar-sections,
+  .navbar-controls {
     border: 0;
     border-radius: 0;
     background: none;
     box-shadow: none;
   }
 
-  .barra-secciones {
+  .navbar-sections {
     flex-direction: column;
     gap: 2px;
     padding: 0;
   }
 
-  .barra-seccion {
+  .navbar-section {
     min-height: 52px;
     padding-inline: 14px;
-    color: var(--color-texto);
-    font: var(--tipo-encabezado);
+    color: var(--color-text);
+    font: var(--type-heading);
   }
 
-  .barra-controles {
+  .navbar-controls {
     flex-wrap: wrap;
     justify-self: auto;
     padding: 10px 6px 2px;
-    border-top: 1px solid var(--color-borde);
+    border-top: 1px solid var(--color-border);
   }
 
-  .barra-controles .selector-tema-menu {
+  .navbar-controls .theme-selector-menu {
     right: auto;
     left: 0;
     transform-origin: top left;
@@ -217,14 +217,14 @@
 }
 
 @media (max-width: 420px) {
-  .barra {
+  .navbar {
     padding-inline: 16px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .barra-seccion,
-  .barra-abrir {
+  .navbar-section,
+  .navbar-toggle {
     transition: none;
   }
 }

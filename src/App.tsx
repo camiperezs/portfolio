@@ -1,31 +1,31 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Layout from './pages/Layout'
-import Contacto from './pages/Contacto'
-import Experiencia from './pages/Experiencia'
-import Inicio from './pages/Inicio'
-import Marco from './pages/Marco'
-import ProyectoDetalle from './pages/ProyectoDetalle'
-import Proyectos from './pages/Proyectos'
-import RedireccionTrabajo from './pages/RedireccionTrabajo'
-import SobreMi from './pages/SobreMi'
-import Tecnologias from './pages/Tecnologias'
+import Contact from './pages/Contact'
+import Experience from './pages/Experience'
+import Home from './pages/Home'
+import Frame from './pages/Frame'
+import ProjectDetail from './pages/ProjectDetail'
+import Projects from './pages/Projects'
+import WorkRedirect from './pages/WorkRedirect'
+import About from './pages/About'
+import Technologies from './pages/Technologies'
 
 export default function App() {
   return (
     <Routes>
-      <Route element={<Marco />}>
-        <Route index element={<Inicio />} />
+      <Route element={<Frame />}>
+        <Route index element={<Home />} />
         <Route element={<Layout />}>
-          <Route path="sobre-mi" element={<SobreMi />} />
-          <Route path="tecnologias" element={<Tecnologias />} />
-          <Route path="experiencia" element={<Experiencia />} />
-          <Route path="proyectos" element={<Proyectos />} />
-          <Route path="proyectos/:slug" element={<ProyectoDetalle />} />
-          <Route path="contacto" element={<Contacto />} />
+          <Route path="sobre-mi" element={<About />} />
+          <Route path="tecnologias" element={<Technologies />} />
+          <Route path="experiencia" element={<Experience />} />
+          <Route path="proyectos" element={<Projects />} />
+          <Route path="proyectos/:slug" element={<ProjectDetail />} />
+          <Route path="contacto" element={<Contact />} />
         </Route>
       </Route>
-      <Route path="trabajo" element={<RedireccionTrabajo />} />
-      <Route path="trabajo/:slug" element={<RedireccionTrabajo />} />
+      <Route path="trabajo" element={<WorkRedirect />} />
+      <Route path="trabajo/:slug" element={<WorkRedirect />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )

@@ -1,0 +1,30 @@
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.cta-text {
+  min-width: 0;
+}
+
+.cta h2 {
+  margin: 0 0 4px;
+  font: var(--type-subtitle);
+  letter-spacing: var(--tracking-subtitle);
+  text-wrap: balance;
+}
+
+.cta p {
+  color: var(--color-text-muted);
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

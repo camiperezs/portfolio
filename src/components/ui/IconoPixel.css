@@ -1,9 +1,0 @@
-.icono-pixel {
-  display: block;
-  flex: none;
-  width: var(--tamano);
-  height: var(--tamano);
-  background: currentColor;
-  -webkit-mask: var(--icono) 0 0 / var(--tamano) var(--tamano) no-repeat;
-  mask: var(--icono) 0 0 / var(--tamano) var(--tamano) no-repeat;
-}

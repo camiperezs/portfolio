@@ -15,7 +15,7 @@
 ## Diseño
 
 - Dirección "Modern Retro RPG": interfaz de producto digital moderno (tarjetas con bordes sutiles, mucho espacio negativo, esquinas levemente redondeadas, sombras discretas) con el menú de videojuego, el cursor pixel, iconos de 16 bits y trama de dithering como acentos. Títulos profesionales, sin nombres medievalizados ni ornamentos.
-- Paleta: neutros cálidos, naranja Fuego vibrante (`--color-acento`), dorado y ciruela, con un modo oscuro real. Los colores salen de los tokens `--color-*` de `src/styles/global.css`; el dorado es solo acento, nunca texto sobre fondo claro.
+- Paleta: neutros cálidos, naranja Fuego vibrante (`--color-accent`), dorado y ciruela, con un modo oscuro real. Los colores salen de los tokens `--color-*` de `src/styles/global.css`; el dorado es solo acento, nunca texto sobre fondo claro.
 - Tipografía: Onest para texto e interfaz; Jersey 25 solo para la marca ChamDev y acentos pixel.
-- Los iconos pixel art van en `public/sprites` a escala entera. Los monocromos se dibujan como máscara (`mascara-*.png`) y se muestran con `IconoPixel` para tomar el color del tema.
+- Los iconos pixel art van en `public/sprites` a escala entera. Los monocromos se dibujan como máscara (`mask-*.png`) y se muestran con `PixelIcon` para tomar el color del tema.
 - No inventar datos de proyectos, experiencia ni estadísticas.

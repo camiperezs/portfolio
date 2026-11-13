@@ -30,14 +30,14 @@ Un cliente o reclutador llega normalmente desde un enlace directo, en escritorio
 - Stack actual: React, TypeScript y Vite, desplegado en Netlify.
 - Tecnologías declaradas: Java, Spring Boot, React, HTML, CSS, Bootstrap, Tailwind CSS, Node.js, Docker, GitHub, Linux, PHP, OpenCart, JavaScript, TypeScript, MySQL y PostgreSQL. IA: Claude, Antigravity y ChatGPT.
 - Integraciones no es una categoría de tecnologías; se muestra en Experiencia.
-- El selector ES/EN traduce el sitio con los textos de `src/data/idiomas`. Los buscadores solo indexan el español hasta que existan rutas por idioma.
+- El selector ES/EN traduce el sitio con los textos de `src/data/languages`. Los buscadores solo indexan el español hasta que existan rutas por idioma.
 - El formulario de Contacto envía con Netlify Forms.
 - Pendiente de definir: la prerenderización de rutas.
 
 ## Brand Commitments
 
 - Marca: ChamDev. Nombre visible: Camila Perez, sin tilde.
-- Compromiso de identidad: "Modern Retro RPG", una interfaz de producto moderno con acentos de videojuego de 16 bits (cursor pixel, iconos pixel y trama de dithering), con neutros cálidos, naranja Fuego vibrante (`--color-acento`), dorado y ciruela. El detalle está en `DESIGN.md`.
+- Compromiso de identidad: "Modern Retro RPG", una interfaz de producto moderno con acentos de videojuego de 16 bits (cursor pixel, iconos pixel y trama de dithering), con neutros cálidos, naranja Fuego vibrante (`--color-accent`), dorado y ciruela. El detalle está en `DESIGN.md`.
 - Títulos profesionales, sin nombres medievalizados.
 - Email público: cperez.dev@outlook.com.
 

@@ -1,0 +1,145 @@
+.about {
+  display: grid;
+  gap: 48px;
+  width: min(1040px, 100%);
+  margin-inline: auto;
+  padding-top: 24px;
+}
+
+.about-board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: start;
+  gap: 32px;
+}
+
+.slot-wide {
+  grid-column: span 7;
+}
+
+.slot-narrow {
+  grid-column: span 5;
+}
+
+.slot-middle-left {
+  grid-column: span 6;
+  margin-left: 20px;
+}
+
+.row-top {
+  align-self: end;
+}
+
+.row-bottom {
+  align-self: start;
+}
+
+.slot-middle-right {
+  grid-column: span 6;
+  margin-right: 16px;
+}
+
+.about-profile {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.about-frame {
+  flex: none;
+  width: 112px;
+  height: 140px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-small);
+}
+
+.about-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: auto;
+  transform: scale(1.06);
+  pointer-events: none;
+}
+
+.about-details {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.about-name {
+  margin: 0;
+  font: var(--type-subtitle);
+  font-size: 24px;
+  letter-spacing: var(--tracking-subtitle);
+}
+
+.about-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px 4px 10px;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 35%, var(--color-border));
+  border-radius: var(--radius-small);
+  background: var(--color-accent-soft);
+  font: var(--type-label);
+  font-weight: 600;
+}
+
+.about-role .pixel-icon {
+  color: var(--color-accent);
+}
+
+.about-city {
+  color: var(--color-text-muted);
+  font: var(--type-detail);
+}
+
+.about-introduction {
+  max-width: var(--reading-width);
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+@media (max-width: 899px) {
+  .about {
+    gap: 32px;
+    padding-top: 0;
+  }
+
+  .about-board {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .about-board > .floating-card {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .about-profile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .about-actions {
+    justify-content: stretch;
+  }
+
+  .about-actions > * {
+    flex: 1 1 100%;
+  }
+}

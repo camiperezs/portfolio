@@ -1,35 +1,35 @@
 import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
-import FondoRadial from '../components/layout/FondoRadial'
+import RadialBackground from '../components/layout/RadialBackground'
 import Navbar from '../components/layout/Navbar'
-import { useIdioma } from '../context/IdiomaContext'
-import { secciones } from '../data/navegacion'
-import { perfil } from '../data/perfil'
-import ControlesSitio from './ControlesSitio'
+import { useLanguage } from '../context/LanguageContext'
+import { sections } from '../data/navigation'
+import { profile } from '../data/profile'
+import SiteControls from './SiteControls'
 import './Layout.css'
 
 export default function Layout() {
   const { pathname } = useLocation()
-  const { textos } = useIdioma()
+  const { texts } = useLanguage()
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [pathname])
 
-  const seccionesNavbar = secciones.map(({ id, ruta }) => ({ ruta, texto: textos.navegacion[id] }))
+  const navbarSections = sections.map(({ id, path }) => ({ path, text: texts.navigation[id] }))
 
   return (
-    <FondoRadial>
+    <RadialBackground>
       <Navbar
-        marca={perfil.marca}
-        etiqueta={textos.navegacion.etiqueta}
-        textoMenu={textos.navegacion.menu}
-        secciones={seccionesNavbar}
-        controles={<ControlesSitio />}
+        brand={profile.brand}
+        label={texts.navigation.label}
+        menuText={texts.navigation.menu}
+        sections={navbarSections}
+        controls={<SiteControls />}
       />
-      <main className="contenido">
+      <main className="content">
         <Outlet />
       </main>
-    </FondoRadial>
+    </RadialBackground>
   )
 }

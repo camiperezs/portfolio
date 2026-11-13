@@ -1,0 +1,43 @@
+.timeline {
+  display: grid;
+  gap: 18px;
+  margin: 0 0 0 11px;
+  padding: 0;
+  border-left: 2px solid var(--color-border);
+  list-style: none;
+}
+
+.timeline-entry {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  padding-left: 20px;
+}
+
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: -5px;
+  width: 8px;
+  height: 8px;
+  background: var(--color-brand, var(--color-accent));
+  box-shadow: 0 0 0 3px var(--color-surface);
+}
+
+.timeline-date {
+  color: var(--color-text-muted);
+  font: var(--type-small);
+  font-variant-numeric: tabular-nums;
+}
+
+.timeline-role {
+  margin: 2px 0 0;
+  font: var(--type-heading);
+  text-wrap: balance;
+}
+
+.timeline-place {
+  color: var(--color-text-muted);
+  font: var(--type-detail);
+}
