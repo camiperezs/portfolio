@@ -20,7 +20,7 @@ export const en: Texts = {
     descriptions: {
       about: 'Profile and journey',
       technologies: 'Stack and tools',
-      experience: 'Integrations, security and automation',
+      experience: 'Unio and WAIA',
       projects: 'Own and published work',
       contact: 'Send me a message',
     },
@@ -65,44 +65,37 @@ export const en: Texts = {
   },
   experience: {
     title: 'Experience',
-    intro: 'Solutions and features I built professionally.',
-    label: 'Experience areas',
-    whatIDid: 'What I built',
+    intro: "Where I've worked and what I did at each place.",
+    label: 'Companies',
+    achievements: 'Responsibilities',
     technologies: 'Technologies',
-    cta: {
-      title: 'Need to solve something similar?',
-      text: "Tell me what you need and I'll reply by email.",
-      journey: 'See my journey',
-    },
-    areas: {
-      ecommerce: {
-        tab: 'E-commerce',
-        title: 'E-commerce integrations and systems',
-        description: 'Payment integrations, checkout customization and commercial features for online stores.',
+    jobs: {
+      unio: {
+        role: 'Backend Developer',
+        period: 'Sep 2026 – present',
+        description: [
+          'Unio uses artificial intelligence and automation to speed up hiring processes and reduce the operational load on HR teams.',
+        ],
         achievements: [
-          'Integrated, maintained and improved Mercado Pago and MODO.',
-          'Adapted checkout, promotions, discounts and gift cards.',
-          'Automated processes and reports.',
+          'Business logic, endpoints and APIs with Node.js and Fastify.',
+          'Authentication and role- and permission-based access control with JWT.',
+          'Serverless services with AWS Lambda and API Gateway.',
+          'Automation workflows in n8n, integrations with external services and migration of automated workflows to code.',
+          'Database changes that I prepare and test locally, coordinated with the team for their production rollout.',
+          'Occasional frontend work.',
         ],
       },
-      authentication: {
-        tab: 'Security & roles',
-        title: 'Authentication, roles and permissions',
-        description: 'Authentication and authorization mechanisms for applications with different types of users.',
+      waia: {
+        role: 'Full Stack Developer',
+        period: 'Mar 2024 – Jul 2026',
+        description: ['Development and maintenance of a production e-commerce platform built on OpenCart.'],
         achievements: [
-          'Authentication with JWT.',
-          'Role- and permission-based access control.',
-          'Protection of backend endpoints and operations.',
-        ],
-      },
-      automation: {
-        tab: 'Automation & AI',
-        title: 'Automation and AI systems',
-        description: 'Backend development for a recruiting platform with automated processes and external integrations.',
-        achievements: [
-          'Built features for recruiting processes.',
-          'Integrated external services and migrated automated workflows to code.',
-          'Implemented backend services and serverless functions.',
+          'Mercado Pago and MODO integrations with REST APIs, OAuth and webhooks.',
+          'Checkout, payment methods, shipping and shopping experience components.',
+          'Business logic for gift cards, coupons, promotions and discounts.',
+          'Requirements gathering with clients and solution proposals.',
+          'Scheduled jobs and PDF and Excel reports.',
+          'Docker environments and production debugging.',
         ],
       },
     },

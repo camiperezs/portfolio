@@ -1,26 +1,31 @@
-export type AreaId = 'ecommerce' | 'authentication' | 'automation'
+export type JobId = 'unio' | 'waia'
 
-export type AreaText = {
-  tab: string
-  title: string
-  description: string
+export type JobText = {
+  role: string
+  period: string
+  description: string[]
   achievements: string[]
 }
 
-export const experienceAreas: { id: AreaId; icon: string; technologies: string[] }[] = [
+export const jobs: { id: JobId; company: string; icon: string; technologies: string[] }[] = [
   {
-    id: 'ecommerce',
+    id: 'unio',
+    company: 'Unio',
+    icon: '/sprites/mask-code.png',
+    technologies: ['Node.js', 'Fastify', 'PostgreSQL', 'Redis', 'AWS Lambda', 'API Gateway', 'n8n'],
+  },
+  {
+    id: 'waia',
+    company: 'WAIA',
     icon: '/sprites/mask-cart.png',
-    technologies: ['PHP', 'MySQL', 'OpenCart', 'JavaScript', 'REST APIs'],
-  },
-  {
-    id: 'authentication',
-    icon: '/sprites/mask-lock.png',
-    technologies: ['Node.js', 'Fastify', 'JWT'],
-  },
-  {
-    id: 'automation',
-    icon: '/sprites/mask-ai.png',
-    technologies: ['Node.js', 'Fastify', 'PostgreSQL', 'Redis', 'AWS Lambda', 'API Gateway'],
+    technologies: ['PHP', 'MySQL', 'OpenCart', 'JavaScript', 'REST APIs', 'OAuth', 'Docker'],
   },
 ]
+
+export const jobParam = 'empresa'
+
+export const legacyAreas: Record<string, JobId> = {
+  ecommerce: 'waia',
+  autenticacion: 'unio',
+  automatizacion: 'unio',
+}

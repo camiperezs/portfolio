@@ -52,6 +52,6 @@ export const projects: Project[] = [
 export const noImageIcon = '/sprites/mask-window.png'
 
 export const workRedirects: Record<string, string> = {
-  'integraciones-pago': '/experiencia',
+  'integraciones-pago': '/experiencia?empresa=waia',
   'control-acceso-roles': '/proyectos/sistema-salon',
 }

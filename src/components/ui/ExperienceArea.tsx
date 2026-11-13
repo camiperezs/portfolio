@@ -6,11 +6,12 @@ type Props = {
   tabId: string
   active: boolean
   title: string
+  meta: string
   icon: string
-  description: string
+  description: string[]
   achievements: string[]
   technologies: string[]
-  labels: { whatIDid: string; technologies: string }
+  labels: { achievements: string; technologies: string }
 }
 
 export default function ExperienceArea({
@@ -18,6 +19,7 @@ export default function ExperienceArea({
   tabId,
   active,
   title,
+  meta,
   icon,
   description,
   achievements,
@@ -37,11 +39,18 @@ export default function ExperienceArea({
         <span className="area-tile" aria-hidden="true">
           <PixelIcon image={icon} />
         </span>
-        <h2 className="area-title">{title}</h2>
+        <div className="area-heading">
+          <h2 className="area-title">{title}</h2>
+          <p className="area-meta">{meta}</p>
+        </div>
       </header>
-      <p className="area-description">{description}</p>
+      <div className="area-description">
+        {description.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
       <div className="area-block">
-        <h3>{labels.whatIDid}</h3>
+        <h3>{labels.achievements}</h3>
         <ul className="area-achievements">
           {achievements.map((achievement) => (
             <li key={achievement}>{achievement}</li>

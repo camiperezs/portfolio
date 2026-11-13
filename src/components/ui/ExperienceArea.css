@@ -9,9 +9,7 @@
 }
 
 .area[data-active='false'] {
-  visibility: hidden;
-  opacity: 0;
-  transition: none;
+  display: none;
 }
 
 .area:focus-visible {
@@ -44,7 +42,20 @@
   text-wrap: balance;
 }
 
+.area-heading {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.area-meta {
+  color: var(--color-text-muted);
+  font: var(--type-detail);
+}
+
 .area-description {
+  display: grid;
+  gap: 10px;
   max-width: var(--reading-width);
 }
 

@@ -1,39 +1,35 @@
 import type { EntryId, EntryText } from '../about'
 import type { CategoryId } from '../technologies'
-import type { AreaId, AreaText } from '../experience'
+import type { JobId, JobText } from '../experience'
 import type { ProjectId, ProjectText } from '../projects'
 
-const areas: Record<AreaId, AreaText> = {
-  ecommerce: {
-    tab: 'E-commerce',
-    title: 'Integraciones y sistemas e-commerce',
-    description: 'Integraciones de pago, personalización de checkout y funcionalidades comerciales para tiendas online.',
+const jobs: Record<JobId, JobText> = {
+  unio: {
+    role: 'Desarrolladora Backend',
+    period: 'sept. 2026 – actualidad',
+    description: [
+      'Unio usa inteligencia artificial y automatización para agilizar los procesos de selección de personal y reducir la carga operativa de los equipos de recursos humanos.',
+    ],
     achievements: [
-      'Integración, mantenimiento y mejora de Mercado Pago y MODO.',
-      'Adaptación de checkout, promociones, descuentos y gift cards.',
-      'Automatización de procesos y reportes.',
+      'Lógica de negocio, endpoints y APIs con Node.js y Fastify.',
+      'Autenticación y control de acceso por roles y permisos con JWT.',
+      'Servicios serverless con AWS Lambda y API Gateway.',
+      'Flujos de automatización en n8n, integraciones con servicios externos y migración de flujos automatizados a código.',
+      'Cambios de base de datos que preparo y pruebo en local, coordinados con el equipo para su ejecución en producción.',
+      'Colaboración ocasional en frontend.',
     ],
   },
-  authentication: {
-    tab: 'Seguridad y roles',
-    title: 'Autenticación, roles y permisos',
-    description:
-      'Implementación de mecanismos de autenticación y autorización para aplicaciones con diferentes tipos de usuarios.',
+  waia: {
+    role: 'Desarrolladora Full Stack',
+    period: 'mar. 2024 – jul. 2026',
+    description: ['Desarrollo y mantenimiento de una plataforma e-commerce en producción sobre OpenCart.'],
     achievements: [
-      'Autenticación mediante JWT.',
-      'Control de acceso basado en roles y permisos.',
-      'Protección de endpoints y operaciones del backend.',
-    ],
-  },
-  automation: {
-    tab: 'Automatización e IA',
-    title: 'Automatización y sistemas con IA',
-    description:
-      'Desarrollo backend para una plataforma de reclutamiento con procesos automatizados e integraciones externas.',
-    achievements: [
-      'Desarrollo de funcionalidades para procesos de reclutamiento.',
-      'Integración de servicios externos y migración de flujos automatizados a código.',
-      'Implementación de servicios backend y funciones serverless.',
+      'Integración de Mercado Pago y MODO con REST APIs, OAuth y webhooks.',
+      'Checkout, medios de pago, envíos y componentes de la experiencia de compra.',
+      'Lógica de gift cards, cupones, promociones y descuentos.',
+      'Relevamiento de requerimientos con clientes y propuesta de soluciones.',
+      'Tareas programadas y reportes en PDF y Excel.',
+      'Entornos con Docker y depuración de errores en producción.',
     ],
   },
 }
@@ -105,7 +101,7 @@ export const es = {
     descriptions: {
       about: 'Perfil y recorrido',
       technologies: 'Stack y herramientas',
-      experience: 'Integraciones, seguridad y automatización',
+      experience: 'Unio y WAIA',
       projects: 'Desarrollos propios y publicados',
       contact: 'Escribime un mensaje',
     },
@@ -138,16 +134,11 @@ export const es = {
   },
   experience: {
     title: 'Experiencia',
-    intro: 'Soluciones y funcionalidades que desarrollé profesionalmente.',
-    label: 'Áreas de experiencia',
-    whatIDid: 'Qué desarrollé',
+    intro: 'Dónde trabajé y qué hice en cada lugar.',
+    label: 'Empresas',
+    achievements: 'Responsabilidades',
     technologies: 'Tecnologías',
-    cta: {
-      title: '¿Tenés que resolver algo parecido?',
-      text: 'Contame qué necesitás y te respondo por email.',
-      journey: 'Ver mi recorrido',
-    },
-    areas,
+    jobs,
   },
   projects: {
     title: 'Proyectos',
