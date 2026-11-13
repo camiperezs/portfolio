@@ -6,3 +6,4 @@ dist
 .claude/settings.local.json
 .impeccable
 fondos-originales
+.claude/skills/impeccable/scripts/bin
