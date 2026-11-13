@@ -20,13 +20,19 @@
 
 .hueco-angosto {
   grid-column: span 5;
-  margin-top: 40px;
 }
 
 .hueco-medio-izquierdo {
   grid-column: span 6;
-  margin-top: 12px;
   margin-left: 20px;
+}
+
+.fila-superior {
+  align-self: end;
+}
+
+.fila-inferior {
+  align-self: start;
 }
 
 .hueco-medio-derecho {

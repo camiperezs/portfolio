@@ -31,11 +31,12 @@ const estilos = {
 } as const
 
 function claseHueco(orden: IdCarta[], indice: number) {
-  const filaAncha = Math.floor(orden.indexOf(cartaFija) / 2)
-  if (Math.floor(indice / 2) === filaAncha) {
-    return orden[indice] === cartaFija ? 'hueco-ancho' : 'hueco-angosto'
+  const fila = Math.floor(indice / 2)
+  const claseFila = fila === 0 ? 'fila-superior' : 'fila-inferior'
+  if (fila === Math.floor(orden.indexOf(cartaFija) / 2)) {
+    return `${claseFila} ${orden[indice] === cartaFija ? 'hueco-ancho' : 'hueco-angosto'}`
   }
-  return indice % 2 === 0 ? 'hueco-medio-izquierdo' : 'hueco-medio-derecho'
+  return `${claseFila} ${indice % 2 === 0 ? 'hueco-medio-izquierdo' : 'hueco-medio-derecho'}`
 }
 
 function intercambiar(orden: IdCarta[], origen: IdCarta, destino: IdCarta) {
