@@ -95,12 +95,14 @@
   color: var(--color-accent);
 }
 
-.about-city {
+.about-location {
   color: var(--color-text-muted);
   font: var(--type-detail);
 }
 
 .about-introduction {
+  display: grid;
+  gap: 12px;
   max-width: var(--reading-width);
 }
 

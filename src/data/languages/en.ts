@@ -1,7 +1,7 @@
 import type { Texts } from './es'
 
 export const en: Texts = {
-  role: 'Backend Developer',
+  role: 'Full Stack Developer',
   language: 'Language',
   theme: { label: 'Theme', system: 'System', light: 'Light', dark: 'Dark' },
   navigation: {
@@ -15,7 +15,7 @@ export const en: Texts = {
   },
   home: {
     menu: 'Sections',
-    value: 'Integrations, APIs and management systems',
+    value: 'I build custom web solutions: websites, integrations, automations and management systems.',
     write: 'Get in touch',
     descriptions: {
       about: 'Profile and journey',
@@ -29,13 +29,17 @@ export const en: Texts = {
     title: 'About me',
     portrait: 'Pixel art portrait of',
     contact: 'Contact links',
-    introduction:
-      "I'm a software developer with a backend focus. I like designing solutions, working on application logic and integrating services. I especially enjoy turning needs into concrete features.",
+    location: 'Working remotely',
+    introduction: [
+      "I like solving problems end to end: understanding what's needed, weighing alternatives, proposing a solution with a clear scope and building it until it works.",
+      'I currently work as a Backend Developer at Unio and take on freelance projects, always remotely.',
+      'I work across frontend and backend, and backend is where I most want to keep growing: APIs, integrations, databases and automation.',
+    ],
     career: {
       label: 'Career summary',
       columns: { experience: 'Work experience', training: 'Education' },
       entries: {
-        current: { date: '2026 – present', title: 'Backend Developer', place: 'AI automation startup' },
+        current: { date: '2026 – present', title: 'Backend Developer', place: 'Unio' },
         waia: { date: '2024 – 2026', title: 'Full Stack Developer', place: 'WAIA' },
         cybersecurity: { date: '2025 – present', title: 'Cybersecurity', place: 'Educación IT' },
         fullStack: { date: '2023', title: 'Full Stack Development', place: 'Egg Live · Udemy' },
@@ -76,7 +80,7 @@ export const en: Texts = {
         title: 'E-commerce integrations and systems',
         description: 'Payment integrations, checkout customization and commercial features for online stores.',
         achievements: [
-          'Integrated, maintained and improved Mercado Pago, MODO and GOcuotas.',
+          'Integrated, maintained and improved Mercado Pago and MODO.',
           'Adapted checkout, promotions, discounts and gift cards.',
           'Automated processes and reports.',
         ],

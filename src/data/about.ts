@@ -9,7 +9,6 @@ export type EntryText = {
 
 export const portrait = {
   image: '/img/portrait.webp',
-  city: 'Rosario, Argentina',
 }
 
 export const careerColumns: { id: ColumnId; icon: string; entries: EntryId[] }[] = [

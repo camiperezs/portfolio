@@ -9,7 +9,7 @@ const areas: Record<AreaId, AreaText> = {
     title: 'Integraciones y sistemas e-commerce',
     description: 'Integraciones de pago, personalización de checkout y funcionalidades comerciales para tiendas online.',
     achievements: [
-      'Integración, mantenimiento y mejora de Mercado Pago, MODO y GOcuotas.',
+      'Integración, mantenimiento y mejora de Mercado Pago y MODO.',
       'Adaptación de checkout, promociones, descuentos y gift cards.',
       'Automatización de procesos y reportes.',
     ],
@@ -70,7 +70,7 @@ const projects: Record<ProjectId, ProjectText> = {
 }
 
 const entries: Record<EntryId, EntryText> = {
-  current: { date: '2026 – actualidad', title: 'Desarrolladora Backend', place: 'Startup de automatización con IA' },
+  current: { date: '2026 – actualidad', title: 'Desarrolladora Backend', place: 'Unio' },
   waia: { date: '2024 – 2026', title: 'Desarrolladora Full Stack', place: 'WAIA' },
   cybersecurity: { date: '2025 – actualidad', title: 'Ciberseguridad', place: 'Educación IT' },
   fullStack: { date: '2023', title: 'Desarrollo Full Stack', place: 'Egg Live · Udemy' },
@@ -86,7 +86,7 @@ const categories: Record<CategoryId, string> = {
 }
 
 export const es = {
-  role: 'Desarrolladora Backend',
+  role: 'Desarrolladora Full Stack',
   language: 'Idioma',
   theme: { label: 'Tema', system: 'Sistema', light: 'Claro', dark: 'Oscuro' },
   navigation: {
@@ -100,7 +100,7 @@ export const es = {
   },
   home: {
     menu: 'Secciones',
-    value: 'Integraciones, APIs y sistemas de gestión',
+    value: 'Desarrollo soluciones web a medida: sitios, integraciones, automatizaciones y sistemas de gestión.',
     write: 'Escribime',
     descriptions: {
       about: 'Perfil y recorrido',
@@ -114,8 +114,12 @@ export const es = {
     title: 'Sobre mí',
     portrait: 'Retrato pixel art de',
     contact: 'Enlaces de contacto',
-    introduction:
-      'Soy desarrolladora de software orientada al backend. Me interesa diseñar soluciones, trabajar con la lógica de las aplicaciones e integrar servicios. Disfruto especialmente transformar necesidades en funcionalidades concretas.',
+    location: 'Trabajo remoto',
+    introduction: [
+      'Me gusta resolver problemas completos: entender qué se necesita, evaluar alternativas, proponer una solución con un alcance claro y desarrollarla hasta que funcione.',
+      'Hoy trabajo como Desarrolladora Backend en Unio y tomo proyectos freelance, siempre en modalidad remota.',
+      'Me muevo tanto en frontend como en backend, y es en el backend donde más quiero seguir creciendo: APIs, integraciones, bases de datos y automatizaciones.',
+    ],
     career: {
       label: 'Trayectoria resumida',
       columns: { experience: 'Experiencia laboral', training: 'Formación' },

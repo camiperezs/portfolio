@@ -134,7 +134,7 @@ export default function About() {
               <PixelIcon image={roleIcon} size={16} />
               {texts.role}
             </p>
-            <p className="about-city">{portrait.city}</p>
+            <p className="about-location">{about.location}</p>
           </div>
         </div>
       ),
@@ -142,7 +142,13 @@ export default function About() {
     text: {
       title: about.title,
       icon: aboutIcon,
-      content: <p className="about-introduction">{about.introduction}</p>,
+      content: (
+        <div className="about-introduction">
+          {about.introduction.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+      ),
     },
     experience: careers.experience,
     training: careers.training,
