@@ -7,7 +7,7 @@ import ServiceLink from '../components/ui/ServiceLink'
 import { useLanguage } from '../context/LanguageContext'
 import { usePageTitle } from '../hooks/usePageTitle'
 import { menuCursor, writeIcon } from '../data/navigation'
-import { mainServiceIcon, modes, services } from '../data/services'
+import { mainServiceContact, mainServiceIcon, modes, services } from '../data/services'
 import './Services.css'
 
 export default function Services() {
@@ -34,16 +34,16 @@ export default function Services() {
         </FeaturedService>
         <nav className="services-list" aria-label={copy.listLabel}>
           <ul>
-            {services.map(({ id, icon }) => (
+            {services.map(({ id, icon, contact }) => (
               <li key={id}>
-                <ServiceLink to="/contacto" icon={icon} cursor={menuCursor} {...copy.items[id]} />
+                <ServiceLink to={contact} icon={icon} cursor={menuCursor} {...copy.items[id]} />
               </li>
             ))}
           </ul>
         </nav>
         <Panel className="services-cta">
           <ContactCta title={copy.cta.title}>
-            <ActionLink text={texts.home.write} icon={writeIcon} target="/contacto" variant="primary" />
+            <ActionLink text={texts.home.write} icon={writeIcon} target={mainServiceContact} variant="primary" />
           </ContactCta>
         </Panel>
       </div>

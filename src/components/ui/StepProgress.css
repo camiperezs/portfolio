@@ -1,0 +1,32 @@
+.step-progress {
+  display: grid;
+  gap: 8px;
+}
+
+.step-progress-label {
+  color: var(--color-text-muted);
+  font: var(--type-small);
+}
+
+.step-progress-track {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  gap: 6px;
+}
+
+.step-progress-segment {
+  height: 4px;
+  background: var(--color-border);
+  transition: background-color 200ms var(--ease-out);
+}
+
+.step-progress-segment.filled {
+  background: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step-progress-segment {
+    transition: none;
+  }
+}

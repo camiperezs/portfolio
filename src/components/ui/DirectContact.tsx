@@ -1,4 +1,3 @@
-import Button from './Button'
 import ActionLink from './ActionLink'
 import PixelIcon from './PixelIcon'
 import './DirectContact.css'
@@ -15,6 +14,8 @@ type Props = {
   emailIcon: string
   copyText: string
   copiedText: string
+  copyIcon: string
+  copiedIcon: string
   copied: boolean
   onCopy: () => void
   socials: Social[]
@@ -26,6 +27,8 @@ export default function DirectContact({
   emailIcon,
   copyText,
   copiedText,
+  copyIcon,
+  copiedIcon,
   copied,
   onCopy,
   socials,
@@ -36,9 +39,17 @@ export default function DirectContact({
       <div className="direct-contact-email">
         <PixelIcon image={emailIcon} />
         <a href={`mailto:${email}`}>{email}</a>
-        <Button onClick={onCopy} aria-live="polite">
-          {copied ? copiedText : copyText}
-        </Button>
+        <button
+          type="button"
+          className={copied ? 'direct-contact-copy copied' : 'direct-contact-copy'}
+          title={copied ? copiedText : copyText}
+          onClick={onCopy}
+        >
+          <PixelIcon image={copied ? copiedIcon : copyIcon} size={18} />
+          <span className="direct-contact-status" aria-live="polite">
+            {copied ? copiedText : copyText}
+          </span>
+        </button>
       </div>
       <ul className="direct-contact-socials">
         {socials.map(({ text, url, icon }) => (
