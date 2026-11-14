@@ -6,7 +6,7 @@ import Panel from '../components/ui/Panel'
 import ServiceLink from '../components/ui/ServiceLink'
 import { useLanguage } from '../context/LanguageContext'
 import { usePageTitle } from '../hooks/usePageTitle'
-import { menuCursor, writeIcon } from '../data/navigation'
+import { writeIcon } from '../data/navigation'
 import { mainServiceContact, mainServiceIcon, modes, services } from '../data/services'
 import './Services.css'
 
@@ -36,7 +36,7 @@ export default function Services() {
           <ul>
             {services.map(({ id, icon, contact }) => (
               <li key={id}>
-                <ServiceLink to={contact} icon={icon} cursor={menuCursor} {...copy.items[id]} />
+                <ServiceLink to={contact} icon={icon} {...copy.items[id]} />
               </li>
             ))}
           </ul>

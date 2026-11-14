@@ -57,7 +57,7 @@ export default function ProjectDetail() {
             </div>
           )}
         </div>
-        <div className="detail-text">
+        <div className="detail-text" tabIndex={0}>
           <p>{text.summary}</p>
           {text.challenge && (
             <section className="detail-block">

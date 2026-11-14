@@ -94,7 +94,7 @@
 .detail-body {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
-  align-items: start;
+  align-items: stretch;
   gap: 32px;
 }
 
@@ -105,8 +105,25 @@
   min-width: 0;
 }
 
+.detail-side {
+  align-content: start;
+}
+
 .detail-text {
+  align-content: start;
   max-width: var(--reading-width);
+  padding: 0 14px 40px 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  contain: size;
+  scrollbar-color: var(--color-control-border) transparent;
+  scrollbar-width: thin;
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 40px), transparent);
+}
+
+.detail-text:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
 }
 
 .detail-block {
@@ -156,6 +173,10 @@
 
   .detail-text {
     order: 2;
+    padding: 0;
+    overflow: visible;
+    contain: none;
+    mask-image: none;
   }
 
   .detail-side > :not(.image-frame) {
