@@ -1,0 +1,34 @@
+.label {
+  --background-label: transparent;
+  --point-label: var(--color-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 26px;
+  padding: 0 10px 0 9px;
+  border-radius: var(--radius-small);
+  background: var(--background-label);
+  box-shadow: inset 0 0 0 1px var(--color-border);
+  color: var(--color-text);
+  font: var(--type-small);
+  white-space: nowrap;
+}
+
+.label-point {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  background: var(--point-label);
+}
+
+.label-project {
+  --background-label: var(--color-gold-soft);
+  --point-label: var(--color-gold);
+  box-shadow: none;
+}
+
+.label-experience {
+  --background-label: var(--color-accent-soft);
+  --point-label: var(--color-accent);
+  box-shadow: none;
+}

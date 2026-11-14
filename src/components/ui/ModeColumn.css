@@ -1,0 +1,27 @@
+.mode {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  min-width: 0;
+}
+
+.mode-number {
+  color: var(--color-accent);
+  font: var(--type-brand);
+}
+
+.mode-title {
+  margin: 0;
+  font: var(--type-heading);
+}
+
+.mode-text {
+  font: var(--type-detail);
+}
+
+.mode-keywords {
+  margin-top: 4px;
+  color: var(--color-text-muted);
+  font: var(--type-detail);
+  font-size: 14px;
+}

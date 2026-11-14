@@ -1,0 +1,125 @@
+.area {
+  grid-area: 1 / 1;
+  display: grid;
+  align-content: start;
+  gap: 18px;
+  min-width: 0;
+  border-radius: var(--radius);
+  transition: opacity 180ms var(--ease-out);
+}
+
+.area[data-active='false'] {
+  display: none;
+}
+
+.area:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 6px;
+}
+
+.area-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.area-tile {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+.area-title {
+  margin: 0;
+  font: var(--type-subtitle);
+  font-size: 20px;
+  letter-spacing: var(--tracking-subtitle);
+  text-wrap: balance;
+}
+
+.area-heading {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.area-meta {
+  color: var(--color-text-muted);
+  font: var(--type-detail);
+}
+
+.area-description {
+  display: grid;
+  gap: 10px;
+  max-width: var(--reading-width);
+}
+
+.area-block {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.area-block h3 {
+  margin: 0;
+  color: var(--color-text-muted);
+  font: var(--type-small);
+}
+
+.area-footer {
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+.area-achievements {
+  display: grid;
+  gap: 6px;
+  max-width: var(--reading-width);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.area-achievements li {
+  display: grid;
+  grid-template-columns: 6px minmax(0, 1fr);
+  gap: 12px;
+}
+
+.area-achievements li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  margin-top: 11px;
+  background: var(--color-plum);
+}
+
+.area-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.area-technologies li {
+  padding: 3px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  color: var(--color-text);
+  font: var(--type-detail);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .area {
+    transition: none;
+  }
+}

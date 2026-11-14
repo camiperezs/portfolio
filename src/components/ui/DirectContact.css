@@ -1,0 +1,104 @@
+.direct-contact {
+  display: grid;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.direct-contact h2 {
+  margin: 0;
+  font: var(--type-heading);
+}
+
+.direct-contact-email {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  color: var(--color-accent);
+}
+
+.direct-contact-email a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-text);
+  font-weight: 500;
+  text-decoration: none;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .direct-contact-email a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 2px;
+  }
+}
+
+.direct-contact-email a:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.direct-contact-copy {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: border-color 150ms ease, color 150ms ease, transform 140ms var(--ease-out);
+}
+
+.direct-contact-copy.copied {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .direct-contact-copy:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+}
+
+.direct-contact-copy:active {
+  transform: scale(0.95);
+}
+
+.direct-contact-copy:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.direct-contact-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .direct-contact-copy {
+    transition: none;
+  }
+}
+
+.direct-contact-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

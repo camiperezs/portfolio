@@ -1,0 +1,119 @@
+.reason-menu {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reason {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 64px;
+  padding: 10px 14px 10px 36px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--color-text);
+  font: var(--type-body);
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.reason-cursor {
+  position: absolute;
+  top: 50%;
+  left: 9px;
+  color: var(--color-accent);
+  opacity: 0;
+  transform: translateY(-50%);
+}
+
+.reason-tile {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.reason-text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.reason-title {
+  font: var(--type-heading);
+}
+
+.reason-detail {
+  color: var(--color-text-muted);
+  font: var(--type-detail);
+}
+
+.reason:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.reason.current .reason-cursor,
+.reason:focus-visible .reason-cursor {
+  opacity: 1;
+  animation: reason-bob 700ms steps(1) infinite;
+}
+
+.reason.current .reason-tile,
+.reason:focus-visible .reason-tile {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .reason:hover .reason-cursor {
+    opacity: 1;
+    animation: reason-bob 700ms steps(1) infinite;
+  }
+
+  .reason:hover .reason-tile {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  .reason-menu:hover .reason.current:not(:hover) .reason-cursor {
+    opacity: 0;
+  }
+
+  .reason-menu:hover .reason.current:not(:hover) .reason-tile {
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+  }
+}
+
+.reason:active {
+  transform: scale(0.99);
+}
+
+@keyframes reason-bob {
+  50% {
+    transform: translate(2px, -50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reason .reason-cursor {
+    animation: none !important;
+  }
+
+  .reason-tile {
+    transition: none;
+  }
+}

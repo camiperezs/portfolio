@@ -1,6 +1,6 @@
 ---
 name: portfolio-workflow
-description: Orquestador para cualquier cambio en el portfolio de Camila (HTML, CSS, JS, textos, imágenes, secciones, proyectos, diseño, SEO, accesibilidad, rendimiento o migración a React). Úsala SIEMPRE antes de modificar index.html, style.css, script.js, formulario.js, img/ o el contenido del sitio, y también cuando pidan "mejorar el portfolio", "agregar un proyecto", "cambiar el diseño", "revisar el sitio" o "auditar". Clasifica el cambio y decide qué skills especializadas cargar ANTES de implementar (planificación y diseño) y DESPUÉS (auditoría y verificación).
+description: Orquestador para cualquier cambio en el portfolio de Camila (React + TypeScript + Vite): componentes, páginas, estilos, textos en ES/EN, imágenes y sprites, diseño, SEO, accesibilidad o rendimiento. Úsala SIEMPRE antes de modificar src/, public/, index.html o los textos de src/data/idiomas, y también cuando pidan "mejorar el portfolio", "agregar un proyecto", "cambiar el diseño", "revisar el sitio" o "auditar". Clasifica el cambio y decide qué skills especializadas cargar ANTES de implementar (planificación y diseño) y DESPUÉS (auditoría y verificación).
 ---
 
 # Flujo de trabajo del portfolio
@@ -9,12 +9,13 @@ Este skill no implementa nada por sí mismo: decide **qué skills usar, en qué 
 
 ## Contexto del proyecto
 
-- Sitio estático de una sola página: `index.html`, `style.css`, `script.js` (menú), `formulario.js`, imágenes en `img/`, certificado en `certificados/`.
-- Stack actual: **HTML/CSS/JS vanilla**, sin build ni dependencias (Font Awesome por CDN). Deploy en Netlify.
-- Idioma del sitio: español (`lang="es"`).
-- Público objetivo: reclutadores y empresas que contratan perfiles junior Full Stack, y posibles clientes freelance.
-- Objetivo de conversión: que la persona visite los proyectos y **contacte** (LinkedIn, email, GitHub).
+- SPA en **React 19 + TypeScript + Vite**, con `react-router-dom`. Deploy en Netlify (`netlify.toml`); el formulario de Contacto usa Netlify Forms.
+- Rutas: `/` (Inicio), `/sobre-mi`, `/tecnologias`, `/experiencia`, `/proyectos`, `/proyectos/:slug`, `/contacto`. `/trabajo` y `/trabajo/:slug` redirigen a las rutas nuevas.
+- Idiomas ES/EN con `IdiomaContext` y los textos de `src/data/idiomas/es.ts` y `en.ts`. Tema día/noche con `TemaContext`.
+- Reglas obligatorias: `CLAUDE.md` (sin comentarios en el código, componentes tontos, datos solo desde `src/pages`).
+- Sistema de diseño: `DESIGN.md` (Modern Retro RPG, con Inicio como referencia). Producto y posicionamiento: `PRODUCT.md`.
 - Contexto de marketing: `.claude/product-marketing.md` (las skills de marketing lo leen automáticamente).
+- Plan en curso: `docs/plan-unificacion-estilo.md` (adaptar las vistas internas al estilo de Inicio).
 
 ## Paso 1: clasificar el cambio
 
@@ -22,17 +23,17 @@ Antes de tocar código, identificá a qué categorías pertenece el pedido. Pued
 
 | Categoría | Señales |
 |---|---|
-| **A. Contenido / textos** | "Sobre mí", descripciones de proyectos, títulos, CTAs, bio |
-| **B. Diseño visual / UI** | colores, tipografía, layout, animaciones, nueva sección, rediseño |
-| **C. Maquetación / estructura HTML-CSS** | responsive, grid/flex, semántica, reorganizar secciones, componentes |
-| **D. Interactividad / JS** | menú, formulario, scroll, filtros, comportamiento |
-| **E. Imágenes y recursos** | agregar/cambiar imágenes, fuentes, íconos, CDN |
-| **F. SEO / visibilidad** | meta tags, Open Graph, compartir en LinkedIn, Google |
-| **G. Nuevo proyecto en la galería** | agregar una tarjeta de proyecto |
-| **H. Migración o código React** | componentes, JSX, Vite/Next, refactor a React |
+| **A. Contenido / textos** | Textos de `src/data/idiomas`, perfil, recorrido, áreas de experiencia, fichas de proyectos, CTAs |
+| **B. Diseño visual / UI** | Tokens, tipografía, layout, animaciones, nueva vista, rediseño |
+| **C. Estructura y estilos** | Responsive, grid/flex, semántica, CSS de componentes |
+| **D. Interactividad** | Menús, pestañas, formulario, teclado, estado en páginas |
+| **E. Imágenes y recursos** | Capturas en `public/img`, sprites y máscaras en `public/sprites`, fuentes |
+| **F. SEO / visibilidad** | Meta tags, Open Graph, `hreflang`, datos estructurados |
+| **G. Nuevo proyecto o área de experiencia** | Entrada nueva en `src/data/proyectos.ts` o `src/data/experiencia.ts` y sus textos |
+| **H. Componentes React** | Componentes nuevos, refactor, props, contexto, rendimiento de render |
 | **I. Auditoría general** | "revisá el sitio", "qué mejorarías", "está listo para mandar a empresas" |
 
-Los cambios triviales (un typo, un color puntual, un link roto) no necesitan el flujo completo: implementá y pasá solo la verificación mínima del Paso 4.
+Los cambios triviales (un typo, un token puntual, un link roto) no necesitan el flujo completo: implementá y pasá solo la verificación mínima del Paso 4.
 
 ## Paso 2: skills ANTES de implementar
 
@@ -40,40 +41,43 @@ Cargalas para planificar y tomar decisiones; no generes auditorías largas en es
 
 | Categoría | Skills previas | Para qué |
 |---|---|---|
-| A | `copywriting` (texto nuevo) o `copy-editing` (pulir texto existente); `marketing-psychology` si se busca persuadir (prueba social, claridad de propuesta) | Definir el mensaje antes de escribirlo en el HTML |
-| B | `frontend-design` | Dirección estética coherente, evitar look genérico |
-| C | `frontend-design` (si afecta lo visual); `accessibility` para la semántica | Elegir estructura semántica correcta desde el inicio |
-| D | `accessibility` (teclado, foco, ARIA); `best-practices` | Evitar `div onclick`, manejar foco y estados |
-| E | `performance` | Formato (WebP/AVIF), tamaños, `loading="lazy"`, `width/height` |
-| F | `seo`; `schema` si hay datos estructurados | Qué meta tags y JSON-LD (`Person`, `WebSite`) corresponden |
-| G | `copywriting` (título + descripción orientada a resultado y tecnologías); `performance` (imagen) | Tarjeta consistente con las existentes |
-| H | `react-best-practices`; `composition-patterns` | Estructura de componentes y patrones antes de escribir JSX |
+| A | `copywriting` (texto nuevo) o `copy-editing` (pulir texto existente); `marketing-psychology` si se busca persuadir | Definir el mensaje antes de escribirlo en `src/data/idiomas` |
+| B | `frontend-design` + `DESIGN.md` | Mantener la dirección Modern Retro RPG y los tokens existentes |
+| C | `frontend-design` (si afecta lo visual); `accessibility` para la semántica | Estructura semántica correcta desde el inicio |
+| D | `accessibility` (teclado, foco, ARIA); `best-practices` | Roles correctos, manejo de foco y estados |
+| E | `performance` | Formato, tamaños, `loading="lazy"`, `width/height`, sprites a escala entera |
+| F | `seo`; `schema` si hay datos estructurados | Meta tags y JSON-LD (`Person`, `WebSite`) |
+| G | `copywriting` (título y resumen orientados a resultado); `performance` (captura) | Ficha consistente con las existentes |
+| H | `react-best-practices`; `composition-patterns` | Variantes explícitas, componentes tontos, sin booleanos de más |
 | I | No aplica: ir directo al Paso 4 en modo auditoría completa | |
 
 ## Paso 3: implementar
 
-- Respetá las convenciones existentes (nombres de clases en español, estructura de secciones `#inicio`, `#sobremi`, `#portfolio`, `#contacto`) salvo que el cambio sea justamente reestructurar.
-- Mantené el sitio sin build step mientras siga siendo vanilla.
-- No inventes datos de Camila (experiencia, métricas, clientes). Si el copy necesita un dato que no existe, marcalo como `[COMPLETAR: ...]` y preguntá.
+- Respetá `CLAUDE.md`: sin comentarios; `src/components` recibe todo por props; `src/pages` conecta datos y contexto; cada componente importa su CSS.
+- Colores solo desde los tokens `--color-*` de `src/styles/global.css`. Verificá día y noche.
+- Reutilizá antes de crear: `FondoRadial`, `MenuJuego`, `EnlaceAccion`, `ControlSegmentado`, `IconoPixel`.
+- Todo texto visible va en `es.ts` y `en.ts`, nunca escrito en el componente.
+- No inventes datos de Camila (experiencia, métricas, clientes) ni nombres la empresa actual. Si el copy necesita un dato que no existe, marcalo como `[COMPLETAR: ...]` y preguntá.
+- Verificá con `npm run build`, que también corre el chequeo de tipos.
 
 ## Paso 4: skills DESPUÉS de implementar (verificación)
 
-Siempre, para cualquier cambio en HTML/CSS/JS:
+Siempre, para cualquier cambio en `src/` o `index.html`:
 - `web-design-guidelines` sobre los archivos tocados (reporte `archivo:línea`).
 
 Según categoría:
 
 | Categoría | Skills posteriores |
 |---|---|
-| A, G | `copy-editing` (repaso final, eliminar muletillas de IA) |
-| B, C | `accessibility` (contraste, jerarquía de headings, foco visible); `webapp-testing` para capturas responsive (mobile 375px, desktop 1280px) |
-| D | `webapp-testing` (probar el menú/formulario de verdad en navegador); `accessibility` (navegación con teclado) |
-| E | `core-web-vitals` (LCP de la imagen hero, CLS por imágenes sin dimensiones) |
+| A, G | `copy-editing` (repaso final, eliminar muletillas de IA), en ES y EN |
+| B, C | `accessibility` (contraste en día y noche, jerarquía de headings, foco visible); `webapp-testing` para capturas (375px y 1280px, día y noche) |
+| D | `webapp-testing` (probar la interacción en el navegador); `accessibility` (teclado) |
+| E | `core-web-vitals` (LCP, CLS por imágenes sin dimensiones) |
 | F | `seo` (verificar); `schema` (validar JSON-LD) |
 | H | `react-best-practices` en modo revisión; `webapp-testing` |
 | I | Auditoría completa en este orden: `accessibility`, `performance` + `core-web-vitals`, `seo`, `best-practices`, `web-design-guidelines`, `cro` (¿se entiende quién es y cómo contactarla?), `copy-editing` |
 
-`cro` también aplica después de cambios en el hero, la sección de contacto o los CTAs.
+`cro` también aplica después de cambios en Inicio, Contacto o los CTAs.
 
 ## Paso 5: reporte
 
@@ -82,14 +86,3 @@ Cerrá con un resumen breve:
 2. Qué se cambió.
 3. Hallazgos de la verificación: corregidos vs. pendientes (con `archivo:línea`).
 4. Cualquier `[COMPLETAR]` que necesite input de Camila.
-
-## Deuda conocida (revisar en la primera auditoría)
-
-- Imagen hero y varias imágenes de proyectos con `alt=""`; `rockyedmfest.png` tiene `alt="blogdecafe"` (incorrecto).
-- Links de redes solo con ícono, sin `aria-label`; íconos decorativos sin `aria-hidden`.
-- Menú hamburguesa en `<div onclick>` en lugar de `<button>`.
-- `<title>Portfolio</title>` genérico; faltan meta description, Open Graph y favicon.
-- Formulario de contacto comentado; `formulario.js` se carga igual.
-- Botón "Descargar CV" comentado con un path local `file:///`.
-- La tarjeta "Portfolio" enlaza a `index.html` con `target="_blank"` (abre el mismo sitio en otra pestaña).
-- Datos personales (fecha de nacimiento, teléfono) expuestos en el HTML: evaluar si conviene mostrarlos.

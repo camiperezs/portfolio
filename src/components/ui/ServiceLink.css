@@ -1,0 +1,95 @@
+.service-link {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 14px;
+  height: 100%;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-small);
+  color: var(--color-text);
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: border-color 150ms ease, transform 200ms var(--ease-out);
+}
+
+.service-link-tile {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-small);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.service-link-body {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.service-link-title {
+  font: var(--type-heading);
+  transition: color 150ms ease;
+}
+
+.service-link-description {
+  font: var(--type-detail);
+}
+
+.service-link-examples {
+  color: var(--color-text-muted);
+  font: var(--type-detail);
+  font-size: 14px;
+}
+
+.service-link:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.service-link:focus-visible .service-link-tile {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.service-link:focus-visible .service-link-title {
+  color: var(--color-accent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-link:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+  }
+
+  .service-link:hover .service-link-tile {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  .service-link:hover .service-link-title {
+    color: var(--color-accent);
+  }
+}
+
+.service-link:active {
+  transform: scale(0.99);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-link,
+  .service-link-title,
+  .service-link-tile {
+    transition: none;
+  }
+
+  .service-link:hover {
+    transform: none;
+  }
+}

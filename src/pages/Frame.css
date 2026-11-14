@@ -1,0 +1,25 @@
+.frame {
+  position: relative;
+}
+
+.frame-controls {
+  position: absolute;
+  top: 24px;
+  right: max(16px, 3vw);
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 420px) {
+  .frame-controls {
+    top: 18px;
+    right: 16px;
+    gap: 6px;
+  }
+
+  .frame-controls .segmented-control button {
+    min-width: 36px;
+    padding-inline: 6px;
+  }
+}
