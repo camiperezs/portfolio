@@ -8,45 +8,47 @@ web
 
 ## Users
 
-Primary: negocios y responsables de proyecto que buscan a alguien para un proyecto web freelance, una integración entre sistemas o un sistema de gestión.
+Primary: profesionales, negocios y emprendimientos que necesitan una landing page o un sitio web, o mejorar sus herramientas digitales con integraciones, automatizaciones, nuevas funcionalidades o soporte.
 
-Secondary: empresas y reclutadores que buscan una Desarrolladora Backend.
+Secondary: empresas y reclutadores que buscan una desarrolladora para su equipo, con interés especial en puestos de backend.
 
 ## Product Purpose
 
-ChamDev es el portfolio de Camila Perez. Existe para presentar y vender su trabajo. El éxito es que un visitante entienda qué resuelve Camila, confíe en su trabajo real y la contacte, ya sea para un puesto o para un proyecto freelance.
+ChamDev es el portfolio de Camila Perez. Existe para presentar y vender su trabajo. El éxito es que un visitante entienda qué ofrece Camila, confíe en su trabajo real y la contacte, ya sea para un puesto o para un proyecto freelance.
 
 ## Positioning
 
-Camila se presenta como Desarrolladora Backend, con orientación a la estructura y la lógica de las aplicaciones y a la etapa de análisis y diseño. Su experiencia frontend le permite abordar proyectos web de manera integral. Su empleo actual se muestra con su rubro (una startup de automatización con IA), sin nombrar la empresa.
+Camila se presenta como Desarrolladora Full Stack que desarrolla soluciones web a medida: sitios, integraciones y automatizaciones. Su prioridad comercial son las landing pages; su interés profesional está en el backend, y eso se demuestra en Experiencia y no en el título. Trabaja de forma remota. Su empleo actual es en Unio, como Desarrolladora Backend.
 
 ## Operating Context
 
-Un cliente o reclutador llega normalmente desde un enlace directo, en escritorio o en móvil, y decide en poco tiempo si el trabajo mostrado es relevante. Después revisa proyectos y tecnologías, y contacta por email o formulario.
+Un cliente o reclutador llega normalmente desde un enlace directo, en escritorio o en móvil, y decide en poco tiempo si el trabajo mostrado es relevante. El cliente recorre Servicios y Proyectos; el reclutador, Experiencia y Sobre mí. Ambos terminan en Contacto.
 
 ## Capabilities and Constraints
 
-- Secciones: Inicio, Sobre mí, Tecnologías, Experiencia, Proyectos y Contacto. Experiencia muestra áreas de trabajo profesional (problema, qué hice y tecnologías) sin nombrar empresas; Proyectos muestra desarrollos propios, freelance y de formación con tarjetas e imagen.
+- Secciones: Inicio, Servicios, Proyectos, Experiencia, Sobre mí y Contacto.
+- Servicios: un servicio principal (landing pages y sitios web, con las modalidades «Diseño y desarrollo» e «Implementación») y cuatro secundarios (Integraciones, Automatizaciones, Nuevas funcionalidades para tu sistema y Soporte y correcciones). Sin precios: cada proyecto se presupuesta según su alcance. Nuevas funcionalidades se ofrece sobre sistemas existentes, no como aplicaciones completas desde cero, y Soporte es por trabajo puntual, sin acuerdos mensuales.
+- Proyectos: desarrollos propios. Hoy solo el gestor para centros de estética, en desarrollo. Se suman landing pages cuando estén publicadas.
+- Experiencia: pestañas por empresa (Unio y WAIA) con rol, fechas, responsabilidades y tecnologías.
+- No hay sección Tecnologías: cada tecnología se muestra en la experiencia o el proyecto donde se usó.
+- Contacto: formulario en dos pasos con Netlify Forms (formulario `contacto`, campos `name`, `email`, `reason`, `service` y `message`). Servicios abre Contacto con `?motivo=` y `?servicio=` para elegir el motivo y el servicio de antemano.
+- El selector ES/EN traduce el sitio con los textos de `src/data/languages`. Los buscadores solo indexan el español hasta que existan rutas por idioma. Las URLs siguen en español.
 - Stack actual: React, TypeScript y Vite, desplegado en Netlify.
-- Tecnologías declaradas: Java, Spring Boot, React, HTML, CSS, Bootstrap, Tailwind CSS, Node.js, Docker, GitHub, Linux, PHP, OpenCart, JavaScript, TypeScript, MySQL y PostgreSQL. IA: Claude, Antigravity y ChatGPT.
-- Integraciones no es una categoría de tecnologías; se muestra en Experiencia.
-- El selector ES/EN traduce el sitio con los textos de `src/data/languages`. Los buscadores solo indexan el español hasta que existan rutas por idioma.
-- El formulario de Contacto envía con Netlify Forms.
 - Pendiente de definir: la prerenderización de rutas.
 
 ## Brand Commitments
 
-- Marca: ChamDev. Nombre visible: Camila Perez, sin tilde.
+- Marca: ChamDev. Nombre visible: Camila Perez, sin tilde. Rol: Desarrolladora Full Stack.
 - Compromiso de identidad: "Modern Retro RPG", una interfaz de producto moderno con acentos de videojuego de 16 bits (cursor pixel, iconos pixel y trama de dithering), con neutros cálidos, naranja Fuego vibrante (`--color-accent`), dorado y ciruela. El detalle está en `DESIGN.md`.
-- Títulos profesionales, sin nombres medievalizados.
+- Títulos profesionales, sin nombres medievalizados. Tono directo, cercano y rioplatense. Acción principal: «Escribime».
 - Email público: cperez.dev@outlook.com.
 
 ## Evidence on Hand
 
-- Camila puede mostrar proyectos laborales, trabajo de e-commerce e integraciones, sistemas de gestión y proyectos de formación. Sus nombres, alcance, resultados y capturas aún deben aportarse.
-- Rock & EDM Festival: https://camiperezs-festival-musica.netlify.app/ con `public/img/rockyedmfest.png`.
-- Frontend Store: https://cemiperezs-frontend-store.netlify.app/ con `public/img/frontendstore.jpg`.
-- Certificados: `public/certificados/egg-full-stack-2023.pdf` y `public/certificados/educacionit-introduccion-ciberseguridad-2025.pdf`.
+- Unio (sept. 2026 – actualidad, Desarrolladora Backend): se puede nombrar con autorización. Tecnologías confirmadas: Node.js, Fastify, PostgreSQL, Redis, AWS Lambda, API Gateway y n8n. No se publican código, capturas, datos internos ni detalles técnicos sensibles.
+- WAIA (mar. 2024 – jul. 2026, Desarrolladora Full Stack): e-commerce en producción sobre OpenCart con PHP, MySQL, integraciones de Mercado Pago y MODO, OAuth, webhooks y Docker.
+- Gestor para centros de estética: proyecto propio en desarrollo, con Java, Spring Boot, Spring Security, JWT, PostgreSQL, React, TypeScript y Tailwind CSS. Falta su captura en `public/img/gestor-estetica.webp`.
+- Formación: Educación IT (Ciberseguridad, 2025 – actualidad) y Egg Live · Udemy (Full Stack, 2023). Certificados en `public/certificados`.
 - Perfiles: https://www.linkedin.com/in/perezs-camila/ y https://github.com/camiperezs
 - No hay testimonios, clientes nombrados, métricas ni estadísticas confirmadas. No deben inventarse.
 

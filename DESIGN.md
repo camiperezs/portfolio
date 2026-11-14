@@ -217,6 +217,12 @@ Los controles de idioma y tema son una pieza global anclada a 24px del borde sup
 
 El margen lateral mínimo es de 16px en todas las rutas.
 
+Las secciones siguen dos patrones. Experiencia, Proyectos, la ficha de proyecto y Sobre mí van dentro de un `Panel`. Servicios y Contacto ponen el título y la introducción directamente sobre el fondo y reparten el contenido en tarjetas independientes, con un ancho máximo de 1040px:
+
+- **Servicios:** dos columnas asimétricas (3fr y 2fr). A la izquierda, el servicio principal y debajo una tarjeta de cierre; a la derecha, los servicios secundarios apilados. Debajo de 960px pasa a una columna con los secundarios en dos columnas, y debajo de 600px se apila todo.
+- **Contacto:** a la izquierda, el título grande, la introducción y el contacto directo; a la derecha, la tarjeta del formulario en dos pasos. Debajo de 900px el orden es título, tarjeta y contacto directo.
+- **Ficha de proyecto:** la columna de texto toma la altura de la columna de imagen y tecnologías, con scroll interno y un desvanecido al pie. En móvil el texto fluye sin scroll.
+
 ## Elevation & Depth
 
 La profundidad es sutil y nace de bordes y sombras cortas, nunca de ilustraciones de fondo.
@@ -256,13 +262,31 @@ El cursor y los iconos pixel son la única geometría pixelada; las superficies 
 `ThemeSelector`: un botón de 44px con el icono del modo elegido (Sistema, Claro u Oscuro) que despliega un menú de juego con las tres opciones. Cada opción tiene el cursor pixel y una baldosa de 32px; la elegida pasa a acento sólido. Se abre con clic o flecha abajo, se recorre con flechas, se elige con Enter y se cierra con Escape, clic afuera o Tab. Abre en 160ms con `--ease-out` desde su esquina. La preferencia se guarda, se sincroniza entre pestañas y, en Sistema, sigue a `prefers-color-scheme` en vivo; un script en `index.html` aplica el tema antes de pintar para evitar el destello.
 
 ### Barra de navegación
-`Navbar`: tarjeta con la marca, cinco secciones (Sobre mí, Tecnologías, Experiencia, Proyectos y Contacto) con su icono pixel, y los controles de idioma y tema. Por debajo de 1100px pasa a un botón "Menú" con panel desplegable.
+`Navbar`: tarjeta con la marca, cinco secciones (Servicios, Proyectos, Experiencia, Sobre mí y Contacto) con su icono pixel, y los controles de idioma y tema. Por debajo de 1100px pasa a un botón "Menú" con panel desplegable.
 
 ### Área de experiencia
-`ExperienceArea`: tarjeta elevada con radio grande para cada área de trabajo profesional. Cabecera con baldosa de acento suave de 40px y título de 20px; debajo, en dos columnas (una en móvil), "El problema" y "Qué hice" con viñetas ciruela, y una fila de tecnologías como pastillas de texto de 14px, sin sprites, para no repetir la sección Tecnologías. No muestra empresas ni imágenes; las tarjetas con imagen quedan para Proyectos.
+`ExperienceArea`: panel de cada empresa dentro de las pestañas de Experiencia. Cabecera con baldosa de acento suave de 40px, el rol como título de 20px y debajo «empresa · fechas» en texto suave. Sigue la descripción, la lista de responsabilidades con viñetas ciruela y una fila de tecnologías como pastillas de texto de 14px, sin sprites. Cada panel toma su propia altura.
 
 ### Cierre de contacto
-`ContactCta`: bloque final de una vista, separado por un borde superior, con un título de subtítulo, una línea de texto suave y las acciones a la derecha (abajo en móvil). La acción principal es siempre "Escribime"; la secundaria lleva a otra sección. Se usa en Experiencia, Tecnologías, Proyectos y la ficha de proyecto.
+`ContactCta`: bloque final de una vista, separado por un borde superior, con un título de subtítulo, una línea de texto suave y las acciones a la derecha (abajo en móvil). La acción principal es siempre "Escribime"; la secundaria lleva a otra sección. Se usa en Proyectos y en la ficha de proyecto. En Servicios va dentro de su propia tarjeta, solo con el título y el botón.
+
+### Servicio principal
+`FeaturedService`: tarjeta grande con baldosa de acento suave de 48px, título de subtítulo y descripción. Dentro, `ModeColumn` muestra las dos modalidades en columnas sin tarjetas internas, separadas por una línea vertical y con líneas finas arriba y abajo: número en Jersey 25 y acento («01», «02»), título, una frase y palabras clave en texto suave. Al pie, una línea con lo que incluyen ambas.
+
+### Servicio secundario
+`ServiceLink`: tarjeta enlazada a Contacto con el motivo y el servicio ya elegidos. Baldosa de 32px, título, descripción y ejemplos separados por « · ». En hover la tarjeta sube 2px, el borde y el título pasan a acento y la baldosa se rellena de acento con el icono en `--color-on-accent`. Con foco de teclado se ve igual, más el contorno de foco.
+
+### Selector de motivo
+`ReasonMenu`: lista de botones del primer paso de Contacto. La opción señalada (hover, foco o elegida) se marca solo con el cursor pixel que oscila y la baldosa rellena de acento; la fila no cambia de fondo. Mientras el mouse está sobre la lista, solo la opción señalada muestra esas marcas. Se recorre con flechas, Inicio y Fin.
+
+### Progreso de pasos
+`StepProgress`: texto «Paso n de 2» y debajo un segmento de 4px por paso, en acento los completados y en borde los pendientes.
+
+### Formulario de contacto
+`ContactCard`: campos en una sola columna (nombre, email y mensaje) con etiquetas flotantes. La etiqueta empieza dentro del campo en texto suave; con foco o con texto sube y se achica a 0.72 dentro del mismo campo, y con foco toma el acento. Los campos miden 56px de alto con borde de control; el error pinta borde y etiqueta. El botón «Enviar» va solo, alineado a la derecha.
+
+### Contacto directo
+`DirectContact`: email con su icono, un botón cuadrado de 40px para copiarlo (icono de copiar que pasa a un tilde en acento durante 2 segundos, con el estado anunciado a lectores de pantalla) y los enlaces a GitHub y LinkedIn.
 
 ### Icono pixel
 `PixelIcon`: máscara PNG (`public/sprites/mask-*.png`) pintada con `currentColor`, de 24px por defecto. Así los iconos siguen el tema y el estado. Se dibujan en una grilla de 12×12 con píxeles de 2px.
@@ -275,6 +299,8 @@ Pastilla de superficie con borde y sombra chica, con ChamDev en Jersey 25 a 25px
 - Transiciones de color de 150ms; movimientos con `--ease-out` (`cubic-bezier(0.23, 1, 0.32, 1)`) entre 140 y 260ms.
 - Entrada escalonada de las opciones del menú: 260ms, con 40ms de diferencia entre cada una.
 - Respuesta al presionar: escala entre 0.96 y 0.98.
+- Hover de tarjetas enlazadas: desplazamiento de 2px hacia arriba en 200ms; la baldosa cambia de color en 200ms.
+- Etiquetas flotantes: 380ms con `cubic-bezier(0.4, 0, 0.2, 1)`, para que el desplazamiento se vea suave y no como un salto.
 - Con `prefers-reduced-motion` se quitan las animaciones y las transiciones.
 
 ## Do's and Don'ts
@@ -286,6 +312,8 @@ Pastilla de superficie con borde y sombra chica, con ChamDev en Jersey 25 a 25px
 - **Do** mostrar los sprites a color (como los iconos de tecnologías) a escala entera, con `image-rendering: pixelated` y `filter: var(--sprite-outline)`, que de noche les dibuja un contorno claro de 1px para que los sprites oscuros no se pierdan sobre superficies oscuras.
 - **Do** mantener una sola animación protagonista por pantalla.
 - **Do** usar títulos profesionales y lenguaje directo.
+- **Do** usar Bootstrap Icons para los controles de interfaz (tema, copiar) y pixel art para la identidad.
+- **Do** marcar una opción seleccionada o señalada con dos señales como máximo: el cursor pixel y la baldosa en acento.
 
 ### Don't:
 - **Don't** usar ilustraciones de escena como fondo ni marcos pixel en las superficies.
@@ -294,3 +322,4 @@ Pastilla de superficie con borde y sombra chica, con ChamDev en Jersey 25 a 25px
 - **Don't** usar Jersey 25 fuera de la marca y los acentos pixel.
 - **Don't** escalar sprites a factores no enteros.
 - **Don't** inventar datos de proyectos, experiencia ni estadísticas.
+- **Don't** usar bordes gruesos de color en un solo lado de una tarjeta como acento.

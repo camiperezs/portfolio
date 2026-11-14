@@ -1,5 +1,4 @@
 import type { EntryId, EntryText } from '../about'
-import type { CategoryId } from '../technologies'
 import type { JobId, JobText } from '../experience'
 import type { ProjectId, ProjectText } from '../projects'
 
@@ -66,15 +65,6 @@ const entries: Record<EntryId, EntryText> = {
   fullStack: { date: '2023', title: 'Desarrollo Full Stack', place: 'Egg Live · Udemy' },
 }
 
-const categories: Record<CategoryId, string> = {
-  backend: 'Backend',
-  frontend: 'Frontend',
-  databases: 'Bases de datos',
-  'e-commerce': 'E‑commerce',
-  tools: 'Herramientas',
-  ai: 'IA',
-}
-
 export const es = {
   role: 'Desarrolladora Full Stack',
   language: 'Idioma',
@@ -112,16 +102,6 @@ export const es = {
       label: 'Trayectoria resumida',
       columns: { experience: 'Experiencia laboral', training: 'Formación' },
       entries,
-    },
-  },
-  technologies: {
-    title: 'Tecnologías',
-    label: 'Categorías de tecnologías',
-    categories,
-    cta: {
-      title: '¿Querés ver cómo las uso?',
-      text: 'En Experiencia cuento qué problemas resolví con ellas.',
-      experience: 'Ver experiencia',
     },
   },
   experience: {

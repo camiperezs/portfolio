@@ -44,23 +44,6 @@ export const en: Texts = {
       },
     },
   },
-  technologies: {
-    title: 'Technologies',
-    label: 'Technology categories',
-    categories: {
-      backend: 'Backend',
-      frontend: 'Frontend',
-      databases: 'Databases',
-      'e-commerce': 'E‑commerce',
-      tools: 'Tools',
-      ai: 'AI',
-    },
-    cta: {
-      title: 'Want to see how I use them?',
-      text: 'In Experience I explain the problems I solved with them.',
-      experience: 'See experience',
-    },
-  },
   experience: {
     title: 'Experience',
     intro: "Where I've worked and what I did at each place.",
