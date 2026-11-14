@@ -1,4 +1,4 @@
-export type ProjectId = 'salonSystem' | 'festival' | 'frontendStore'
+export type ProjectId = 'salonSystem'
 export type ProjectType = 'project' | 'training'
 export type ProjectStatus = 'development' | 'published'
 
@@ -24,34 +24,22 @@ type Project = {
 export const projects: Project[] = [
   {
     id: 'salonSystem',
-    slug: 'sistema-salon',
+    slug: 'gestor-estetica',
     type: 'project',
     status: 'development',
     technologies: ['Java', 'Spring Boot', 'Spring Security', 'JWT', 'PostgreSQL', 'React', 'TypeScript', 'Tailwind CSS'],
-  },
-  {
-    id: 'festival',
-    slug: 'rock-edm-festival',
-    type: 'training',
-    status: 'published',
-    technologies: [],
-    image: '/img/rockyedmfest.webp',
-    site: 'https://camiperezs-festival-musica.netlify.app/',
-  },
-  {
-    id: 'frontendStore',
-    slug: 'frontend-store',
-    type: 'training',
-    status: 'published',
-    technologies: [],
-    image: '/img/frontendstore.webp',
-    site: 'https://cemiperezs-frontend-store.netlify.app/',
   },
 ]
 
 export const noImageIcon = '/sprites/mask-window.png'
 
+export const projectRedirects: Record<string, string> = {
+  'sistema-salon': '/proyectos/gestor-estetica',
+  'rock-edm-festival': '/proyectos',
+  'frontend-store': '/proyectos',
+}
+
 export const workRedirects: Record<string, string> = {
   'integraciones-pago': '/experiencia?empresa=waia',
-  'control-acceso-roles': '/proyectos/sistema-salon',
+  'control-acceso-roles': '/proyectos/gestor-estetica',
 }

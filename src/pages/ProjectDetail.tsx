@@ -8,7 +8,7 @@ import Panel from '../components/ui/Panel'
 import { useLanguage } from '../context/LanguageContext'
 import { usePageTitle } from '../hooks/usePageTitle'
 import { writeIcon } from '../data/navigation'
-import { noImageIcon, projects } from '../data/projects'
+import { noImageIcon, projectRedirects, projects } from '../data/projects'
 import { technologyIcons } from '../data/technologies'
 import './Projects.css'
 
@@ -19,7 +19,7 @@ export default function ProjectDetail() {
   const current = projects.find((project) => project.slug === slug)
   usePageTitle(current ? texts.projects.items[current.id].title : undefined)
 
-  if (!current) return <Navigate to="/proyectos" replace />
+  if (!current) return <Navigate to={projectRedirects[slug ?? ''] ?? '/proyectos'} replace />
 
   const text = projectTexts.items[current.id]
   const technologies = current.technologies.map((name) => ({ name, icon: technologyIcons[name] }))

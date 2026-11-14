@@ -8,7 +8,7 @@ import ProjectDetail from './pages/ProjectDetail'
 import Projects from './pages/Projects'
 import WorkRedirect from './pages/WorkRedirect'
 import About from './pages/About'
-import Technologies from './pages/Technologies'
+import Services from './pages/Services'
 
 export default function App() {
   return (
@@ -16,8 +16,9 @@ export default function App() {
       <Route element={<Frame />}>
         <Route index element={<Home />} />
         <Route element={<Layout />}>
+          <Route path="servicios" element={<Services />} />
           <Route path="sobre-mi" element={<About />} />
-          <Route path="tecnologias" element={<Technologies />} />
+          <Route path="tecnologias" element={<Navigate to="/experiencia" replace />} />
           <Route path="experiencia" element={<Experience />} />
           <Route path="proyectos" element={<Projects />} />
           <Route path="proyectos/:slug" element={<ProjectDetail />} />

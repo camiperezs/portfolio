@@ -38,10 +38,10 @@ const jobs: Record<JobId, JobText> = {
 
 const projects: Record<ProjectId, ProjectText> = {
   salonSystem: {
-    title: 'Sistema de gestión para salones de belleza',
+    title: 'Gestor para centros de estética',
     role: 'Desarrolladora Full Stack · Responsable del proyecto',
     summary:
-      'Aplicación web full stack pensada para simplificar la operación diaria de salones de belleza y profesionales independientes.',
+      'Aplicación web full stack pensada para simplificar la operación diaria de centros de estética, peluquerías y profesionales independientes.',
     challenge:
       'Cada usuario necesita acceder a funciones e información distintas: la administración configura el sistema, recepción gestiona turnos y clientes, y cada profesional accede a lo relativo a su propio trabajo. Diseñé un modelo de seguridad centralizado con JWT, BCrypt y Spring Security, con tres roles (ADMIN, RECEPTIONIST y PROFESSIONAL) y permisos validados antes de cada operación protegida.',
     list: {
@@ -56,14 +56,6 @@ const projects: Record<ProjectId, ProjectText> = {
     },
     context:
       'Desarrollado de forma independiente, desde el diseño de la base de datos y las APIs REST hasta la implementación del frontend. Actualmente en desarrollo.',
-  },
-  festival: {
-    title: 'Rock & EDM Festival',
-    summary: 'Proyecto frontend con temática de festival, con información del line up, galería y entradas.',
-  },
-  frontendStore: {
-    title: 'Frontend Store',
-    summary: 'Simulación de una tienda de remeras con secciones de tienda, nosotros y descripción de producto.',
   },
 }
 
@@ -91,20 +83,20 @@ export const es = {
     label: 'Secciones',
     menu: 'Menú',
     about: 'Sobre mí',
-    technologies: 'Tecnologías',
-    experience: 'Experiencia',
+    services: 'Servicios',
     projects: 'Proyectos',
+    experience: 'Experiencia',
     contact: 'Contacto',
   },
   home: {
     menu: 'Secciones',
-    value: 'Desarrollo soluciones web a medida: sitios, integraciones, automatizaciones y sistemas de gestión.',
+    value: 'Desarrollo soluciones web a medida: sitios, integraciones y automatizaciones.',
     write: 'Escribime',
     descriptions: {
-      about: 'Perfil y recorrido',
-      technologies: 'Stack y herramientas',
+      services: 'Qué hago y cómo trabajo',
+      projects: 'Lo que estoy construyendo',
       experience: 'Unio y WAIA',
-      projects: 'Desarrollos propios y publicados',
+      about: 'Perfil y recorrido',
       contact: 'Escribime un mensaje',
     },
   },
@@ -140,9 +132,64 @@ export const es = {
     technologies: 'Tecnologías',
     jobs,
   },
+  services: {
+    title: 'Servicios',
+    intro: 'Trabajo independiente para negocios, profesionales y emprendimientos.',
+    main: {
+      title: 'Landing pages y sitios web',
+      description: 'Diseño y desarrollo web para profesionales, negocios y emprendimientos.',
+      modes: {
+        design: {
+          number: '01',
+          title: 'Diseño y desarrollo',
+          text: 'Partimos de tu idea y construimos una propuesta visual y funcional.',
+          keywords: ['Estructura', 'Contenido', 'Diseño', 'Desarrollo'],
+        },
+        implementation: {
+          number: '02',
+          title: 'Implementación',
+          text: 'Convertimos tu diseño existente en una página web funcional.',
+          keywords: ['Revisión', 'Desarrollo', 'Adaptación', 'Pruebas'],
+        },
+      },
+      common: 'Ambas modalidades incluyen adaptación responsive, pruebas y publicación.',
+    },
+    listLabel: 'Otros servicios',
+    items: {
+      integrations: {
+        title: 'Integraciones',
+        description: 'Hago que tus plataformas y servicios se comuniquen para intercambiar información sin pasos manuales.',
+        examples: [
+          'Medios de pago como Mercado Pago y MODO',
+          'APIs propias y de terceros',
+          'Webhooks',
+          'Plataformas de comercio electrónico',
+        ],
+      },
+      automation: {
+        title: 'Automatizaciones',
+        description: 'Procesos que se ejecutan solos y te sacan de encima las tareas repetitivas.',
+        examples: ['Flujos de trabajo automáticos', 'Tareas programadas', 'Generación de reportes', 'Procesamiento de datos'],
+      },
+      features: {
+        title: 'Nuevas funcionalidades para tu sistema',
+        description:
+          'Sumo funcionalidades y mejoras a aplicaciones que ya están en uso, adaptándolas a cómo trabaja tu negocio.',
+        examples: ['Nuevos módulos y procesos', 'Usuarios, roles y permisos', 'Mejoras en procesos existentes'],
+      },
+      support: {
+        title: 'Soporte y correcciones',
+        description: 'Resuelvo errores y hago ajustes puntuales en sitios y aplicaciones que ya están funcionando.',
+        examples: ['Corrección de errores', 'Actualizaciones', 'Ajustes técnicos'],
+      },
+    },
+    cta: {
+      title: '¿Tenés un proyecto en mente?',
+    },
+  },
   projects: {
     title: 'Proyectos',
-    intro: 'Desarrollos propios y proyectos publicados.',
+    intro: 'Desarrollos propios.',
     label: 'Lista de proyectos',
     cta: {
       title: '¿Tenés un proyecto en mente?',

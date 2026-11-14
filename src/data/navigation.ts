@@ -1,8 +1,8 @@
 export const sections = [
-  { id: 'about', path: '/sobre-mi', icon: '/sprites/mask-person.png' },
-  { id: 'technologies', path: '/tecnologias', icon: '/sprites/mask-code.png' },
-  { id: 'experience', path: '/experiencia', icon: '/sprites/mask-briefcase.png' },
+  { id: 'services', path: '/servicios', icon: '/sprites/mask-code.png' },
   { id: 'projects', path: '/proyectos', icon: '/sprites/mask-window.png' },
+  { id: 'experience', path: '/experiencia', icon: '/sprites/mask-briefcase.png' },
+  { id: 'about', path: '/sobre-mi', icon: '/sprites/mask-person.png' },
   { id: 'contact', path: '/contacto', icon: '/sprites/mask-envelope.png' },
 ] as const
 

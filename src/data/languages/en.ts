@@ -8,20 +8,20 @@ export const en: Texts = {
     label: 'Sections',
     menu: 'Menu',
     about: 'About me',
-    technologies: 'Technologies',
-    experience: 'Experience',
+    services: 'Services',
     projects: 'Projects',
+    experience: 'Experience',
     contact: 'Contact',
   },
   home: {
     menu: 'Sections',
-    value: 'I build custom web solutions: websites, integrations, automations and management systems.',
+    value: 'I build custom web solutions: websites, integrations and automations.',
     write: 'Get in touch',
     descriptions: {
-      about: 'Profile and journey',
-      technologies: 'Stack and tools',
+      services: 'What I do and how I work',
+      projects: "What I'm building",
       experience: 'Unio and WAIA',
-      projects: 'Own and published work',
+      about: 'Profile and journey',
       contact: 'Send me a message',
     },
   },
@@ -100,9 +100,63 @@ export const en: Texts = {
       },
     },
   },
+  services: {
+    title: 'Services',
+    intro: 'Independent work for businesses, professionals and startups.',
+    main: {
+      title: 'Landing pages and websites',
+      description: 'Web design and development for professionals, businesses and startups.',
+      modes: {
+        design: {
+          number: '01',
+          title: 'Design and build',
+          text: 'We start from your idea and build a visual, functional proposal.',
+          keywords: ['Structure', 'Content', 'Design', 'Development'],
+        },
+        implementation: {
+          number: '02',
+          title: 'Implementation',
+          text: 'We turn your existing design into a working website.',
+          keywords: ['Review', 'Development', 'Adaptation', 'Testing'],
+        },
+      },
+      common: 'Both options include responsive adaptation, testing and publishing.',
+    },
+    listLabel: 'Other services',
+    items: {
+      integrations: {
+        title: 'Integrations',
+        description: 'I get your platforms and services talking to each other so they share information without manual steps.',
+        examples: [
+          'Payment methods such as Mercado Pago and MODO',
+          'Your own and third-party APIs',
+          'Webhooks',
+          'E-commerce platforms',
+        ],
+      },
+      automation: {
+        title: 'Automation',
+        description: 'Processes that run on their own and take repetitive tasks off your plate.',
+        examples: ['Automated workflows', 'Scheduled jobs', 'Report generation', 'Data processing'],
+      },
+      features: {
+        title: 'New features for your system',
+        description: 'I add features and improvements to applications already in use, adapting them to how your business works.',
+        examples: ['New modules and processes', 'Users, roles and permissions', 'Improvements to existing processes'],
+      },
+      support: {
+        title: 'Support and fixes',
+        description: 'I fix bugs and make one-off adjustments to websites and applications that are already running.',
+        examples: ['Bug fixes', 'Updates', 'Technical adjustments'],
+      },
+    },
+    cta: {
+      title: 'Have a project in mind?',
+    },
+  },
   projects: {
     title: 'Projects',
-    intro: 'Personal and published projects.',
+    intro: 'Personal projects.',
     label: 'Project list',
     cta: {
       title: 'Have a project in mind?',
@@ -119,7 +173,7 @@ export const en: Texts = {
     statuses: { development: 'In development', published: 'Published' },
     items: {
       salonSystem: {
-        title: 'Beauty Salon Management System',
+        title: 'Management app for beauty centers',
         role: 'Full Stack Developer · Project Owner',
         summary:
           'Full-stack web application designed to simplify daily operations for beauty salons and independent professionals.',
@@ -137,14 +191,6 @@ export const en: Texts = {
         },
         context:
           'Independently developed, from database design and REST APIs to frontend implementation. Currently in development.',
-      },
-      festival: {
-        title: 'Rock & EDM Festival',
-        summary: 'Festival-themed frontend project with line-up information, a gallery, and tickets.',
-      },
-      frontendStore: {
-        title: 'Frontend Store',
-        summary: 'Simulated T-shirt store with shop, about us, and product description sections.',
       },
     },
   },

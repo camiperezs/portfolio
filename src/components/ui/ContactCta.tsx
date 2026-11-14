@@ -4,7 +4,7 @@ import './ContactCta.css'
 
 type Props = {
   title: string
-  text: string
+  text?: string
   children: ReactNode
 }
 
@@ -15,7 +15,7 @@ export default function ContactCta({ title, text, children }: Props) {
     <section className="cta" aria-labelledby={titleId}>
       <div className="cta-text">
         <h2 id={titleId}>{title}</h2>
-        <p>{text}</p>
+        {text && <p>{text}</p>}
       </div>
       <div className="cta-actions">{children}</div>
     </section>
